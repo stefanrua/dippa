@@ -250,8 +250,32 @@
 %% 
 \thispagestyle{empty}
 
-Airborne remote sensing based tree mapping methods are used for forest health monitoring \cite{ecke} and city planning \cite{velasquez} due to their efficiency, but the training process is often bottlenecked by creating high quality annotations manually. 
+Airborne remote sensing based tree mapping methods are used for forest health monitoring \cite{ecke} and city planning \cite{velasquez} due to their efficiency compared to manual methods, but the training process is often bottlenecked by the need for high quality annotations made by hand. 
 The goal of this study is to test if training results can be improved in instance segmentation tasks by refining coarse segments calculated from a canopy height model (CHM) using Segment Anything Model 2 (SAM2) \cite{sam2}.
+
+This document begins by explaining the necessary background information in the Backgroud section, and exploring the previous works relevant to this study in the Related Work section. The Materials and Methods section contains a detailed explanation of the dataset, models, and training hyperparameters. Finally, the experiment's outcome is displayed and analyzed in the Results and Discussion sections, along with suggestions for future improvement.
+
+\newpage
+\section{Background}
+
+\subsection{Instance Segmentation}
+
+Instance segmentation is a machine learning task where the goal is to return separate masks for individual objects in an image. This differs from semantic segmentation, where each pixel is given a semantic label without separating individual objects, and from object detection where individual objects are given bounding boxes and no masks.
+
+\subsection{Segment Anything Model 2}
+
+Segment Anything Model 2 (SAM2) is a model that can segment objects very generally, even ones that it hasn't been trained on. There are two ways to use it: only providing it with an image and letting it segment every object on its own, or providing it with an image and a prompt containing the location of the object of interest. The prompts can be of two types: a set of one or more foreground points and optional background points, or a bounding box. The model outputs a binary mask.
+
+\subsection{Mask R-CNN}
+
+Mask R-CNN is an instance segmentation model based on a region-based convolutional neural network (R-CNN). It's trained using image-target pairs, where the target contains a binary mask, bounding box, and category label for each object of interest. After training it is used on new images to predict masks for the types of objects seen in training.
+
+A CNN consists of convolutional layers, where the connections to the next layer are formed by sliding a kernel with tunable weights over the previous layer. R-CNNs search over feature maps produced by a CNN called the region proposal network (RPN) to find objects in images.
+
+\subsection{Tree Mapping}
+\subsection{Aerial Imaging}
+- dsm chm
+- multispectral
 
 \newpage
 \section{Related Work}
