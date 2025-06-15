@@ -155,7 +155,7 @@
 %% the pdf file as well as the abstract page. To have paragraphs in your
 %% abstract rewrite it in the abstarct environment as described below.
 \thesisabstract{
-    Yappidi-yap, lorem ipsum etc.
+    Lorem ipsum etc.
 }
 
 %% You can prevent LaTeX from writing into the xmpdata file (it contains all the 
@@ -224,7 +224,7 @@
 \keywords{pseudolabelöinti, instanssisegmentaatio, metsäily}
 %% Abstract text
 \begin{abstractpage}[finnish]
-    Höpötihöp, lorem ipsum jne.
+    Lorem ipsum jne.
 \end{abstractpage}
 
 \dothesispagenumbering{}
@@ -260,29 +260,54 @@ This document begins by explaining the necessary background information in the B
 
 \subsection{Instance Segmentation}
 
-Instance segmentation is a machine learning task where the goal is to return separate masks for individual objects in an image. This differs from semantic segmentation, where each pixel is given a semantic label without separating individual objects, and from object detection where individual objects are given bounding boxes and no masks.
+Instance segmentation is a machine learning task where the goal is to generate separate masks for individual objects in an image. This differs from semantic segmentation, where each pixel is given a semantic label without separating individual objects, and from object detection where individual objects are given bounding boxes but no masks.
+
+[semantic segmentation vs instance segmentation vs object detection image]
 
 \subsection{Segment Anything Model 2}
 
-Segment Anything Model 2 (SAM2) is a model that can segment objects very generally, even ones that it hasn't been trained on. There are two ways to use it: only providing it with an image and letting it segment every object on its own, or providing it with an image and a prompt containing the location of the object of interest. The prompts can be of two types: a set of one or more foreground points and optional background points, or a bounding box. The model outputs a binary mask.
+Segment Anything Model 2 (SAM2) is a foundation model that can segment objects very generally, even ones that it hasn't been trained on. There are two ways to use it: only providing it with an image and letting it segment every object on its own, or providing it with an image and a prompt containing the location of the object of interest. The prompts can be of two types: a set of one or more foreground points and optional background points, or a bounding box. The model outputs a binary mask.
+
+[sam bbox to mask example]
+
+SAM2 is a revised version of Segment Anything Model (SAM) [ref], with the main addition being the ability to train and predict on video data. While no video data was used in this thesis, SAM2 was chosen for its higher accuracy and 6x speedup over SAM.
 
 \subsection{Mask R-CNN}
 
-Mask R-CNN is an instance segmentation model based on a region-based convolutional neural network (R-CNN). It's trained using image-target pairs, where the target contains a binary mask, bounding box, and category label for each object of interest. After training it is used on new images to predict masks for the types of objects seen in training.
+Mask R-CNN is an instance segmentation model based on a region-based convolutional neural network (R-CNN). It's trained using image-target pairs, where the target contains a binary mask, bounding box, and category label for each object of interest. After training, the model can predict masks in new images for the types of objects seen in training.
 
 A CNN consists of convolutional layers, where the connections to the next layer are formed by sliding a kernel with tunable weights over the previous layer. R-CNNs search over feature maps produced by a CNN called the region proposal network (RPN) to find objects in images.
 
+[cnn image]
+
 \subsection{Tree Mapping}
+
+Tree mapping is used by the forestry industry to monitor forest health, by urban planners to plan cities, ecological ???, and by ??? for post-disaster damage assessment.
+
+Traditionally tree mapping has been done by ground-level visual analysis [?], but the advent of aerial photography, laser scanning, and computational analysis has moved this task towards remote sensing.
+
 \subsection{Aerial Imaging}
-- dsm chm
-- multispectral
+
+Aerial images may be taken from any airborne apparatus, for example drones, helicopters, aeroplanes, or even satellites. For the purpose of mapping individual trees satellite imagery doesn't provide a high enough ground separation distance (GSD) [?], and aeroplanes ??? [?], so drones and helicopters are most often used.
+
+[image of drone with camera]
+
+Aerial remote sensing sensors include laser scanners and multispectral cameras in addition to traditional RGB-cameras that only capture visible wavelengths. Laser scanners produce three-dimensional point could data. Point clouds be used for volumetric segmentation or detection, or for calculating a digital surface model (DSM) or canopy height model (CHM). A DSM models the surface of the ground and protruding objects, and a CHM models the height the tree canopy (how are they different?).
+
+[image of point cloud, image of dsm]
+
+Multispectral cameras can capture wavelengths invisible to the human eye. Typically these include infra-red (IR) at ??? nm and near infra-red (NIR) at ??? nm. Hyperspectral cameras capture a continuous (?) spectrum often spanning the visible wavelenghts (?).
+
+[hyperspectral graph]
 
 \newpage
 \section{Related Work}
 
-The previous version of SAM2, SAM has been assessed for tree crown instance segmentation on drone imagery \cite{sam-treecrown}. The study uses SAM in the following ways: generating masks without any prompts, generating masks with digital surface model (DSM) maxima as point prompts, and prompting SAM with predictions from a trained Mask R-CNN model. Of these, the last approach is closest to the one examined here.
+The previous version of SAM2, SAM has been assessed for tree crown instance segmentation on drone imagery \cite{sam-treecrown}. The study uses SAM in the following ways: generating masks without any prompts, generating masks with digital surface model (DSM) maxima as point prompts, and prompting SAM with predictions from a trained Mask R-CNN model. Of these, the last approach is closest to the one examined here. (results?)
 
-Another study examining SAM for remote sensing use proposes RSPrompter \cite{rsprompter}, a method that learns to generate prompts from the SAM's image encoder, then feeding them to the decoder.
+Another study examining SAM for remote sensing use proposes RSPrompter \cite{rsprompter}, a method that learns to generate prompts from the SAM's image encoder, then feeding them to the decoder. (huh?)
+
+FMARS \cite{fmars} is a dataset with annotations generated using GroundingDINO and SAM. GroundingDINO was used to convert text prompts to bounding boxes, and SAM for converting these boxes to segments. A subset of the annotated area was manually annotated, and the generated annotations were compared to the manual ones, resulting in a mean intersection over union (mIoU) score of 50.22%.
 
 \newpage
 \section{Materials and Methods}
@@ -317,7 +342,13 @@ where A and B are the segments to be compared. Then, a Mask R-CNN model with a R
 
 \section{Results}
 
+(Results table with accuracy, recall, f1, and miou for each model here)
+
+The highest scoring model was ???. The addition of the SAM2 pseudolabeling preprocessing step improved accuracy by ??%, recall by ??%, F1 by ??%, and mIoU by ??%.
+
 \section{Discussion}
+
+The segmentation performance improvement provided by pseudolabeling indicates that it is a worthwhile preprocessing step for datasets, where the original annotations are only approximate.
 
 \section{Conclusions}
 
