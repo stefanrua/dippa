@@ -61,6 +61,14 @@ K.~Chen, C.~Liu, H.~Chen, H.~Zhang, W.~Li, Z.~Zou, and Z.~Shi, ``Rsprompter:
   \url{https://arxiv.org/abs/2306.16269}
 \BIBentrySTDinterwordspacing
 
+\bibitem{fmars}
+\BIBentryALTinterwordspacing
+E.~Arnaudo, J.~L. Vaschetti, L.~Innocenti, L.~Barco, D.~Lisi, V.~Fissore, and
+  C.~Rossi, ``Fmars: Annotating remote sensing images for disaster management
+  using foundation models,'' 2024. [Online]. Available:
+  \url{https://arxiv.org/abs/2405.20109}
+\BIBentrySTDinterwordspacing
+
 \bibitem{maskrcnn}
 \BIBentryALTinterwordspacing
 K.~He, G.~Gkioxari, P.~Dollár, and R.~Girshick, ``Mask r-cnn,'' 2018.

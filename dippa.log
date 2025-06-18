@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.4.4)  5 MAY 2025 10:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.4.4)  16 JUN 2025 14:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1084,18 +1084,18 @@ nding settings to your xmpdata-file.  on input line 118.
 (/usr/share/texlive/texmf-dist/tex/latex/doclicense/doclicense-english.ldf
 File: doclicense-english.ldf 
 ))
-Package hyperref Info: Option `unicode' set `true' on input line 170.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 170.
+Package hyperref Info: Option `unicode' set `true' on input line 171.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 171.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 170.
+Package hyperref Info: Option `colorlinks' set `true' on input line 171.
 LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line
- 170.
+ 171.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
 File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 170.
+(Font)              scaled to size 12.0pt on input line 171.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ccicons/ccicons.sty
 Package: ccicons 2017/10/30 v1.6 LaTeX support for Creative Commons icons
@@ -1125,52 +1125,52 @@ Package babel Info: Importing basic data for finnish
 ))
 \openout1 = `dippa.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 170.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 171.
 LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line
- 170.
+ 171.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 171.
 LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 
-170.
+171.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 170.
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 171.
 LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line
- 170.
+ 171.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 170.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 171.
 LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input lin
-e 170.
+e 171.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    ... okay on input line 171.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1194,7 +1194,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 170.
+Package hyperref Info: Link coloring ON on input line 171.
 
 (./dippa.out) (./dippa.out)
 \@outlinefile=\write5
@@ -1235,18 +1235,18 @@ Package hyperref Info: Link coloring ON on input line 170.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 170.
-Package microtype Info: Applying patch `item' on input line 170.
-Package microtype Info: Applying patch `toc' on input line 170.
-Package microtype Info: Applying patch `eqnum' on input line 170.
-Package microtype Info: Applying patch `footnote' on input line 170.
-Package microtype Info: Applying patch `verbatim' on input line 170.
+LaTeX Info: Redefining \microtypecontext on input line 171.
+Package microtype Info: Applying patch `item' on input line 171.
+Package microtype Info: Applying patch `toc' on input line 171.
+Package microtype Info: Applying patch `eqnum' on input line 171.
+Package microtype Info: Applying patch `footnote' on input line 171.
+Package microtype Info: Applying patch `verbatim' on input line 171.
 Package microtype Info: Generating PDF output.
 Package microtype Info: No character protrusion.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 170.
+LaTeX Info: Redefining \showhyphens on input line 171.
 Package microtype Info: Tracking enabled.
 Package microtype Info: Using default tracking set `smallcaps'.
 Package microtype Info: Adjustment of interword spacing enabled.
@@ -1269,8 +1269,8 @@ Package caption Info: End \AtBeginDocument code.
 
 \c@mv@tabular=\count357
 \c@mv@boldtabular=\count358
-LaTeX Info: Command `\dddot' is already robust on input line 170.
-LaTeX Info: Command `\ddddot' is already robust on input line 170.
+LaTeX Info: Command `\dddot' is already robust on input line 171.
+LaTeX Info: Command `\ddddot' is already robust on input line 171.
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1304,53 +1304,53 @@ LaTeX Info: Command `\ddddot' is already robust on input line 170.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Trying to load font information for T1+qhv on input line 17
-4.
+5.
 
 (/usr/share/texmf/tex/latex/tex-gyre/t1qhv.fd
 File: t1qhv.fd 2009/09/25 v1.2 font definition file for T1/qhv
 )
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 11.28003pt on input line 174.
+(Font)              scaled to size 11.28003pt on input line 175.
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 23.38725pt on input line 174.
+(Font)              scaled to size 23.38725pt on input line 175.
 
-Overfull \hbox (120.92422pt too wide) in paragraph at lines 174--174
+Overfull \hbox (120.92422pt too wide) in paragraph at lines 175--175
 [] 
  []
 
 
-Overfull \hbox (149.37697pt too wide) in paragraph at lines 174--174
+Overfull \hbox (149.37697pt too wide) in paragraph at lines 175--175
 [][] 
  []
 
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 13.53603pt on input line 174.
+(Font)              scaled to size 13.53603pt on input line 175.
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 13.53603pt on input line 174.
+(Font)              scaled to size 13.53603pt on input line 175.
 LaTeX Font Info:    Trying to load font information for OT1+minntx on input lin
-e 174.
+e 175.
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
 File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
 )
 LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 
-174.
+175.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
 )
 LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 
-174.
+175.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
 )
 LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 
-174.
+175.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
-Overfull \hbox (120.92422pt too wide) in paragraph at lines 174--174
+Overfull \hbox (120.92422pt too wide) in paragraph at lines 175--175
 $[]$ 
  []
 
@@ -1367,25 +1367,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 {/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}]
 LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input lin
-e 182.
+e 183.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
 File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 182.
+(Font)              scaled to size 12.0pt on input line 183.
 
 
 Package microtype Warning: I cannot find a spacing list for font
 (microtype)                `TS1/ntxtlf/m/n/12' (context: `nonfrench'). Switchin
 g off
-(microtype)                spacing for this font on input line 182.
+(microtype)                spacing for this font on input line 183.
 
-<doclicense-CC-by-nc-sa-88x31.pdf, id=71, 90.3375pt x 31.61812pt>
+<doclicense-CC-by-nc-sa-88x31.pdf, id=95, 90.3375pt x 31.61812pt>
 File: doclicense-CC-by-nc-sa-88x31.pdf Graphic file (type pdf)
 <use doclicense-CC-by-nc-sa-88x31.pdf>
 Package pdftex.def Info: doclicense-CC-by-nc-sa-88x31.pdf  used on input line 1
-82.
+83.
 (pdftex.def)             Requested size: 120.0pt x 42.0004pt.
 [2
 
@@ -1394,7 +1394,7 @@ Package pdftex.def Info: doclicense-CC-by-nc-sa-88x31.pdf  used on input line 1
 dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc} </usr/share/texlive/texmf-dist/tex/l
 atex/doclicense/images/doclicense-CC-by-nc-sa-88x31.pdf>]
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 11.28003pt on input line 195.
+(Font)              scaled to size 11.28003pt on input line 196.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1422,11 +1422,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 ]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 234.
+(Font)              scaled to size 17.28pt on input line 235.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 234.
+(Font)              scaled to size 17.28pt on input line 235.
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 16.24324pt on input line 234.
+(Font)              scaled to size 16.24324pt on input line 235.
  (./dippa.toc
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 5.
@@ -1438,33 +1438,103 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 
 ] [6
 
-] [7]
+]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 266.
+(Font)              scaled to size 14.4pt on input line 262.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 266.
-<figures/radii.pdf, id=131, 462.52798pt x 346.89601pt>
-File: figures/radii.pdf Graphic file (type pdf)
-<use figures/radii.pdf>
-Package pdftex.def Info: figures/radii.pdf  used on input line 289.
-(pdftex.def)             Requested size: 282.81915pt x 212.12498pt.
-<figures/ndvi.pdf, id=132, 462.52798pt x 346.89601pt>
+(Font)              scaled to size 14.4pt on input line 262.
+
+Underfull \hbox (badness 10000) in paragraph at lines 264--269
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 264--269
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--277
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--277
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--289
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--289
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 298--303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--309
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--309
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--315
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--315
+
+ []
+
+[8] [9]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.8pt on input line 335.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.6pt on input line 335.
+<figures/ndvi.pdf, id=171, 462.52798pt x 346.89601pt>
 File: figures/ndvi.pdf Graphic file (type pdf)
 <use figures/ndvi.pdf>
-Package pdftex.def Info: figures/ndvi.pdf  used on input line 290.
+Package pdftex.def Info: figures/ndvi.pdf  used on input line 342.
 (pdftex.def)             Requested size: 282.81915pt x 212.12498pt.
-<figures/pseudolabel-example.png, id=133, 1387.584pt x 722.7pt>
+ [10{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc} <./fi
+gures/ndvi.pdf>]
+<figures/pseudolabel-example.png, id=223, 1387.584pt x 722.7pt>
 File: figures/pseudolabel-example.png Graphic file (type png)
 <use figures/pseudolabel-example.png>
-Package pdftex.def Info: figures/pseudolabel-example.png  used on input line 29
-1.
+Package pdftex.def Info: figures/pseudolabel-example.png  used on input line 35
+7.
 (pdftex.def)             Requested size: 404.02913pt x 210.42674pt.
- [8{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}] [9 <.
-/figures/radii.pdf> <./figures/ndvi.pdf> <./figures/pseudolabel-example.png>] [
-10] (./dippa.bbl
+<figures/radii.pdf, id=225, 462.52798pt x 346.89601pt>
+File: figures/radii.pdf Graphic file (type pdf)
+<use figures/radii.pdf>
+Package pdftex.def Info: figures/radii.pdf  used on input line 364.
+(pdftex.def)             Requested size: 282.81915pt x 212.12498pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11 <./figures/pseudolabel-example.png>] [12 <./figures/radii.pdf>]
+(./dippa.bbl
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 12.0pt on input line 28.
-) [11
+) [13
 
 ] (./dippa.aux)
  ***********
@@ -1472,14 +1542,14 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `dippa.out' has not changed.
-(rerunfilecheck)             Checksum: CCC260A12D33A0782EF26FFA0FC20D14;1490.
+(rerunfilecheck)             Checksum: 93F0A2FB84B30FE00B967CCD406FE7F6;2428.
  ) 
 Here is how much of TeX's memory you used:
- 37590 strings out of 474222
- 661688 string characters out of 5748734
- 1937975 words of memory out of 5000000
- 59092 multiletter control sequences out of 15000+600000
- 616213 words of font info for 124 fonts, out of 8000000 for 9000
+ 37664 strings out of 474222
+ 663049 string characters out of 5748734
+ 1938975 words of memory out of 5000000
+ 59114 multiletter control sequences out of 15000+600000
+ 623801 words of font info for 146 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  132i,12n,135p,998b,2556s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/sha
@@ -1490,10 +1560,10 @@ xlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx
 /ztmri.pfb>
-Output written on dippa.pdf (11 pages, 1698101 bytes).
+Output written on dippa.pdf (13 pages, 1709387 bytes).
 PDF statistics:
- 296 PDF objects out of 1000 (max. 8388607)
- 192 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 28821 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 350 PDF objects out of 1000 (max. 8388607)
+ 243 compressed objects within 3 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 32965 words of extra memory for PDF output out of 35830 (max. 10000000)
 

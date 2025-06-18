@@ -5,6 +5,7 @@
 
 %% Add here the packges you need
 \usepackage{graphicx}
+\usepackage{amsmath}
 
 
 %% For tables that span multiple pages; used to split a paraphrasing example in
@@ -193,7 +194,7 @@
 %% well.
 %%
 \begin{abstractpage}[english]
-    Yappidi-yap, lorem ipsum etc.
+    Lorem ipsum etc.
 \end{abstractpage}
 
 %% The text in the \thesisabstract macro is stored in the macro \abstractext, so
@@ -250,7 +251,7 @@
 %% 
 \thispagestyle{empty}
 
-Airborne remote sensing based tree mapping methods are used for forest health monitoring \cite{ecke} and city planning \cite{velasquez} due to their efficiency compared to manual methods, but the training process is often bottlenecked by the need for high quality annotations made by hand. 
+Airborne remote sensing based tree mapping methods are used for forest health monitoring \cite{ecke} and city planning \cite{velasquez} due to their efficiency compared to manual methods, but the training process is often bottlenecked by the need for high quality manual annotations. 
 The goal of this study is to test if training results can be improved in instance segmentation tasks by refining coarse segments calculated from a canopy height model (CHM) using Segment Anything Model 2 (SAM2) \cite{sam2}.
 
 This document begins by explaining the necessary background information in the Backgroud section, and exploring the previous works relevant to this study in the Related Work section. The Materials and Methods section contains a detailed explanation of the dataset, models, and training hyperparameters. Finally, the experiment's outcome is displayed and analyzed in the Results and Discussion sections, along with suggestions for future improvement.
@@ -261,14 +262,18 @@ This document begins by explaining the necessary background information in the B
 \subsection{Instance Segmentation}
 
 Instance segmentation is a machine learning task where the goal is to generate separate masks for individual objects in an image. This differs from semantic segmentation, where each pixel is given a semantic label without separating individual objects, and from object detection where individual objects are given bounding boxes but no masks.
-
+\newline
+\newline
 [semantic segmentation vs instance segmentation vs object detection image]
+\newline
 
 \subsection{Segment Anything Model 2}
 
 Segment Anything Model 2 (SAM2) is a foundation model that can segment objects very generally, even ones that it hasn't been trained on. There are two ways to use it: only providing it with an image and letting it segment every object on its own, or providing it with an image and a prompt containing the location of the object of interest. The prompts can be of two types: a set of one or more foreground points and optional background points, or a bounding box. The model outputs a binary mask.
-
+\newline
+\newline
 [sam bbox to mask example]
+\newline
 
 SAM2 is a revised version of Segment Anything Model (SAM) [ref], with the main addition being the ability to train and predict on video data. While no video data was used in this thesis, SAM2 was chosen for its higher accuracy and 6x speedup over SAM.
 
@@ -277,46 +282,67 @@ SAM2 is a revised version of Segment Anything Model (SAM) [ref], with the main a
 Mask R-CNN is an instance segmentation model based on a region-based convolutional neural network (R-CNN). It's trained using image-target pairs, where the target contains a binary mask, bounding box, and category label for each object of interest. After training, the model can predict masks in new images for the types of objects seen in training.
 
 A CNN consists of convolutional layers, where the connections to the next layer are formed by sliding a kernel with tunable weights over the previous layer. R-CNNs search over feature maps produced by a CNN called the region proposal network (RPN) to find objects in images.
-
+\newline
+\newline
 [cnn image]
+\newline
 
 \subsection{Tree Mapping}
 
-Tree mapping is used by the forestry industry to monitor forest health, by urban planners to plan cities, ecological ???, and by ??? for post-disaster damage assessment.
+Tree mapping is used by the forestry industry to monitor forest health, by urban planners to plan cities, by scientists to model ecological change and assess post-disaster damage.
 
 Traditionally tree mapping has been done by ground-level visual analysis [?], but the advent of aerial photography, laser scanning, and computational analysis has moved this task towards remote sensing.
 
 \subsection{Aerial Imaging}
 
-Aerial images may be taken from any airborne apparatus, for example drones, helicopters, aeroplanes, or even satellites. For the purpose of mapping individual trees satellite imagery doesn't provide a high enough ground separation distance (GSD) [?], and aeroplanes ??? [?], so drones and helicopters are most often used.
-
+Aerial images may be taken from any airborne apparatus, for example drones, helicopters, aeroplanes, or even satellites. For the purpose of mapping individual trees satellite imagery rarely provides a high enough ground sample distance (GSD), and aeroplanes aren't convenient for covering square-ish areas, so drones and helicopters are most often used.
+\newline
+\newline
 [image of drone with camera]
+\newline
 
 Aerial remote sensing sensors include laser scanners and multispectral cameras in addition to traditional RGB-cameras that only capture visible wavelengths. Laser scanners produce three-dimensional point could data. Point clouds be used for volumetric segmentation or detection, or for calculating a digital surface model (DSM) or canopy height model (CHM). A DSM models the surface of the ground and protruding objects, and a CHM models the height the tree canopy (how are they different?).
-
+\newline
+\newline
 [image of point cloud, image of dsm]
+\newline
 
-Multispectral cameras can capture wavelengths invisible to the human eye. Typically these include infra-red (IR) at ??? nm and near infra-red (NIR) at ??? nm. Hyperspectral cameras capture a continuous (?) spectrum often spanning the visible wavelenghts (?).
-
+Multispectral cameras can capture additional wavelengths invisible to the human eye. Typically these include infrared (IR) at 1550-1750 nm and near-infrared (NIR) at 750-900 nm. Hyperspectral cameras capture a continuous spectrum instead of discrete channels.
+\newline
+\newline
 [hyperspectral graph]
+\newline
 
 \newpage
 \section{Related Work}
 
-The previous version of SAM2, SAM has been assessed for tree crown instance segmentation on drone imagery \cite{sam-treecrown}. The study uses SAM in the following ways: generating masks without any prompts, generating masks with digital surface model (DSM) maxima as point prompts, and prompting SAM with predictions from a trained Mask R-CNN model. Of these, the last approach is closest to the one examined here. (results?)
+The previous version of SAM2, SAM has been assessed for tree crown instance segmentation on drone imagery \cite{sam-treecrown}. The study uses SAM in the following ways: generating masks without any prompts, generating masks with digital surface model (DSM) maxima as point prompts, and prompting SAM with predictions from a trained Mask R-CNN model. Of these, the last approach is closest to the one examined here. The resulting mean intersection over union (mIoU) scores the single-class detection class were as follows: SAM + no prompts: 35.06\%, SAM + DSM prompts: 46.15\%, Mask R-CNN + SAM: 78.27\%.
 
-Another study examining SAM for remote sensing use proposes RSPrompter \cite{rsprompter}, a method that learns to generate prompts from the SAM's image encoder, then feeding them to the decoder. (huh?)
+Another study examining SAM for remote sensing use proposes RSPrompter \cite{rsprompter}, a method that learns to generate prompts from the SAM's image encoder, then feeding them to the decoder. The study proposing the method reports the results as AP scores, but the study mentioned above tested RSPrompter as well, achieving 82.58\% mIoU. \cite{sam-treecrown}
 
-FMARS \cite{fmars} is a dataset with annotations generated using GroundingDINO and SAM. GroundingDINO was used to convert text prompts to bounding boxes, and SAM for converting these boxes to segments. A subset of the annotated area was manually annotated, and the generated annotations were compared to the manual ones, resulting in a mean intersection over union (mIoU) score of 50.22%.
+FMARS \cite{fmars} is a dataset with annotations generated using GroundingDINO and SAM. GroundingDINO was used to convert text prompts to bounding boxes, and SAM for converting these boxes to segments. A subset of the annotated area was manually annotated, and the generated annotations were compared to the manual ones, resulting in a mIoU score of 50.22\%.
 
 \newpage
 \section{Materials and Methods}
 
 \subsection{Datasets}
 
-The main dataset consists of a multispectral orthophoto spanning approximately 2 km$^2$ and CHM-based coarse tree crown segments. The orthophoto covers both forest and urban area, has a GSD of 2.5 cm, and contains blue, green, red, near-infrared, ???, and thermal bands.
+The main dataset consists of a multispectral orthophoto taken by helicopter spanning approximately 2 km$^2$ and CHM-based coarse tree crown segments. The orthophoto covers both forest and urban area, has a GSD of 2.5 cm, and contains blue, green, red, near-infrared, mid-infrared, and thermal infrared bands.
 
-- taken by drone/helicopter?
+As the CHM-based coarse tree crown segments had been calculated from point-cloud data from an earlier flight than the multispectral images, many segments no longer contained trees. To eliminate these erroneus segments, they were filtered based on their Normalized Difference Vegetation Index (NDVI) value:
+
+$$
+\text{NDVI} = \frac{\text{NIR - Red}}{\text{NIR + Red}}.
+$$
+
+For each segment, NDVI was calculated using the per-channel mean values. Segments with NDVI < 0.2 were removed. Figure \ref{fig:ndvi} shows the distribution of NDVI values.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/ndvi.pdf}
+    \caption{Distribution of NDVI values. The dashed vertical line indicates the threshold below which segments were discarded.}
+    \label{fig:ndvi}
+\end{figure}
 
 \subsection{Models}
 
@@ -324,9 +350,23 @@ SAM2 is used for the pseudolabeling task and Mask R-CNN \cite{maskrcnn} for the 
 
 \subsection{Methods}
 
-First the coarse segments were pseudolabeled using SAM2, indexing the orthphoto in a grid with a window of size 1024 and a stride of 512. For each window, only the segments whose centroids were located in the central 512x512 square of the window were selected for pseudolabeling. Then, the bounding box of each segment was passed as a prompt to SAM2, and the largest connected component of the output mask was saved as the pseudolabel. These parameters for the window size and stride were selected in order to avoid stitching artifacts and to provide SAM2 with images mathcing the native input resolution of the model.
+First the coarse segments were pseudolabeled using SAM2, indexing the orthphoto in a grid with a window of size 1024 and a stride of 512. For each window, only the segments whose centroids were located in the central 512x512 square of the window were selected for pseudolabeling. Then, the bounding box of each segment was passed as a prompt to SAM2, and the largest connected component of the output mask was saved as the pseudolabel. These parameters for the window size and stride were selected in order to avoid stitching artifacts and to provide SAM2 with images matching the native input resolution of the model. An example of the pseudolabeling process is shown in Figure \ref{fig:pseudolabel}, and the distribution of tree radii is shown in Figure \ref{fig:radii}.
 
-A small test area of 25 trees was segmented manually. To evaluate the quality of the coarse segments and quantify the effect of SAM2 pseudolabeling, the coarse segments and pseudolabels were compared to the manual segments using the Jaccard index \cite{jaccard}:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/pseudolabel-example.png}
+    \caption{Example of the pseudolabeling process. On the left, CHM-based coarse segments are drawn around tree crowns, and their centroids are displayed as dots. The shaded area around the central 512x512 square is the buffer region. On the right, the box prompts provided to SAM are shown in reduced opacity, and the predicted mask outlines are drawn in white.}
+    \label{fig:pseudolabel}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/radii.pdf}
+    \caption{Distribution of tree crown radii. The dashed vertical line indicates the threshold above which segments may span from the central region of interest over the buffer region to the image border, producing stitching artifacts.}
+    \label{fig:radii}
+\end{figure}
+
+A small test area of 362 trees was segmented manually. To evaluate the quality of the coarse segments and quantify the effect of SAM2 pseudolabeling, the coarse segments and pseudolabels were compared to the manual segments using the Jaccard index \cite{jaccard}:
 
 $$
 J(A, B) = \frac{|A \cap B|}{|A \cup B |},
@@ -334,17 +374,11 @@ $$
 
 where A and B are the segments to be compared. Then, a Mask R-CNN model with a ResNet-50 \cite{resnet} backbone was trained separately on both the coarse segments and pseudolabels.
 
-\begin{center}
-\includegraphics[width=0.7\textwidth]{figures/radii.pdf}
-\includegraphics[width=0.7\textwidth]{figures/ndvi.pdf}
-\includegraphics[width=1.0\textwidth]{figures/pseudolabel-example.png}
-\end{center}
-
 \section{Results}
 
 (Results table with accuracy, recall, f1, and miou for each model here)
 
-The highest scoring model was ???. The addition of the SAM2 pseudolabeling preprocessing step improved accuracy by ??%, recall by ??%, F1 by ??%, and mIoU by ??%.
+The highest scoring model was ???. The addition of the SAM2 pseudolabeling preprocessing step improved accuracy by ??\%, recall by ??\%, F1 by ??\%, and mIoU by ??\%.
 
 \section{Discussion}
 
