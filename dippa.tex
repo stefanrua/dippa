@@ -234,30 +234,57 @@
 %%
 \thesistableofcontents
 
+%% Symbols and abbreviations
+%\mysection{Symbols and abbreviations}
+%\subsection*{Abbreviations}
+
+\mysection{Abbreviations}
+
+\begin{tabular}{ll}
+CHM & canopy height model \\
+CNN & convolutional neural network \\
+DSM & digital surface model \\
+GSD & ground sample distance \\
+IR & infrared \\
+IoU & intersection over union \\
+NDVI & normalized difference vegetation index \\
+NIR & near-infrared \\
+R-CNN & region-based convolutional neural network \\
+RPN & region proposal network \\
+SAM & Segment Anything Model \\
+SAM2 & Segment Anything Model 2 \\
+mIoU & mean intersection over union \\
+\end{tabular}
+
 %% \clearpage is similar to \newpage, but it also flushes the floats (figures
 %% and tables).
-%%
 \cleardoublepage
 
-%% Text body begins. Note that since the text body is mostly in Finnish the
-%% majority of comments are also in Finnish after this point. There is no point
-%% in explaining Finnish-language specific thesis conventions in English.
-%% This text will be translated to English soon.
-%%
 \section{Introduction}
 \label{sec:intro}
 
 %% Leave page number of the first page empty
-%% 
 \thispagestyle{empty}
 
 Airborne remote sensing based tree mapping methods are used for forest health monitoring \cite{ecke} and city planning \cite{velasquez} due to their efficiency compared to manual methods, but the training process is often bottlenecked by the need for high quality manual annotations. 
 The goal of this study is to test if training results can be improved in instance segmentation tasks by refining coarse segments calculated from a canopy height model (CHM) using Segment Anything Model 2 (SAM2) \cite{sam2}.
 
-This document begins by explaining the necessary background information in the Backgroud section, and exploring the previous works relevant to this study in the Related Work section. The Materials and Methods section contains a detailed explanation of the dataset, models, and training hyperparameters. Finally, the experiment's outcome is displayed and analyzed in the Results and Discussion sections, along with suggestions for future improvement.
+\subsection{Research Questions}
+
+\begin{enumerate}
+\item How much does SAM2 pseudolabeling improve low quality instance segmentation annotations?
+\item How much does SAM2 pseudolabeling improve training results in instance segmentaion tasks?
+\item How well does SAM2 pseudolabeling perform compared to other zero-shot instance segmentation methods?
+
+\subsection{Structure of the Thesis}
+
+This thesis begins by explaining the necessary background information in the Backgroud section, and exploring the previous works relevant to this study in the Related Work section. The Dataset and Methods section contains a detailed explanation of the dataset, models, and training hyperparameters. Finally, the experiment's outcome is displayed and analyzed in the Results and Discussion sections, along with suggestions for future improvement.
+\begin{end}
 
 \newpage
 \section{Background}
+
+This section goes over the necessary background information for understanding this thesis. Subsections explain the the machine learning task of instance segmentation, methods and model architectures to perform said task, the goals and methods of aerial tree mapping, and differences in remote sensing aerial imaging apparatus.
 
 \subsection{Instance Segmentation}
 
@@ -267,17 +294,7 @@ Instance segmentation is a machine learning task where the goal is to generate s
 [semantic segmentation vs instance segmentation vs object detection image]
 \newline
 
-\subsection{Segment Anything Model 2}
-
-Segment Anything Model 2 (SAM2) is a foundation model that can segment objects very generally, even ones that it hasn't been trained on. There are two ways to use it: only providing it with an image and letting it segment every object on its own, or providing it with an image and a prompt containing the location of the object of interest. The prompts can be of two types: a set of one or more foreground points and optional background points, or a bounding box. The model outputs a binary mask.
-\newline
-\newline
-[sam bbox to mask example]
-\newline
-
-SAM2 is a revised version of Segment Anything Model (SAM) [ref], with the main addition being the ability to train and predict on video data. While no video data was used in this thesis, SAM2 was chosen for its higher accuracy and 6x speedup over SAM.
-
-\subsection{Mask R-CNN}
+\subsubsection{Mask R-CNN}
 
 Mask R-CNN is an instance segmentation model based on a region-based convolutional neural network (R-CNN). It's trained using image-target pairs, where the target contains a binary mask, bounding box, and category label for each object of interest. After training, the model can predict masks in new images for the types of objects seen in training.
 
@@ -287,13 +304,23 @@ A CNN consists of convolutional layers, where the connections to the next layer 
 [cnn image]
 \newline
 
-\subsection{Tree Mapping}
+\subsubsection{Segment Anything Model 2}
+
+Segment Anything Model 2 (SAM2) is a foundation model that can segment objects very generally, even ones that it hasn't been trained on. There are two ways to use it: only providing it with an image and letting it segment every object on its own, or providing it with an image and a prompt containing the location of the object of interest. The prompts can be of two types: a set of one or more foreground points and optional background points, or a bounding box. The model outputs a binary mask.
+\newline
+\newline
+[sam bbox to mask example]
+\newline
+
+SAM2 is a revised version of Segment Anything Model (SAM) [ref], with the main addition being the ability to train and predict on video data. While no video data was used in this thesis, SAM2 was chosen for its higher accuracy and 6x speedup over SAM.
+
+\subsection{Aerial Tree Mapping}
 
 Tree mapping is used by the forestry industry to monitor forest health, by urban planners to plan cities, by scientists to model ecological change and assess post-disaster damage.
 
 Traditionally tree mapping has been done by ground-level visual analysis [?], but the advent of aerial photography, laser scanning, and computational analysis has moved this task towards remote sensing.
 
-\subsection{Aerial Imaging}
+\subsubsection{Aerial Imaging}
 
 Aerial images may be taken from any airborne apparatus, for example drones, helicopters, aeroplanes, or even satellites. For the purpose of mapping individual trees satellite imagery rarely provides a high enough ground sample distance (GSD), and aeroplanes aren't convenient for covering square-ish areas, so drones and helicopters are most often used.
 \newline
@@ -323,9 +350,11 @@ Another study examining SAM for remote sensing use proposes RSPrompter \cite{rsp
 FMARS \cite{fmars} is a dataset with annotations generated using GroundingDINO and SAM. GroundingDINO was used to convert text prompts to bounding boxes, and SAM for converting these boxes to segments. A subset of the annotated area was manually annotated, and the generated annotations were compared to the manual ones, resulting in a mIoU score of 50.22\%.
 
 \newpage
-\section{Materials and Methods}
+\section{Dataset and Methods}
 
-\subsection{Datasets}
+This section covers the technical details of the dataset and methods used to train and evaluate the models.
+
+\subsection{Dataset}
 
 The main dataset consists of a multispectral orthophoto taken by helicopter spanning approximately 2 km$^2$ and CHM-based coarse tree crown segments. The orthophoto covers both forest and urban area, has a GSD of 2.5 cm, and contains blue, green, red, near-infrared, mid-infrared, and thermal infrared bands.
 
@@ -348,6 +377,20 @@ For each segment, NDVI was calculated using the per-channel mean values. Segment
 
 SAM2 is used for the pseudolabeling task and Mask R-CNN \cite{maskrcnn} for the supervised instance segmentation.
 
+\subsection{Performance Measures}
+
+\subsubsection{Jaccard Index}
+
+The Jaccard index\cite{jaccard} is a measure of similarity between two segments:
+
+$$
+J(A, B) = \frac{|A \cap B|}{|A \cup B |},
+$$
+
+where A and B are the segments to be compared. This performance measure is also referred to as IoU (intersection over union), and utilized in the mIoU metric, which denotes the mean of IoU-scores over all target classes.
+
+\subsubsection{F1-score}
+
 \subsection{Methods}
 
 First the coarse segments were pseudolabeled using SAM2, indexing the orthphoto in a grid with a window of size 1024 and a stride of 512. For each window, only the segments whose centroids were located in the central 512x512 square of the window were selected for pseudolabeling. Then, the bounding box of each segment was passed as a prompt to SAM2, and the largest connected component of the output mask was saved as the pseudolabel. These parameters for the window size and stride were selected in order to avoid stitching artifacts and to provide SAM2 with images matching the native input resolution of the model. An example of the pseudolabeling process is shown in Figure \ref{fig:pseudolabel}, and the distribution of tree radii is shown in Figure \ref{fig:radii}.
@@ -366,21 +409,17 @@ First the coarse segments were pseudolabeled using SAM2, indexing the orthphoto 
     \label{fig:radii}
 \end{figure}
 
-A small test area of 362 trees was segmented manually. To evaluate the quality of the coarse segments and quantify the effect of SAM2 pseudolabeling, the coarse segments and pseudolabels were compared to the manual segments using the Jaccard index \cite{jaccard}:
+A small test area of 362 trees was segmented manually. To evaluate the quality of the coarse segments and quantify the effect of SAM2 pseudolabeling, the coarse segments and pseudolabels were compared to the manual segments using the Jaccard index.
 
-$$
-J(A, B) = \frac{|A \cap B|}{|A \cup B |},
-$$
+Then, a Mask R-CNN model with a ResNet-50 \cite{resnet} backbone was trained separately on both the coarse segments and pseudolabels.
 
-where A and B are the segments to be compared. Then, a Mask R-CNN model with a ResNet-50 \cite{resnet} backbone was trained separately on both the coarse segments and pseudolabels.
-
-\section{Results}
+\section{Experiments and Results}
 
 (Results table with accuracy, recall, f1, and miou for each model here)
 
 The highest scoring model was ???. The addition of the SAM2 pseudolabeling preprocessing step improved accuracy by ??\%, recall by ??\%, F1 by ??\%, and mIoU by ??\%.
 
-\section{Discussion}
+\subsection{Discussion}
 
 The segmentation performance improvement provided by pseudolabeling indicates that it is a worthwhile preprocessing step for datasets, where the original annotations are only approximate.
 
