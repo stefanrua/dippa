@@ -275,11 +275,11 @@ The goal of this study is to test if training results can be improved in instanc
 \item How much does SAM2 pseudolabeling improve low quality instance segmentation annotations?
 \item How much does SAM2 pseudolabeling improve training results in instance segmentaion tasks?
 \item How well does SAM2 pseudolabeling perform compared to other zero-shot instance segmentation methods?
+\end{enumerate}
 
 \subsection{Structure of the Thesis}
 
 This thesis begins by explaining the necessary background information in the Backgroud section, and exploring the previous works relevant to this study in the Related Work section. The Dataset and Methods section contains a detailed explanation of the dataset, models, and training hyperparameters. Finally, the experiment's outcome is displayed and analyzed in the Results and Discussion sections, along with suggestions for future improvement.
-\begin{end}
 
 \newpage
 \section{Background}
@@ -360,9 +360,9 @@ The main dataset consists of a multispectral orthophoto taken by helicopter span
 
 As the CHM-based coarse tree crown segments had been calculated from point-cloud data from an earlier flight than the multispectral images, many segments no longer contained trees. To eliminate these erroneus segments, they were filtered based on their Normalized Difference Vegetation Index (NDVI) value:
 
-$$
+\begin{equation}
 \text{NDVI} = \frac{\text{NIR - Red}}{\text{NIR + Red}}.
-$$
+\end{equation}
 
 For each segment, NDVI was calculated using the per-channel mean values. Segments with NDVI < 0.2 were removed. Figure \ref{fig:ndvi} shows the distribution of NDVI values.
 
@@ -376,20 +376,6 @@ For each segment, NDVI was calculated using the per-channel mean values. Segment
 \subsection{Models}
 
 SAM2 is used for the pseudolabeling task and Mask R-CNN \cite{maskrcnn} for the supervised instance segmentation.
-
-\subsection{Performance Measures}
-
-\subsubsection{Jaccard Index}
-
-The Jaccard index\cite{jaccard} is a measure of similarity between two segments:
-
-$$
-J(A, B) = \frac{|A \cap B|}{|A \cup B |},
-$$
-
-where A and B are the segments to be compared. This performance measure is also referred to as IoU (intersection over union), and utilized in the mIoU metric, which denotes the mean of IoU-scores over all target classes.
-
-\subsubsection{F1-score}
 
 \subsection{Methods}
 
@@ -412,6 +398,21 @@ First the coarse segments were pseudolabeled using SAM2, indexing the orthphoto 
 A small test area of 362 trees was segmented manually. To evaluate the quality of the coarse segments and quantify the effect of SAM2 pseudolabeling, the coarse segments and pseudolabels were compared to the manual segments using the Jaccard index.
 
 Then, a Mask R-CNN model with a ResNet-50 \cite{resnet} backbone was trained separately on both the coarse segments and pseudolabels.
+
+\subsection{Performance Measures}
+
+\subsubsection{Jaccard Index}
+
+The Jaccard index\cite{jaccard} is a measure of similarity between two segments:
+
+\begin{equation}
+J(A, B) = \frac{|A \cap B|}{|A \cup B |},
+\end{equation}
+
+where A and B are the segments to be compared. This performance measure is also referred to as IoU (intersection over union), and utilized in the mIoU metric, which denotes the mean of IoU-scores over all target classes.
+
+\subsubsection{F1-score}
+
 
 \section{Experiments and Results}
 

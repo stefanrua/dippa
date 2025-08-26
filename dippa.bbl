@@ -24,9 +24,9 @@
 \bibitem{ecke}
 \BIBentryALTinterwordspacing
 S.~Ecke, J.~Dempewolf, J.~Frey, A.~Schwaller, E.~Endres, H.-J. Klemmt,
-  D.~Tiede, and T.~Seifert, ``Uav-based forest health monitoring: A systematic
-  review,'' \emph{Remote Sensing}, vol.~14, no.~13, 2022. [Online]. Available:
-  \url{https://www.mdpi.com/2072-4292/14/13/3205}
+  D.~Tiede, and T.~Seifert, ``{UAV}-based forest health monitoring: A
+  systematic review,'' \emph{Remote Sensing}, vol.~14, no.~13, 2022. [Online].
+  Available: \url{https://www.mdpi.com/2072-4292/14/13/3205}
 \BIBentrySTDinterwordspacing
 
 \bibitem{velasquez}
@@ -41,8 +41,8 @@ L.~Velasquez-Camacho, A.~Cardil, M.~Mohan, M.~Etxegarai, G.~Anzaldi, and
 \BIBentryALTinterwordspacing
 N.~Ravi, V.~Gabeur, Y.-T. Hu, R.~Hu, C.~Ryali, T.~Ma, H.~Khedr, R.~Rädle,
   C.~Rolland, L.~Gustafson, E.~Mintun, J.~Pan, K.~V. Alwala, N.~Carion, C.-Y.
-  Wu, R.~Girshick, P.~Dollár, and C.~Feichtenhofer, ``Sam 2: Segment anything
-  in images and videos,'' 2024. [Online]. Available:
+  Wu, R.~Girshick, P.~Dollár, and C.~Feichtenhofer, ``{SAM} 2: Segment
+  anything in images and videos,'' 2024. [Online]. Available:
   \url{https://arxiv.org/abs/2408.00714}
 \BIBentrySTDinterwordspacing
 
@@ -55,7 +55,7 @@ M.~Teng, A.~Ouaknine, E.~Laliberté, Y.~Bengio, D.~Rolnick, and H.~Larochelle,
 
 \bibitem{rsprompter}
 \BIBentryALTinterwordspacing
-K.~Chen, C.~Liu, H.~Chen, H.~Zhang, W.~Li, Z.~Zou, and Z.~Shi, ``Rsprompter:
+K.~Chen, C.~Liu, H.~Chen, H.~Zhang, W.~Li, Z.~Zou, and Z.~Shi, ``{RSPrompter}:
   Learning to prompt for remote sensing instance segmentation based on visual
   foundation model,'' 2023. [Online]. Available:
   \url{https://arxiv.org/abs/2306.16269}
@@ -64,21 +64,16 @@ K.~Chen, C.~Liu, H.~Chen, H.~Zhang, W.~Li, Z.~Zou, and Z.~Shi, ``Rsprompter:
 \bibitem{fmars}
 \BIBentryALTinterwordspacing
 E.~Arnaudo, J.~L. Vaschetti, L.~Innocenti, L.~Barco, D.~Lisi, V.~Fissore, and
-  C.~Rossi, ``Fmars: Annotating remote sensing images for disaster management
+  C.~Rossi, ``{FMARS}: Annotating remote sensing images for disaster management
   using foundation models,'' 2024. [Online]. Available:
   \url{https://arxiv.org/abs/2405.20109}
 \BIBentrySTDinterwordspacing
 
 \bibitem{maskrcnn}
 \BIBentryALTinterwordspacing
-K.~He, G.~Gkioxari, P.~Dollár, and R.~Girshick, ``Mask r-cnn,'' 2018.
+K.~He, G.~Gkioxari, P.~Dollár, and R.~Girshick, ``Mask {R-CNN},'' 2018.
   [Online]. Available: \url{https://arxiv.org/abs/1703.06870}
 \BIBentrySTDinterwordspacing
-
-\bibitem{jaccard}
-G.~K. Gilbert, ``Finley's tornado predictions.'' \emph{American Meteorological
-  Journal. A Monthly Review of Meteorology and Allied Branches of Study
-  (1884-1896)}, vol.~1, no.~5, p. 166, 1884.
 
 \bibitem{resnet}
 \BIBentryALTinterwordspacing
@@ -86,5 +81,10 @@ K.~He, X.~Zhang, S.~Ren, and J.~Sun, ``Deep residual learning for image
   recognition,'' 2015. [Online]. Available:
   \url{https://arxiv.org/abs/1512.03385}
 \BIBentrySTDinterwordspacing
+
+\bibitem{jaccard}
+G.~K. Gilbert, ``Finley's tornado predictions.'' \emph{American Meteorological
+  Journal. A Monthly Review of Meteorology and Allied Branches of Study
+  (1884-1896)}, vol.~1, no.~5, p. 166, 1884.
 
 \end{thebibliography}

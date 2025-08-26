@@ -14,19 +14,25 @@
 \babel@toc {finnish}{}\relax 
 \babel@toc {english}{}\relax 
 \contentsline {section}{Contents}{5}{section*.3}%
-\contentsline {section}{\numberline {1}Introduction}{6}{section.1}%
-\contentsline {section}{\numberline {2}Background}{7}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Instance Segmentation}{7}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Segment Anything Model 2}{7}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Mask R-CNN}{7}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Tree Mapping}{8}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Aerial Imaging}{8}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Related Work}{9}{section.3}%
-\contentsline {section}{\numberline {4}Materials and Methods}{10}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Datasets}{10}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Models}{10}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Methods}{11}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Results}{12}{section.5}%
-\contentsline {section}{\numberline {6}Discussion}{12}{section.6}%
-\contentsline {section}{\numberline {7}Conclusions}{12}{section.7}%
-\contentsline {section}{References}{13}{section*.8}%
+\contentsline {section}{Abbreviations}{6}{section*.5}%
+\contentsline {section}{\numberline {1}Introduction}{7}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Research Questions}{7}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Structure of the Thesis}{7}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Background}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Instance Segmentation}{8}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Mask R-CNN}{8}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Segment Anything Model 2}{8}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Aerial Tree Mapping}{9}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Aerial Imaging}{9}{subsubsection.2.2.1}%
+\contentsline {section}{\numberline {3}Related Work}{10}{section.3}%
+\contentsline {section}{\numberline {4}Dataset and Methods}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Dataset}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Models}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Methods}{12}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Performance Measures}{12}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Jaccard Index}{12}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}F1-score}{13}{subsubsection.4.4.2}%
+\contentsline {section}{\numberline {5}Experiments and Results}{13}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Discussion}{13}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Conclusions}{13}{section.6}%
+\contentsline {section}{References}{14}{section*.9}%
