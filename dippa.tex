@@ -6,6 +6,7 @@
 %% Add here the packges you need
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{subcaption}
 
 
 %% For tables that span multiple pages; used to split a paraphrasing example in
@@ -241,12 +242,14 @@
 \mysection{Abbreviations}
 
 \begin{tabular}{ll}
+ANN & artificial neural network \\
 CHM & canopy height model \\
 CNN & convolutional neural network \\
 DSM & digital surface model \\
 GSD & ground sample distance \\
 IR & infrared \\
 IoU & intersection over union \\
+MLP & multilayer perceptron \\
 NDVI & normalized difference vegetation index \\
 NIR & near-infrared \\
 R-CNN & region-based convolutional neural network \\
@@ -267,7 +270,11 @@ mIoU & mean intersection over union \\
 \thispagestyle{empty}
 
 Airborne remote sensing based tree mapping methods are used for forest health monitoring \cite{ecke} and city planning \cite{velasquez} due to their efficiency compared to manual methods, but the training process is often bottlenecked by the need for high quality manual annotations. 
-The goal of this study is to test if training results can be improved in instance segmentation tasks by refining coarse segments calculated from a canopy height model (CHM) using Segment Anything Model 2 (SAM2) \cite{sam2}.
+The goal of this thesis is to test if training results can be improved in instance segmentation tasks by refining coarse segments calculated from a canopy height model (CHM) using Segment Anything Model 2 (SAM2) \cite{sam2}.
+
+In recent years, deep learning based methods have been shown to produce increasingly useful models and predictions in forestry and agriculture \cite{dl-forestry}, especially in the tasks of species detection and land cover prediction. Combined with the recent advances in autonomous data collection methods using unmanned aerial vehicles (UAVs) \cite{uav-data-collection}, there is unprecedented potential for massive data collection and mapping with relatively little manual labor. The efficient use of the available manual labor resources is especially important here in Finland where the population in small.
+
+The ability to keep an up to date map of vegetation is essential for monitoring our forest ecosystems, which are increasingly important as global emissions rise and biodiversity decreases \cite{natural-resources-finland}. Finland has an especially great resposibility in protecting its nature, as an exceptionally large part of its surface area (75\%) is covered by forest. In addition to protecting boreal forests, efficiently managing areas used for by the forest industry is necessary, as it accounts for a significant part of the Finnish economy \cite{forest-industry-economy}. Finnish forests face unprecedented risks from bark beetles, drought, and forest fires due to climate change \cite{climate-change-finland-forestry}.
 
 \subsection{Research Questions}
 
@@ -286,55 +293,123 @@ This thesis begins by explaining the necessary background information in the Bac
 
 This section goes over the necessary background information for understanding this thesis. Subsections explain the the machine learning task of instance segmentation, methods and model architectures to perform said task, the goals and methods of aerial tree mapping, and differences in remote sensing aerial imaging apparatus.
 
+\subsection{Neural Networks}
+
+Artificial neural networks (ANNs) are mathematical models, usually written as computer programs, designed to resemble the biological brain by imitating its structure of interconnected neurons. The goal of such models is to be "trained" using example data containing input and target pairs, after which the trained model is able to predict targets for new input data. The training is made possible by the interconnected neuron structure, represented as a graph where each neuron is a node, and each edge between nodes holds a tunable weight and bias parameter. The oldest and simplest type of neural network is the multilayer perceptron (MLP), that consists of an input layer of nodes, an output layer, and fully connected hidden layers in-between (Figure \ref{fig:mlp}). During training, the outputs of the model are compared to the ground truth targets and evaluated using a loss function. The gradients of the weights for each layer are calculated during the prediction phase called the forward pass, and updated based on the resulting loss during the backward pass. By repeating this backpropagation step over multiple iterations, the model's parameters gradually converge to predict the wanted targets for the given domain.
+\cite{ann}
+
+The gradient calculation and backpropagation step utilize the chain rule of differentiation: if $h = f(g(x))$, the derivative of $h(x)$, $h'(x)$ is
+
+\begin{equation}
+    h'(x) = f'(g(x))g'(x).
+\end{equation}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/mlp.png}
+    \caption{A multilayer perceptron visualized. \cite{julius}}
+    \label{fig:mlp}
+\end{figure}
+
+\subsubsection{Convolutional Nerual Networks}
+
+Convolutional neural networks (CNNs) are neural networks that employ convolutional layers. These are commonly used for computer vision tasks due to their efficiency in detecting hierarchies of visual features. A convolutional layer consists of a kernel that is moved over the input as a sliding window, computing an output for each position (Figure \ref{fig:convolutional}). The weights of the layer make up the kernel, and optimizing these weights lead to the kernel representing some feature related to the target. \cite{cnn}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/convolutional-layer.png}
+    \caption{A convolutional layer visualized. \cite{convolutional-layer}}
+    \label{fig:convolutional}
+\end{figure}
+
+\subsubsection{Transformers}
+
+The transformer is a more recent neural network architecture that has shown great performance when trained on extremely large amounts of data. The network consists of an encoder that transforms the input into a set of tokens, that are then weighed using a self-attention layer, after which a decoder calculates the output based on the weighted tokens \cite{attention-is-all-you-need}. The main advantage of transformers is the ability to leverage massively parallel compute efficiently, allowing the training of very large models in a reasonable amount of time. An example of a transformer type neural network in shown in Figure \ref{fig:transformer}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/transformer.png}
+    \caption{A transformer architecture visualized. Left: encoder, right: decoder. \cite{transformer}}
+    \label{fig:transformer}
+\end{figure}
+
 \subsection{Instance Segmentation}
 
-Instance segmentation is a machine learning task where the goal is to generate separate masks for individual objects in an image. This differs from semantic segmentation, where each pixel is given a semantic label without separating individual objects, and from object detection where individual objects are given bounding boxes but no masks.
-\newline
-\newline
-[semantic segmentation vs instance segmentation vs object detection image]
-\newline
+Instance segmentation is a machine learning task where the goal is to generate separate masks for individual objects in an image. This differs from semantic segmentation, where each pixel is given a semantic label without separating individual objects, and from object detection where individual objects are given bounding boxes but no masks. See Figure \ref{fig:task-comparison} for a visual comparison of the tasks.
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \includegraphics[width=1.0\textwidth]{figures/task-comparison/sem-seg.png}
+        \caption{Semantic segmentation.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \includegraphics[width=1.0\textwidth]{figures/task-comparison/instance-seg.png}
+        \caption{Instance segmentation.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \includegraphics[width=1.0\textwidth]{figures/task-comparison/obj-det.png}
+        \caption{Object detection.}
+    \end{subfigure}
+    \caption{Comparison of similar computer vision tasks.}
+    \label{fig:task-comparison}
+\end{figure}
 
 \subsubsection{Mask R-CNN}
 
 Mask R-CNN is an instance segmentation model based on a region-based convolutional neural network (R-CNN). It's trained using image-target pairs, where the target contains a binary mask, bounding box, and category label for each object of interest. After training, the model can predict masks in new images for the types of objects seen in training.
 
 A CNN consists of convolutional layers, where the connections to the next layer are formed by sliding a kernel with tunable weights over the previous layer. R-CNNs search over feature maps produced by a CNN called the region proposal network (RPN) to find objects in images.
-\newline
-\newline
-[cnn image]
-\newline
 
 \subsubsection{Segment Anything Model 2}
 
-Segment Anything Model 2 (SAM2) is a foundation model that can segment objects very generally, even ones that it hasn't been trained on. There are two ways to use it: only providing it with an image and letting it segment every object on its own, or providing it with an image and a prompt containing the location of the object of interest. The prompts can be of two types: a set of one or more foreground points and optional background points, or a bounding box. The model outputs a binary mask.
-\newline
-\newline
-[sam bbox to mask example]
-\newline
+Segment Anything Model 2 (SAM2) is a foundation model that can segment objects very generally, even ones that it hasn't been trained on. There are two ways to use it: only providing it with an image and letting it segment every object on its own, or providing it with an image and a prompt containing the location of the object of interest. The prompts can be of two types: a set of one or more foreground points and optional background points, or a bounding box (Figure \ref{fig:sam-prompts}). The model outputs a binary mask.
 
-SAM2 is a revised version of Segment Anything Model (SAM) [ref], with the main addition being the ability to train and predict on video data. While no video data was used in this thesis, SAM2 was chosen for its higher accuracy and 6x speedup over SAM.
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[t]{0.32\textwidth}
+        \includegraphics[width=1.0\textwidth]{figures/sam-prompts/box.png}
+        \caption{Bounding box.}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\textwidth}
+        \includegraphics[width=1.0\textwidth]{figures/sam-prompts/point.png}
+        \caption{Foreground point.}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\textwidth}
+        \includegraphics[width=1.0\textwidth]{figures/sam-prompts/point-background.png}
+        \caption{Foreground and background points.}
+    \end{subfigure}
+    \caption{Comparison of SAM prompt types.}
+    \label{fig:sam-prompts}
+\end{figure}
+
+
+SAM2 is a revised version of Segment Anything Model (SAM) \cite{sam}, a transformer-based foundation model for image segmentation. The main improvement in SAM2 the ability to train and predict on video data. While no video data was used in this thesis, SAM2 was chosen for its higher accuracy and 6x speedup over SAM.
 
 \subsection{Aerial Tree Mapping}
 
 Tree mapping is used by the forestry industry to monitor forest health, by urban planners to plan cities, by scientists to model ecological change and assess post-disaster damage.
 
-Traditionally tree mapping has been done by ground-level visual analysis [?], but the advent of aerial photography, laser scanning, and computational analysis has moved this task towards remote sensing.
+Traditionally tree mapping has been done by ground-level visual analysis \cite{aerial-photography}, but the advent of aerial photography, laser scanning, and computational analysis has moved this task towards remote sensing.
 
 \subsubsection{Aerial Imaging}
 
 Aerial images may be taken from any airborne apparatus, for example drones, helicopters, aeroplanes, or even satellites. For the purpose of mapping individual trees satellite imagery rarely provides a high enough ground sample distance (GSD), and aeroplanes aren't convenient for covering square-ish areas, so drones and helicopters are most often used.
-\newline
-\newline
-[image of drone with camera]
-\newline
 
-Aerial remote sensing sensors include laser scanners and multispectral cameras in addition to traditional RGB-cameras that only capture visible wavelengths. Laser scanners produce three-dimensional point could data. Point clouds be used for volumetric segmentation or detection, or for calculating a digital surface model (DSM) or canopy height model (CHM). A DSM models the surface of the ground and protruding objects, and a CHM models the height the tree canopy (how are they different?).
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/drone.jpg}
+    \caption{Drone with remote sensing apparatus.}
+    \label{fig:drone}
+\end{figure}
+
+Aerial remote sensing sensors include laser scanners and multispectral cameras in addition to traditional RGB-cameras that only capture visible wavelengths. Laser scanners produce three-dimensional point could data. Point clouds be used for volumetric segmentation or detection, or for calculating a digital surface model (DSM) or canopy height model (CHM). A DSM models the surface of the ground and protruding objects, and a CHM models the height the tree canopy.
 \newline
 \newline
 [image of point cloud, image of dsm]
 \newline
 
-Multispectral cameras can capture additional wavelengths invisible to the human eye. Typically these include infrared (IR) at 1550-1750 nm and near-infrared (NIR) at 750-900 nm. Hyperspectral cameras capture a continuous spectrum instead of discrete channels.
+Multispectral cameras can capture additional wavelengths invisible to the human eye. Typically these include infrared (IR) at 1550-1750 nm and near-infrared (NIR) at 750-900 nm. Hyperspectral cameras capture a continuous spectrum instead of discrete channels. In forestry and agriculture, this extended range of bandwidths can provide useful information for biomass and growth stage estimation and species detection. \cite{hyperspectral-agricultural}
 \newline
 \newline
 [hyperspectral graph]
@@ -395,9 +470,30 @@ First the coarse segments were pseudolabeled using SAM2, indexing the orthphoto 
     \label{fig:radii}
 \end{figure}
 
-A small test area of 362 trees was segmented manually. To evaluate the quality of the coarse segments and quantify the effect of SAM2 pseudolabeling, the coarse segments and pseudolabels were compared to the manual segments using the Jaccard index.
+A small test area of 362 trees was segmented manually. To evaluate the quality of the coarse segments and quantify the effect of SAM2 pseudolabeling, the coarse segments and pseudolabels were compared to the manual segments using the Jaccard index. Figure \ref{fig:annotation-comparison} shows the visual differences between the original coarse CHM-based segments, pseudolabels produced by SAM, and manually drawn segments.
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \includegraphics[width=1.0\textwidth]{figures/annotations/coarse.png}
+        \caption{Coarse, CHM-based.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \includegraphics[width=1.0\textwidth]{figures/annotations/pseudolabeled.png}
+        \caption{SAM pseudolabels.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \includegraphics[width=1.0\textwidth]{figures/annotations/manual.png}
+        \caption{Manual.}
+    \end{subfigure}
+    \caption{Comparison of annotations.}
+    \label{fig:annotation-comparison}
+\end{figure}
 
 Then, a Mask R-CNN model with a ResNet-50 \cite{resnet} backbone was trained separately on both the coarse segments and pseudolabels.
+
+\newpage
+
 
 \subsection{Performance Measures}
 
@@ -409,9 +505,29 @@ The Jaccard index\cite{jaccard} is a measure of similarity between two segments:
 J(A, B) = \frac{|A \cap B|}{|A \cup B |},
 \end{equation}
 
-where A and B are the segments to be compared. This performance measure is also referred to as IoU (intersection over union), and utilized in the mIoU metric, which denotes the mean of IoU-scores over all target classes.
+where A and B are the segments to be compared. This performance measure is also referred to as IoU (intersection over union), and utilized in the mIoU metric, the mean of IoU-scores over all target classes.
 
-\subsubsection{F1-score}
+\subsubsection{Precision and Recall}
+
+Precision and recall meaure the quality of a model's predictions. Precision is the fraction of detections that truly contained a target:
+
+\begin{equation}
+    \text{Precision} = \frac{\text{Correct detections}}{\text{All detections}}, 
+\end{equation}
+
+and recall is the fraction of targets that were detected:
+
+\begin{equation}
+    \text{Recall} = \frac{\text{Detected targets}}{\text{All targets}}.
+\end{equation}
+
+\subsubsection{$F_1$ score}
+
+The $F_1$ score is a performance measure that represents the overall performance of a model as the harmonic mean of precision and recall:
+
+\begin{equation}
+    F_1 = \frac{2}{\text{recall}^{-1} + \text{precision}^{-1}}.
+\end{equation}
 
 
 \section{Experiments and Results}

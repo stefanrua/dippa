@@ -11,46 +11,49 @@ Database file #1: references.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in forest-industry-economy
+Warning--empty journal in julius
 
 Done.
-You've used 9 entries,
+You've used 23 entries,
             4087 wiz_defined-function locations,
-            871 strings with 9435 characters,
-and the built_in function-call counts, 5666 in all, are:
-= -- 391
-> -- 252
-< -- 7
-+ -- 122
-- -- 61
-* -- 298
-:= -- 908
-add.period$ -- 18
-call.type$ -- 9
-change.case$ -- 9
-chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 419
-empty$ -- 437
-format.name$ -- 69
-if$ -- 1250
+            947 strings with 12730 characters,
+and the built_in function-call counts, 14980 in all, are:
+= -- 1113
+> -- 578
+< -- 47
++ -- 287
+- -- 135
+* -- 768
+:= -- 2409
+add.period$ -- 47
+call.type$ -- 23
+change.case$ -- 25
+chr.to.int$ -- 63
+cite$ -- 25
+duplicate$ -- 1120
+empty$ -- 1151
+format.name$ -- 152
+if$ -- 3365
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 116
-newline$ -- 66
-num.names$ -- 9
-pop$ -- 328
+int.to.str$ -- 23
+missing$ -- 274
+newline$ -- 124
+num.names$ -- 23
+pop$ -- 718
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 402
+skip$ -- 1103
 stack$ -- 0
-substring$ -- 15
-swap$ -- 299
-text.length$ -- 7
+substring$ -- 187
+swap$ -- 829
+text.length$ -- 26
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 9
-warning$ -- 0
-while$ -- 10
-width$ -- 10
-write$ -- 119
+type$ -- 23
+warning$ -- 2
+while$ -- 36
+width$ -- 25
+write$ -- 271
+(There were 2 warnings)
