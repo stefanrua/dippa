@@ -37,15 +37,6 @@ L.~Velasquez-Camacho, A.~Cardil, M.~Mohan, M.~Etxegarai, G.~Anzaldi, and
   \url{https://www.mdpi.com/2072-4292/13/23/4889}
 \BIBentrySTDinterwordspacing
 
-\bibitem{sam2}
-\BIBentryALTinterwordspacing
-N.~Ravi, V.~Gabeur, Y.-T. Hu, R.~Hu, C.~Ryali, T.~Ma, H.~Khedr, R.~Rädle,
-  C.~Rolland, L.~Gustafson, E.~Mintun, J.~Pan, K.~V. Alwala, N.~Carion, C.-Y.
-  Wu, R.~Girshick, P.~Dollár, and C.~Feichtenhofer, ``{SAM} 2: Segment
-  anything in images and videos,'' 2024. [Online]. Available:
-  \url{https://arxiv.org/abs/2408.00714}
-\BIBentrySTDinterwordspacing
-
 \bibitem{dl-forestry}
 \BIBentryALTinterwordspacing
 T.~Wang, Y.~Zuo, T.~Manda, D.~Hwarari, and L.~Yang, ``Harnessing artificial
@@ -65,33 +56,42 @@ A.~Jaakkola, J.~Hyyppä, X.~Yu, A.~Kukko, H.~Kaartinen, X.~Liang, H.~Hyyppä,
 \BIBentrySTDinterwordspacing
 
 \bibitem{natural-resources-finland}
-S.~Finland, ``Finland's natural resources and the environment 2004,''
-  \emph{Helsinki: Ministry of the Environment, Environment and Natural
-  Resources}, vol. 2001, p.~3C, 2001.
+{Statistics Finland}, ``Finland's natural resources and the environment 2004,''
+  \emph{Ministry of the Environment, Environment and Natural Resources}, vol.
+  2001, p.~3C, 2001.
 
 \bibitem{forest-industry-economy}
 J.~Viitanen, A.~Mutanen, M.~Kniivil{\"a}, E.~Haltia, E.-J. Viitala,
   M.~Kallioniemi, K.~H{\"a}rk{\"o}nen, J.~Lepp{\"a}nen, E.~Uotila, and
   J.~Routa, ``Finnish forest sector economic outlook 2021--2022: Executive
-  summary,'' 2021.
+  summary,'' 2021, [Online; accessed September 15, 2025].
 
 \bibitem{climate-change-finland-forestry}
 \BIBentryALTinterwordspacing
 A.~Venäläinen, I.~Lehtonen, M.~Laapas, K.~Ruosteenoja, O.-P. Tikkanen,
   H.~Viiri, V.-P. Ikonen, and H.~Peltola, ``Climate change induces multiple
-  risks to boreal forests and forestry in finland: A literature review,''
+  risks to boreal forests and forestry in {Finland}: A literature review,''
   \emph{Global Change Biology}, vol.~26, no.~8, pp. 4178--4196, 2020. [Online].
   Available: \url{https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.15183}
 \BIBentrySTDinterwordspacing
 
+\bibitem{sam2}
+\BIBentryALTinterwordspacing
+N.~Ravi, V.~Gabeur, Y.-T. Hu, R.~Hu, C.~Ryali, T.~Ma, H.~Khedr, R.~Rädle,
+  C.~Rolland, L.~Gustafson, E.~Mintun, J.~Pan, K.~V. Alwala, N.~Carion, C.-Y.
+  Wu, R.~Girshick, P.~Dollár, and C.~Feichtenhofer, ``{SAM} 2: Segment
+  anything in images and videos,'' 2024. [Online]. Available:
+  \url{https://arxiv.org/abs/2408.00714}
+\BIBentrySTDinterwordspacing
+
 \bibitem{ann}
-S.-C. Wang, ``Artificial neural network,'' in \emph{Interdisciplinary computing
-  in java programming}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2003,
-  pp. 81--100.
+K.~Gurney, \emph{An introduction to neural networks}.\hskip 1em plus 0.5em
+  minus 0.4em\relax CRC press, 2018.
 
 \bibitem{julius}
 J.~Pesonen, ``Pixelwise road surface slipperiness estimation for autonomous
-  driving with weakly supervised learning,'' 2023.
+  driving with weakly supervised learning,'' {Master}'s thesis, {Aalto
+  University}.
 
 \bibitem{cnn}
 L.~Alzubaidi, J.~Zhang, A.~J. Humaidi, A.~Al-Dujaili, Y.~Duan, O.~Al-Shamma,
@@ -116,6 +116,19 @@ A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez,
 dvgodoy, ``A standard transformer architecture,'' 2025, [Online; accessed
   September 1, 2025]. [Online]. Available:
   \url{https://commons.wikimedia.org/w/index.php?curid=151216016}
+\BIBentrySTDinterwordspacing
+
+\bibitem{maskrcnn}
+\BIBentryALTinterwordspacing
+K.~He, G.~Gkioxari, P.~Dollár, and R.~Girshick, ``Mask {R-CNN},'' 2018.
+  [Online]. Available: \url{https://arxiv.org/abs/1703.06870}
+\BIBentrySTDinterwordspacing
+
+\bibitem{rcnn}
+\BIBentryALTinterwordspacing
+R.~Girshick, J.~Donahue, T.~Darrell, and J.~Malik, ``Rich feature hierarchies
+  for accurate object detection and semantic segmentation,'' 2014. [Online].
+  Available: \url{https://arxiv.org/abs/1311.2524}
 \BIBentrySTDinterwordspacing
 
 \bibitem{sam}
@@ -144,7 +157,7 @@ B.~Lu, P.~D. Dao, J.~Liu, Y.~He, and J.~Shang, ``Recent advances of
 \bibitem{sam-treecrown}
 \BIBentryALTinterwordspacing
 M.~Teng, A.~Ouaknine, E.~Laliberté, Y.~Bengio, D.~Rolnick, and H.~Larochelle,
-  ``Assessing sam for tree crown instance segmentation from drone imagery,''
+  ``Assessing {SAM} for tree crown instance segmentation from drone imagery,''
   2025. [Online]. Available: \url{https://arxiv.org/abs/2503.20199}
 \BIBentrySTDinterwordspacing
 
@@ -164,17 +177,17 @@ E.~Arnaudo, J.~L. Vaschetti, L.~Innocenti, L.~Barco, D.~Lisi, V.~Fissore, and
   \url{https://arxiv.org/abs/2405.20109}
 \BIBentrySTDinterwordspacing
 
-\bibitem{maskrcnn}
-\BIBentryALTinterwordspacing
-K.~He, G.~Gkioxari, P.~Dollár, and R.~Girshick, ``Mask {R-CNN},'' 2018.
-  [Online]. Available: \url{https://arxiv.org/abs/1703.06870}
-\BIBentrySTDinterwordspacing
-
 \bibitem{resnet}
 \BIBentryALTinterwordspacing
 K.~He, X.~Zhang, S.~Ren, and J.~Sun, ``Deep residual learning for image
   recognition,'' 2015. [Online]. Available:
   \url{https://arxiv.org/abs/1512.03385}
+\BIBentrySTDinterwordspacing
+
+\bibitem{adamw}
+\BIBentryALTinterwordspacing
+I.~Loshchilov and F.~Hutter, ``Decoupled weight decay regularization,'' 2019.
+  [Online]. Available: \url{https://arxiv.org/abs/1711.05101}
 \BIBentrySTDinterwordspacing
 
 \bibitem{jaccard}

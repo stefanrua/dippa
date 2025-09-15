@@ -8,52 +8,58 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: references.bib
+I was expecting a `,' or a `}'---line 272 of file references.bib
+ :   
+ :   year={2023}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--empty journal in forest-industry-economy
 Warning--empty journal in julius
+Warning--empty year in julius
 
 Done.
-You've used 23 entries,
+You've used 25 entries,
             4087 wiz_defined-function locations,
-            947 strings with 12730 characters,
-and the built_in function-call counts, 14980 in all, are:
-= -- 1113
-> -- 578
-< -- 47
-+ -- 287
-- -- 135
-* -- 768
-:= -- 2409
-add.period$ -- 47
-call.type$ -- 23
-change.case$ -- 25
-chr.to.int$ -- 63
-cite$ -- 25
-duplicate$ -- 1120
-empty$ -- 1151
-format.name$ -- 152
-if$ -- 3365
+            957 strings with 13054 characters,
+and the built_in function-call counts, 15487 in all, are:
+= -- 1148
+> -- 597
+< -- 39
++ -- 294
+- -- 141
+* -- 789
+:= -- 2517
+add.period$ -- 50
+call.type$ -- 25
+change.case$ -- 27
+chr.to.int$ -- 42
+cite$ -- 28
+duplicate$ -- 1167
+empty$ -- 1203
+format.name$ -- 160
+if$ -- 3467
 int.to.chr$ -- 0
-int.to.str$ -- 23
-missing$ -- 274
-newline$ -- 124
-num.names$ -- 23
-pop$ -- 718
+int.to.str$ -- 25
+missing$ -- 292
+newline$ -- 134
+num.names$ -- 25
+pop$ -- 775
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1103
+skip$ -- 1141
 stack$ -- 0
-substring$ -- 187
-swap$ -- 829
-text.length$ -- 26
+substring$ -- 144
+swap$ -- 845
+text.length$ -- 25
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 23
-warning$ -- 2
-while$ -- 36
-width$ -- 25
-write$ -- 271
-(There were 2 warnings)
+type$ -- 25
+warning$ -- 3
+while$ -- 34
+width$ -- 27
+write$ -- 290
+(There was 1 error message)
