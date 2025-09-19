@@ -254,8 +254,10 @@ NDVI & normalized difference vegetation index \\
 NIR & near-infrared \\
 R-CNN & region-based convolutional neural network \\
 RPN & region proposal network \\
+RGB & red, green, blue \\
 SAM & Segment Anything Model \\
 SAM2 & Segment Anything Model 2 \\
+UAV & unmanned aerial vehicle\\
 \end{tabular}
 
 %% \clearpage is similar to \newpage, but it also flushes the floats (figures
@@ -374,17 +376,17 @@ There are two ways to use it: only providing it with an image and letting it seg
     \centering
     \begin{subfigure}[t]{0.32\textwidth}
         \includegraphics[width=1.0\textwidth]{figures/sam-prompts/box.png}
-        \caption{Bounding box.}
+        \caption{}
     \end{subfigure}
     \begin{subfigure}[t]{0.32\textwidth}
         \includegraphics[width=1.0\textwidth]{figures/sam-prompts/point.png}
-        \caption{Foreground point.}
+        \caption{}
     \end{subfigure}
     \begin{subfigure}[t]{0.32\textwidth}
         \includegraphics[width=1.0\textwidth]{figures/sam-prompts/point-background.png}
-        \caption{Foreground and background points.}
+        \caption{}
     \end{subfigure}
-    \caption{Comparison of SAM prompt types.}
+    \caption{Comparison of SAM prompt types: \textbf{(a)} bounding box, \textbf{(b)} foreground point \textbf{(c)} foreground and background points.}
     \label{fig:sam-prompts}
 \end{figure}
 
@@ -418,6 +420,37 @@ Multispectral cameras can capture additional wavelengths invisible to the human 
 [hyperspectral graph]
 \newline
 
+
+\subsection{Performance Measures}
+
+\subsubsection{Jaccard Index}
+
+The Jaccard index\cite{jaccard} is a measure of similarity between two segments:
+\begin{equation}
+J(A, B) = \frac{|A \cap B|}{|A \cup B |},
+\end{equation}
+where A and B are the segments to be compared. This performance measure is also referred to as IoU (intersection over union), and utilized in the mIoU metric, the mean of IoU-scores over all target classes.
+
+\subsubsection{Precision and Recall}
+
+Precision and recall meaure the quality of a model's predictions. Precision is the fraction of detections that truly contained a target:
+\begin{equation}
+    \text{Precision} = \frac{\text{Correct detections}}{\text{All detections}}, 
+\end{equation}
+and recall is the fraction of targets that were detected:
+\begin{equation}
+    \text{Recall} = \frac{\text{Detected targets}}{\text{All targets}}.
+\end{equation}
+
+\subsubsection{$F_1$ score}
+
+The $F_1$ score is a performance measure that represents the overall performance of a model as the harmonic mean of precision and recall:
+\begin{equation}
+    F_1 = \frac{2}{\text{recall}^{-1} + \text{precision}^{-1}}.
+\end{equation}
+
+
+
 \newpage
 \section{Related Work}
 
@@ -434,7 +467,7 @@ This section covers the technical details of the dataset and methods used to tra
 
 \subsection{Dataset}
 
-The main dataset consists of a multispectral orthophoto taken from Espoonlahti by helicopter spanning approximately 2 km$^2$ (Figures \ref{fig:dataset-ortho} and \ref{fig:dataset-test}) and CHM-based coarse tree crown segments. The orthophoto covers both forest and urban area, has a GSD of 2.5 cm, and contains blue, green, red, near-infrared, mid-infrared, and thermal infrared bands.
+The main dataset consists of a multispectral orthophoto taken from Espoonlahti by helicopter spanning approximately 2 km$^2$ and CHM-based coarse tree crown segments. The entire area is shown in Figure \ref{fig:dataset-ortho} and a magnified view of the test area is shown in Figure \ref{fig:dataset-test}). The orthophoto covers both forest and urban area, has a GSD of 0.05 m, has a width of 36871 pixels and a height of 31254 pixels, and contains blue, green, red, near-infrared, mid-infrared, and thermal infrared bands. The test area was cut out of the orthophoto and selected based on image quality and environment variety, and has a width of 4893 pixels and a height of 4471 pixels.
 
 \begin{figure}[h]
     \centering
@@ -453,7 +486,7 @@ The main dataset consists of a multispectral orthophoto taken from Espoonlahti b
 As the CHM-based coarse tree crown segments had been calculated from point-cloud data from an earlier flight than the multispectral images, many segments no longer contained trees. To eliminate these erroneus segments, they were filtered based on their Normalized Difference Vegetation Index (NDVI) value:
 
 \begin{equation}
-\text{NDVI} = \frac{\text{NIR - Red}}{\text{NIR + Red}}.
+    \text{NDVI} = \frac{\text{NIR} - \text{Red}}{\text{NIR + Red}}.
 \end{equation}
 
 For each segment, NDVI was calculated using the per-channel mean values. Segments with NDVI < 0.2 were removed. Figure \ref{fig:ndvi} shows the distribution of NDVI values.
@@ -464,6 +497,32 @@ For each segment, NDVI was calculated using the per-channel mean values. Segment
     \caption{Distribution of NDVI values. The dashed vertical line indicates the threshold of 0.2 below which segments were discarded.}
     \label{fig:ndvi}
 \end{figure}
+
+Finally, the orthophotos and shapefiles were cut into 1024 $\times$ 1024 pixel tiles and saved in the COCO \cite{coco} format. Table \ref{table:data} lists the properties of the final dataset.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ll}
+    Image dimensions & 1024 $\times$ 1024 \\
+    Channels & 3 (RGB) or 5 (RGB + NIR + IR) \\
+    Pixel size & 0.05 m \\
+    Training images & 886 \\
+    Validation images & 209 \\
+    Testing images & 21 \\
+    \end{tabular}
+    \caption{Dataset properties.}
+    \label{table:data}
+\end{table}
+
+A small test area of 362 trees was segmented manually in order to accurately evaluate the performance of the trained models. The manually drawn segments overlayed on the test area is shown in Figure \ref{fig:dataset-test-manual-segments}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/dataset-test-manual-segments.png}
+    \caption{The test area and manually drawn tree crown segments.}
+    \label{fig:dataset-test-manual-segments}
+\end{figure}
+
 
 \subsection{Models}
 
@@ -496,65 +555,145 @@ First the coarse segments were pseudolabeled using SAM2, indexing the orthophoto
     \label{fig:radii}
 \end{figure}
 
-A small test area of 362 trees was segmented manually. To evaluate the quality of the coarse segments and quantify the effect of SAM2 pseudolabeling, the coarse segments and pseudolabels were compared to the manual segments using the Jaccard index. Figure \ref{fig:annotation-comparison} shows the visual differences between the original coarse CHM-based segments, pseudolabels produced by SAM, and manually drawn segments.
+To evaluate the quality of the coarse segments and quantify the effect of SAM2 pseudolabeling, the coarse segments and pseudolabels were compared to the manual segments using the Jaccard index. Figure \ref{fig:annotation-comparison} shows the visual differences between the original coarse CHM-based segments, pseudolabels produced by SAM, and manually drawn segments.
 
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.32\textwidth}
         \includegraphics[width=1.0\textwidth]{figures/annotations/coarse.png}
-        \caption{Coarse, CHM-based.}
+        \caption{}
     \end{subfigure}
     \begin{subfigure}[b]{0.32\textwidth}
         \includegraphics[width=1.0\textwidth]{figures/annotations/pseudolabeled.png}
-        \caption{SAM pseudolabels.}
+        \caption{}
     \end{subfigure}
     \begin{subfigure}[b]{0.32\textwidth}
         \includegraphics[width=1.0\textwidth]{figures/annotations/manual.png}
-        \caption{Manual.}
+        \caption{}
     \end{subfigure}
-    \caption{Comparison of annotations.}
+    \caption{Comparison of annotations: \textbf{(a)} coarse CHM-based, \textbf{(b)} SAM pseudolabels, and \textbf{(c)} manual.}
     \label{fig:annotation-comparison}
 \end{figure}
 
-Then, a Mask R-CNN model with a ResNet-50 \cite{resnet} backbone was trained separately on both the coarse segments and pseudolabels. The optimizer was AdamW \cite{adamw} with a learning rate of 1e-6 and weight decay of 1e-2.
+Then, a Mask R-CNN model with a ResNet-50 \cite{resnet} backbone was trained separately on both the coarse segments and pseudolabels. The optimizer was AdamW \cite{adamw} with a learning rate of 1e-6 and weight decay of 1e-2. Training hyperparameters are listed in Table \ref{table:train}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ll}
+    Model & Mask R-CNN (ResNet50-FPN) \\
+    Optimizer & AdamW \\
+    Learning rate & 1e-6 \\
+    Weight decay & 1e-2 \\
+    Batch size & 8 \\
+    Epochs & 400 \\
+    Augmentations & Horizontal flipping, vertical flipping, rotation, random IoU crop \\
+    \end{tabular}
+    \caption{Training hyperparameters.}
+    \label{table:train}
+\end{table}
+
 
 \newpage
 
-
-\subsection{Performance Measures}
-
-\subsubsection{Jaccard Index}
-
-The Jaccard index\cite{jaccard} is a measure of similarity between two segments:
-\begin{equation}
-J(A, B) = \frac{|A \cap B|}{|A \cup B |},
-\end{equation}
-where A and B are the segments to be compared. This performance measure is also referred to as IoU (intersection over union), and utilized in the mIoU metric, the mean of IoU-scores over all target classes.
-
-\subsubsection{Precision and Recall}
-
-Precision and recall meaure the quality of a model's predictions. Precision is the fraction of detections that truly contained a target:
-\begin{equation}
-    \text{Precision} = \frac{\text{Correct detections}}{\text{All detections}}, 
-\end{equation}
-and recall is the fraction of targets that were detected:
-\begin{equation}
-    \text{Recall} = \frac{\text{Detected targets}}{\text{All targets}}.
-\end{equation}
-
-\subsubsection{$F_1$ score}
-
-The $F_1$ score is a performance measure that represents the overall performance of a model as the harmonic mean of precision and recall:
-\begin{equation}
-    F_1 = \frac{2}{\text{recall}^{-1} + \text{precision}^{-1}}.
-\end{equation}
 
 \newpage
 \section{Experiments and Results}
 
-(Results table with accuracy, recall, f1, and miou for each model here)
+Figure \ref{fig:loss} shows the training and validation loss over the training epochs.
 
-The highest scoring model was ???. The addition of the SAM2 pseudolabeling preprocessing step improved accuracy by ??\%, recall by ??\%, F1 by ??\%, and mIoU by ??\%.
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=1.0\textwidth]{figures/loss/coarse.pdf}
+    \caption{}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=1.0\textwidth]{figures/loss/coarse-ms.pdf}
+    \caption{}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=1.0\textwidth]{figures/loss/pseudo.pdf}
+    \caption{}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=1.0\textwidth]{figures/loss/pseudo-ms.pdf}
+    \caption{}
+    \end{subfigure}
+
+    \caption{Losses over training epochs for models trained on \textbf{(a)} coarse annotations and RGB images, \textbf{(b)} coarse annotations and multispectral images, \textbf{(c)} pseudolabel annotations and RGB images, and \textbf{(d)} pseudolabel annotations and multispectral images.}
+    \label{fig:loss}
+\end{figure}
+
+Table \ref{table:inference} contains the inference parameters.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ll}
+    Mask threshold & 0.5 \\
+    Score threshold & 0.3 \\
+    NMS IoU threshold & 0.3 \\
+    \end{tabular}
+    \caption{Inference parameters.}
+    \label{table:inference}
+\end{table}
+
+The inference results on the test area are shown in Table \ref{table:results}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{llrrrr}
+    Annotations & Channels & Precision & Recall & F1 & mIoU \\
+    \hline
+    Coarse & RGB & 0.63 & 0.56 & 0.59 & 0.47 \\
+    Coarse & Multispectral & \textbf{0.74} & 0.70 & 0.72 & 0.53 \\
+    Pseudolabeled & RGB & 0.71 & 0.68 & 0.69 & 0.53 \\
+    Pseudolabeled & Multispectral & 0.70 & \textbf{0.78} & \textbf{0.74} & \textbf{0.62} \\
+    \end{tabular}
+    \caption{Performance metrics on the test area.}
+    \label{table:results}
+\end{table}
+
+The best scores in recall (0.78), F1 (0.74), and mIoU (0.62) were achieved by the model trained on pseudolabels and multispectral images. The best precision score (0.74) was achieved by the model trained on coarse annotations and multispectral images. The addition of the SAM2 pseudolabeling preprocessing step improved the mIoU score both when training on RGB images (0.47 $\rightarrow$ 0.53, +0.06) and when training on multispectral images (0.53 $\rightarrow$ 0.62, +0.09). An interesting result is that the model trained on pseudolabeled RGB images achieved an equal mIoU score to the model trained on multispectral images with coarse annotations.
+
+Examples of masks predicted by the models are shown in Figure \ref{fig:inference-masks}.
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=1.0\textwidth]{figures/masks/masks-gt.png}
+    \caption{}
+    \end{subfigure}
+
+    \bigskip
+    \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=1.0\textwidth]{figures/masks/masks-inf-coarse.png}
+    \caption{}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=1.0\textwidth]{figures/masks/masks-inf-coarse-ms.png}
+    \caption{}
+    \end{subfigure}
+
+    \bigskip
+    \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=1.0\textwidth]{figures/masks/masks-inf-pseudo.png}
+    \caption{}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=1.0\textwidth]{figures/masks/masks-inf-pseudo-ms.png}
+    \caption{}
+    \end{subfigure}
+
+    \caption{Comparison of
+        \textbf{(a)} ground truth masks and predictions by models trained on 
+        \textbf{(b)} coarse annotations and RGB images,
+        \textbf{(c)} coarse annotations and multispectral images,
+        \textbf{(d)} pseudolabels and RGB images,
+        \textbf{(e)} pseudolabels and multispectral images.
+        }
+    \label{fig:inference-masks}
+\end{figure}
 
 \subsection{Discussion}
 

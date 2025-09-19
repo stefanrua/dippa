@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.4.4)  15 SEP 2025 17:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.4.4)  19 SEP 2025 15:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1445,28 +1445,28 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}] [6]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 279.
+(Font)              scaled to size 14.4pt on input line 281.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 279.
+(Font)              scaled to size 14.4pt on input line 281.
  [7
 
 ]
 <figures/mlp.png, id=224, 1416.29124pt x 840.13875pt>
 File: figures/mlp.png Graphic file (type png)
 <use figures/mlp.png>
-Package pdftex.def Info: figures/mlp.png  used on input line 312.
+Package pdftex.def Info: figures/mlp.png  used on input line 314.
 (pdftex.def)             Requested size: 282.81915pt x 167.75555pt.
  [8 <./figures/mlp.png>]
 <figures/convolutional-layer.png, id=242, 636.3775pt x 427.5975pt>
 File: figures/convolutional-layer.png Graphic file (type png)
 <use figures/convolutional-layer.png>
 Package pdftex.def Info: figures/convolutional-layer.png  used on input line 32
-3.
+5.
 (pdftex.def)             Requested size: 202.01456pt x 135.73785pt.
 <figures/transformer.png, id=247, 1027.84pt x 1081.03876pt>
 File: figures/transformer.png Graphic file (type png)
 <use figures/transformer.png>
-Package pdftex.def Info: figures/transformer.png  used on input line 334.
+Package pdftex.def Info: figures/transformer.png  used on input line 336.
 (pdftex.def)             Requested size: 282.81915pt x 297.45978pt.
 
 
@@ -1476,25 +1476,25 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: figures/task-comparison/obj-det.png Graphic file (type png)
 <use figures/task-comparison/obj-det.png>
 Package pdftex.def Info: figures/task-comparison/obj-det.png  used on input lin
-e 346.
+e 348.
 (pdftex.def)             Requested size: 129.29227pt x 107.61461pt.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 347.
+(Font)              scaled to size 10.95pt on input line 349.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.95pt on input line 347.
+(Font)              scaled to size 10.95pt on input line 349.
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 10.29301pt on input line 347.
+(Font)              scaled to size 10.29301pt on input line 349.
 <figures/task-comparison/sem-seg.png, id=252, 1017.8025pt x 847.165pt>
 File: figures/task-comparison/sem-seg.png Graphic file (type png)
 <use figures/task-comparison/sem-seg.png>
 Package pdftex.def Info: figures/task-comparison/sem-seg.png  used on input lin
-e 350.
+e 352.
 (pdftex.def)             Requested size: 129.29227pt x 107.61461pt.
 <figures/task-comparison/instance-seg.png, id=253, 1017.8025pt x 847.165pt>
 File: figures/task-comparison/instance-seg.png Graphic file (type png)
 <use figures/task-comparison/instance-seg.png>
 Package pdftex.def Info: figures/task-comparison/instance-seg.png  used on inpu
-t line 354.
+t line 356.
 (pdftex.def)             Requested size: 129.29227pt x 107.61461pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1505,158 +1505,230 @@ ures/task-comparison/instance-seg.png>]
 <figures/sam-prompts/box.png, id=281, 888.31876pt x 743.77875pt>
 File: figures/sam-prompts/box.png Graphic file (type png)
 <use figures/sam-prompts/box.png>
-Package pdftex.def Info: figures/sam-prompts/box.png  used on input line 376.
+Package pdftex.def Info: figures/sam-prompts/box.png  used on input line 378.
 (pdftex.def)             Requested size: 129.29227pt x 108.24805pt.
 <figures/sam-prompts/point.png, id=282, 888.31876pt x 743.77875pt>
 File: figures/sam-prompts/point.png Graphic file (type png)
 <use figures/sam-prompts/point.png>
-Package pdftex.def Info: figures/sam-prompts/point.png  used on input line 380.
+Package pdftex.def Info: figures/sam-prompts/point.png  used on input line 382.
 
 (pdftex.def)             Requested size: 129.29227pt x 108.24805pt.
 <figures/sam-prompts/point-background.png, id=283, 888.31876pt x 743.77875pt>
 File: figures/sam-prompts/point-background.png Graphic file (type png)
 <use figures/sam-prompts/point-background.png>
 Package pdftex.def Info: figures/sam-prompts/point-background.png  used on inpu
-t line 384.
+t line 386.
 (pdftex.def)             Requested size: 129.29227pt x 108.24805pt.
-
-Underfull \hbox (badness 3482) in paragraph at lines 385--385
-[]\T1/qhv/b/n/10.95 (+20) (c) |\T1/ntxtlf/m/n/10.95 (+20) Fore-ground and back-
-
- []
-
 <figures/drone.jpg, id=285, 1387.584pt x 925.056pt>
 File: figures/drone.jpg Graphic file (type jpg)
 <use figures/drone.jpg>
-Package pdftex.def Info: figures/drone.jpg  used on input line 404.
+Package pdftex.def Info: figures/drone.jpg  used on input line 406.
 (pdftex.def)             Requested size: 282.81915pt x 188.53671pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--414
+Underfull \hbox (badness 10000) in paragraph at lines 411--416
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--414
+Underfull \hbox (badness 10000) in paragraph at lines 411--416
 
  []
 
 [11 <./figures/sam-prompts/box.png> <./figures/sam-prompts/point.png> <./figure
 s/sam-prompts/point-background.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 415--420
+Underfull \hbox (badness 10000) in paragraph at lines 417--422
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 415--420
+Underfull \hbox (badness 10000) in paragraph at lines 417--422
 
  []
 
-[12 <./figures/drone.jpg>] [13]
-<figures/dataset-ortho.png, id=317, 818.05624pt x 879.285pt>
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.8pt on input line 438.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.6pt on input line 438.
+[12 <./figures/drone.jpg>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 445.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 445.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 445.
+
+[13] [14]
+<figures/dataset-ortho.png, id=328, 818.05624pt x 879.285pt>
 File: figures/dataset-ortho.png Graphic file (type png)
 <use figures/dataset-ortho.png>
-Package pdftex.def Info: figures/dataset-ortho.png  used on input line 441.
+Package pdftex.def Info: figures/dataset-ortho.png  used on input line 474.
 (pdftex.def)             Requested size: 242.41994pt x 260.5541pt.
-<figures/dataset-test.png, id=318, 985.6825pt x 863.225pt>
+<figures/dataset-test.png, id=329, 985.6825pt x 863.225pt>
 File: figures/dataset-test.png Graphic file (type png)
 <use figures/dataset-test.png>
-Package pdftex.def Info: figures/dataset-test.png  used on input line 448.
+Package pdftex.def Info: figures/dataset-test.png  used on input line 481.
 (pdftex.def)             Requested size: 242.41994pt x 212.30203pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 456.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.6pt on input line 456.
-<figures/ndvi.pdf, id=320, 462.52798pt x 346.89601pt>
+<figures/ndvi.pdf, id=331, 462.52798pt x 346.89601pt>
 File: figures/ndvi.pdf Graphic file (type pdf)
 <use figures/ndvi.pdf>
-Package pdftex.def Info: figures/ndvi.pdf  used on input line 463.
+Package pdftex.def Info: figures/ndvi.pdf  used on input line 496.
 (pdftex.def)             Requested size: 282.81915pt x 212.12498pt.
+[15 <./figures/dataset-ortho.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14 <./figures/dataset-ortho.png>] [15 <./figures/dataset-test.png> <./figures/
-ndvi.pdf>]
-<figures/pseudolabel1a.png, id=378, 800.9925pt x 777.90625pt>
+<figures/dataset-test-manual-segments.png, id=344, 835.12pt x 761.84625pt>
+File: figures/dataset-test-manual-segments.png Graphic file (type png)
+<use figures/dataset-test-manual-segments.png>
+Package pdftex.def Info: figures/dataset-test-manual-segments.png  used on inpu
+t line 521.
+(pdftex.def)             Requested size: 242.41994pt x 221.15062pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16 <./figures/dataset-test.png> <./figures/ndvi.pdf>]
+<figures/pseudolabel1a.png, id=395, 800.9925pt x 777.90625pt>
 File: figures/pseudolabel1a.png Graphic file (type png)
 <use figures/pseudolabel1a.png>
-Package pdftex.def Info: figures/pseudolabel1a.png  used on input line 480.
+Package pdftex.def Info: figures/pseudolabel1a.png  used on input line 539.
 (pdftex.def)             Requested size: 197.97649pt x 192.26828pt.
-<figures/pseudolabel1b.png, id=379, 808.01875pt x 777.90625pt>
+<figures/pseudolabel1b.png, id=396, 808.01875pt x 777.90625pt>
 File: figures/pseudolabel1b.png Graphic file (type png)
 <use figures/pseudolabel1b.png>
-Package pdftex.def Info: figures/pseudolabel1b.png  used on input line 484.
+Package pdftex.def Info: figures/pseudolabel1b.png  used on input line 543.
 (pdftex.def)             Requested size: 197.97649pt x 190.59464pt.
-<figures/radii.pdf, id=380, 462.52798pt x 346.89601pt>
-File: figures/radii.pdf Graphic file (type pdf)
-<use figures/radii.pdf>
-Package pdftex.def Info: figures/radii.pdf  used on input line 494.
-(pdftex.def)             Requested size: 282.81915pt x 212.12498pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/annotations/coarse.png, id=382, 818.05624pt x 879.285pt>
+<figures/radii.pdf, id=397, 462.52798pt x 346.89601pt>
+File: figures/radii.pdf Graphic file (type pdf)
+<use figures/radii.pdf>
+Package pdftex.def Info: figures/radii.pdf  used on input line 553.
+(pdftex.def)             Requested size: 282.81915pt x 212.12498pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[17 <./figures/dataset-test-manual-segments.png>]
+<figures/annotations/coarse.png, id=406, 818.05624pt x 879.285pt>
 File: figures/annotations/coarse.png Graphic file (type png)
 <use figures/annotations/coarse.png>
-Package pdftex.def Info: figures/annotations/coarse.png  used on input line 504
+Package pdftex.def Info: figures/annotations/coarse.png  used on input line 563
 .
 (pdftex.def)             Requested size: 129.29227pt x 138.9577pt.
-<figures/annotations/pseudolabeled.png, id=383, 818.05624pt x 879.285pt>
+<figures/annotations/pseudolabeled.png, id=407, 818.05624pt x 879.285pt>
 File: figures/annotations/pseudolabeled.png Graphic file (type png)
 <use figures/annotations/pseudolabeled.png>
 Package pdftex.def Info: figures/annotations/pseudolabeled.png  used on input l
-ine 508.
+ine 567.
 (pdftex.def)             Requested size: 129.29227pt x 138.9577pt.
-<figures/annotations/manual.png, id=384, 818.05624pt x 879.285pt>
+<figures/annotations/manual.png, id=408, 818.05624pt x 879.285pt>
 File: figures/annotations/manual.png Graphic file (type png)
 <use figures/annotations/manual.png>
-Package pdftex.def Info: figures/annotations/manual.png  used on input line 512
+Package pdftex.def Info: figures/annotations/manual.png  used on input line 571
 .
 (pdftex.def)             Requested size: 129.29227pt x 138.9577pt.
 
+
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16 <./figures/pseudolabel1a.png> <./figures/pseudolabel1b.png>] [17 <./figures
-/radii.pdf> <./figures/annotations/coarse.png> <./figures/annotations/pseudolab
-eled.png> <./figures/annotations/manual.png>]
+[18 <./figures/pseudolabel1a.png> <./figures/pseudolabel1b.png>]
+<figures/loss/coarse.pdf, id=423, 462.52798pt x 346.89601pt>
+File: figures/loss/coarse.pdf Graphic file (type pdf)
+<use figures/loss/coarse.pdf>
+Package pdftex.def Info: figures/loss/coarse.pdf  used on input line 607.
+(pdftex.def)             Requested size: 197.97649pt x 148.48483pt.
+<figures/loss/coarse-ms.pdf, id=424, 462.52798pt x 346.89601pt>
+File: figures/loss/coarse-ms.pdf Graphic file (type pdf)
+<use figures/loss/coarse-ms.pdf>
+Package pdftex.def Info: figures/loss/coarse-ms.pdf  used on input line 611.
+(pdftex.def)             Requested size: 197.97649pt x 148.48483pt.
+<figures/loss/pseudo.pdf, id=425, 462.52798pt x 346.89601pt>
+File: figures/loss/pseudo.pdf Graphic file (type pdf)
+<use figures/loss/pseudo.pdf>
+Package pdftex.def Info: figures/loss/pseudo.pdf  used on input line 616.
+(pdftex.def)             Requested size: 197.97649pt x 148.48483pt.
+<figures/loss/pseudo-ms.pdf, id=426, 462.52798pt x 346.89601pt>
+File: figures/loss/pseudo-ms.pdf Graphic file (type pdf)
+<use figures/loss/pseudo-ms.pdf>
+Package pdftex.def Info: figures/loss/pseudo-ms.pdf  used on input line 620.
+(pdftex.def)             Requested size: 197.97649pt x 148.48483pt.
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 545.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[19 <./figures/radii.pdf> <./figures/annotations/coarse.png> <./figures/annotat
+ions/pseudolabeled.png> <./figures/annotations/manual.png>] [20 <./figures/loss
+/coarse.pdf> <./figures/loss/coarse-ms.pdf> <./figures/loss/pseudo.pdf> <./figu
+res/loss/pseudo-ms.pdf>]
+<figures/masks/masks-gt.png, id=635, 1097.09875pt x 817.0525pt>
+File: figures/masks/masks-gt.png Graphic file (type png)
+<use figures/masks/masks-gt.png>
+Package pdftex.def Info: figures/masks/masks-gt.png  used on input line 664.
+(pdftex.def)             Requested size: 197.97649pt x 147.43712pt.
+<figures/masks/masks-inf-coarse.png, id=636, 1097.09875pt x 817.0525pt>
+File: figures/masks/masks-inf-coarse.png Graphic file (type png)
+<use figures/masks/masks-inf-coarse.png>
+Package pdftex.def Info: figures/masks/masks-inf-coarse.png  used on input line
+ 670.
+(pdftex.def)             Requested size: 197.97649pt x 147.43712pt.
+<figures/masks/masks-inf-coarse-ms.png, id=637, 1097.09875pt x 817.0525pt>
+File: figures/masks/masks-inf-coarse-ms.png Graphic file (type png)
+<use figures/masks/masks-inf-coarse-ms.png>
+Package pdftex.def Info: figures/masks/masks-inf-coarse-ms.png  used on input l
+ine 674.
+(pdftex.def)             Requested size: 197.97649pt x 147.43712pt.
+<figures/masks/masks-inf-pseudo.png, id=638, 1097.09875pt x 817.0525pt>
+File: figures/masks/masks-inf-pseudo.png Graphic file (type png)
+<use figures/masks/masks-inf-pseudo.png>
+Package pdftex.def Info: figures/masks/masks-inf-pseudo.png  used on input line
+ 680.
+(pdftex.def)             Requested size: 197.97649pt x 147.43712pt.
+<figures/masks/masks-inf-pseudo-ms.png, id=639, 1097.09875pt x 817.0525pt>
+File: figures/masks/masks-inf-pseudo-ms.png Graphic file (type png)
+<use figures/masks/masks-inf-pseudo-ms.png>
+Package pdftex.def Info: figures/masks/masks-inf-pseudo-ms.png  used on input l
+ine 684.
+(pdftex.def)             Requested size: 197.97649pt x 147.43712pt.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 545.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 545.
-
-[18] [19] [20] (./dippa.bbl
+[21] [22] [23 <./figures/masks/masks-gt.png> <./figures/masks/masks-inf-coarse.
+png> <./figures/masks/masks-inf-coarse-ms.png> <./figures/masks/masks-inf-pseud
+o.png> <./figures/masks/masks-inf-pseudo-ms.png>] (./dippa.bbl
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 12.0pt on input line 28.
- [21
+ [24
 
-] [22]) [23] (./dippa.aux)
+] [25])
+[26] (./dippa.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `dippa.out' has not changed.
-(rerunfilecheck)             Checksum: 6C49FC70AF6F290EC2792147CBFF584E;4387.
+(rerunfilecheck)             Checksum: 180C9A13951A246F83B8FA384DFF6DCD;4387.
  ) 
 Here is how much of TeX's memory you used:
- 38024 strings out of 474222
- 671477 string characters out of 5748734
- 1943975 words of memory out of 5000000
- 59389 multiletter control sequences out of 15000+600000
- 634998 words of font info for 165 fonts, out of 8000000 for 9000
+ 38121 strings out of 474222
+ 674573 string characters out of 5748734
+ 1942975 words of memory out of 5000000
+ 59471 multiletter control sequences out of 15000+600000
+ 635175 words of font info for 167 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  132i,12n,135p,998b,2556s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/sha
@@ -1667,10 +1739,10 @@ xlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx
 /ztmri.pfb>
-Output written on dippa.pdf (23 pages, 27263713 bytes).
+Output written on dippa.pdf (26 pages, 38534282 bytes).
 PDF statistics:
- 562 PDF objects out of 1000 (max. 8388607)
- 409 compressed objects within 5 object streams
- 101 named destinations out of 1000 (max. 500000)
- 39269 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 767 PDF objects out of 1000 (max. 8388607)
+ 459 compressed objects within 5 object streams
+ 112 named destinations out of 1000 (max. 500000)
+ 39319 words of extra memory for PDF output out of 42996 (max. 10000000)
 

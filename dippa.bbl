@@ -154,6 +154,11 @@ B.~Lu, P.~D. Dao, J.~Liu, Y.~He, and J.~Shang, ``Recent advances of
   \url{https://www.mdpi.com/2072-4292/12/16/2659}
 \BIBentrySTDinterwordspacing
 
+\bibitem{jaccard}
+G.~K. Gilbert, ``Finley's tornado predictions.'' \emph{American Meteorological
+  Journal. A Monthly Review of Meteorology and Allied Branches of Study
+  (1884-1896)}, vol.~1, no.~5, p. 166, 1884.
+
 \bibitem{sam-treecrown}
 \BIBentryALTinterwordspacing
 M.~Teng, A.~Ouaknine, E.~Laliberté, Y.~Bengio, D.~Rolnick, and H.~Larochelle,
@@ -177,6 +182,14 @@ E.~Arnaudo, J.~L. Vaschetti, L.~Innocenti, L.~Barco, D.~Lisi, V.~Fissore, and
   \url{https://arxiv.org/abs/2405.20109}
 \BIBentrySTDinterwordspacing
 
+\bibitem{coco}
+\BIBentryALTinterwordspacing
+T.-Y. Lin, M.~Maire, S.~Belongie, L.~Bourdev, R.~Girshick, J.~Hays, P.~Perona,
+  D.~Ramanan, C.~L. Zitnick, and P.~Dollár, ``Microsoft coco: Common objects
+  in context,'' 2015. [Online]. Available:
+  \url{https://arxiv.org/abs/1405.0312}
+\BIBentrySTDinterwordspacing
+
 \bibitem{resnet}
 \BIBentryALTinterwordspacing
 K.~He, X.~Zhang, S.~Ren, and J.~Sun, ``Deep residual learning for image
@@ -189,10 +202,5 @@ K.~He, X.~Zhang, S.~Ren, and J.~Sun, ``Deep residual learning for image
 I.~Loshchilov and F.~Hutter, ``Decoupled weight decay regularization,'' 2019.
   [Online]. Available: \url{https://arxiv.org/abs/1711.05101}
 \BIBentrySTDinterwordspacing
-
-\bibitem{jaccard}
-G.~K. Gilbert, ``Finley's tornado predictions.'' \emph{American Meteorological
-  Journal. A Monthly Review of Meteorology and Allied Branches of Study
-  (1884-1896)}, vol.~1, no.~5, p. 166, 1884.
 
 \end{thebibliography}

@@ -65,45 +65,60 @@
 \newlabel{fig:task-comparison}{{4}{10}{Comparison of similar computer vision tasks: \textbf {(a)} object detection, \textbf {(b)} semantic segmentation, and \textbf {(c)} instance segmentation}{figure.caption.9}{}}
 \citation{aerial-photography}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Segment Anything Model 2}{11}{subsubsection.2.2.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Comparison of SAM prompt types.}}{11}{figure.caption.10}\protected@file@percent }
-\newlabel{fig:sam-prompts}{{5}{11}{Comparison of SAM prompt types}{figure.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Comparison of SAM prompt types: \textbf  {(a)} bounding box, \textbf  {(b)} foreground point \textbf  {(c)} foreground and background points.}}{11}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:sam-prompts}{{5}{11}{Comparison of SAM prompt types: \textbf {(a)} bounding box, \textbf {(b)} foreground point \textbf {(c)} foreground and background points}{figure.caption.10}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Aerial Tree Mapping}{11}{subsection.2.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Aerial Imaging}{11}{subsubsection.2.3.1}\protected@file@percent }
 \citation{hyperspectral-agricultural}
+\citation{jaccard}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Drone with remote sensing apparatus.}}{12}{figure.caption.11}\protected@file@percent }
 \newlabel{fig:drone}{{6}{12}{Drone with remote sensing apparatus}{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Performance Measures}{12}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.1}Jaccard Index}{12}{subsubsection.2.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.2}Precision and Recall}{13}{subsubsection.2.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3}$F_1$ score}{13}{subsubsection.2.4.3}\protected@file@percent }
 \citation{sam-treecrown}
 \citation{rsprompter}
 \citation{sam-treecrown}
 \citation{fmars}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Related Work}{13}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Related Work}{14}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Dataset and Methods}{15}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Dataset}{15}{subsection.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Dataset (RGB channels shown). The test area is delineated in green.}}{15}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:dataset-ortho}{{7}{15}{Dataset (RGB channels shown). The test area is delineated in green}{figure.caption.12}{}}
+\citation{coco}
 \citation{maskrcnn}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Dataset and Methods}{14}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Dataset}{14}{subsection.4.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Dataset (RGB channels shown). The test area is delineated in green.}}{14}{figure.caption.12}\protected@file@percent }
-\newlabel{fig:dataset-ortho}{{7}{14}{Dataset (RGB channels shown). The test area is delineated in green}{figure.caption.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The test area (RGB channels shown).}}{15}{figure.caption.13}\protected@file@percent }
-\newlabel{fig:dataset-test}{{8}{15}{The test area (RGB channels shown)}{figure.caption.13}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Distribution of NDVI values. The dashed vertical line indicates the threshold of 0.2 below which segments were discarded.}}{15}{figure.caption.14}\protected@file@percent }
-\newlabel{fig:ndvi}{{9}{15}{Distribution of NDVI values. The dashed vertical line indicates the threshold of 0.2 below which segments were discarded}{figure.caption.14}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Models}{15}{subsection.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Methods}{15}{subsection.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The test area (RGB channels shown).}}{16}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:dataset-test}{{8}{16}{The test area (RGB channels shown)}{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Distribution of NDVI values. The dashed vertical line indicates the threshold of 0.2 below which segments were discarded.}}{16}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:ndvi}{{9}{16}{Distribution of NDVI values. The dashed vertical line indicates the threshold of 0.2 below which segments were discarded}{figure.caption.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Dataset properties.}}{17}{table.caption.15}\protected@file@percent }
+\newlabel{table:data}{{1}{17}{Dataset properties}{table.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces The test area and manually drawn tree crown segments.}}{17}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:dataset-test-manual-segments}{{10}{17}{The test area and manually drawn tree crown segments}{figure.caption.16}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Models}{17}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Methods}{17}{subsection.4.3}\protected@file@percent }
 \citation{resnet}
 \citation{adamw}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Example of the pseudolabeling process. On the left \textbf  {(a)}, CHM-based coarse segments are drawn around tree crowns, and their centroids are displayed as dots. The shaded area around the central 512 $\times $ 512 square is the buffer region. On the right \textbf  {(b)}, the box prompts provided to SAM are shown in reduced opacity, and the predicted mask outlines are drawn in white.}}{16}{figure.caption.15}\protected@file@percent }
-\newlabel{fig:pseudolabel}{{10}{16}{Example of the pseudolabeling process. On the left \textbf {(a)}, CHM-based coarse segments are drawn around tree crowns, and their centroids are displayed as dots. The shaded area around the central 512 $\times $ 512 square is the buffer region. On the right \textbf {(b)}, the box prompts provided to SAM are shown in reduced opacity, and the predicted mask outlines are drawn in white}{figure.caption.15}{}}
-\citation{jaccard}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Distribution of tree crown radii. The dashed vertical line indicates the threshold above which segments may span from the central region of interest over the buffer region to the image border, producing stitching artifacts.}}{17}{figure.caption.16}\protected@file@percent }
-\newlabel{fig:radii}{{11}{17}{Distribution of tree crown radii. The dashed vertical line indicates the threshold above which segments may span from the central region of interest over the buffer region to the image border, producing stitching artifacts}{figure.caption.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Comparison of annotations.}}{17}{figure.caption.17}\protected@file@percent }
-\newlabel{fig:annotation-comparison}{{12}{17}{Comparison of annotations}{figure.caption.17}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Performance Measures}{17}{subsection.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.1}Jaccard Index}{17}{subsubsection.4.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.2}Precision and Recall}{18}{subsubsection.4.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.3}$F_1$ score}{18}{subsubsection.4.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Example of the pseudolabeling process. On the left \textbf  {(a)}, CHM-based coarse segments are drawn around tree crowns, and their centroids are displayed as dots. The shaded area around the central 512 $\times $ 512 square is the buffer region. On the right \textbf  {(b)}, the box prompts provided to SAM are shown in reduced opacity, and the predicted mask outlines are drawn in white.}}{18}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:pseudolabel}{{11}{18}{Example of the pseudolabeling process. On the left \textbf {(a)}, CHM-based coarse segments are drawn around tree crowns, and their centroids are displayed as dots. The shaded area around the central 512 $\times $ 512 square is the buffer region. On the right \textbf {(b)}, the box prompts provided to SAM are shown in reduced opacity, and the predicted mask outlines are drawn in white}{figure.caption.17}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Training hyperparameters.}}{18}{table.caption.20}\protected@file@percent }
+\newlabel{table:train}{{2}{18}{Training hyperparameters}{table.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Distribution of tree crown radii. The dashed vertical line indicates the threshold above which segments may span from the central region of interest over the buffer region to the image border, producing stitching artifacts.}}{19}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:radii}{{12}{19}{Distribution of tree crown radii. The dashed vertical line indicates the threshold above which segments may span from the central region of interest over the buffer region to the image border, producing stitching artifacts}{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Comparison of annotations: \textbf  {(a)} coarse CHM-based, \textbf  {(b)} SAM pseudolabels, and \textbf  {(c)} manual.}}{19}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:annotation-comparison}{{13}{19}{Comparison of annotations: \textbf {(a)} coarse CHM-based, \textbf {(b)} SAM pseudolabels, and \textbf {(c)} manual}{figure.caption.19}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Experiments and Results}{19}{section.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Discussion}{19}{subsection.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusions}{20}{section.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Inference parameters.}}{19}{table.caption.22}\protected@file@percent }
+\newlabel{table:inference}{{3}{19}{Inference parameters}{table.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Losses over training epochs for models trained on \textbf  {(a)} coarse annotations and RGB images, \textbf  {(b)} coarse annotations and multispectral images, \textbf  {(c)} pseudolabel annotations and RGB images, and \textbf  {(d)} pseudolabel annotations and multispectral images.}}{20}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:loss}{{14}{20}{Losses over training epochs for models trained on \textbf {(a)} coarse annotations and RGB images, \textbf {(b)} coarse annotations and multispectral images, \textbf {(c)} pseudolabel annotations and RGB images, and \textbf {(d)} pseudolabel annotations and multispectral images}{figure.caption.21}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Performance metrics on the test area.}}{20}{table.caption.23}\protected@file@percent }
+\newlabel{table:results}{{4}{20}{Performance metrics on the test area}{table.caption.23}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Discussion}{21}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusions}{22}{section.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Comparison of \textbf  {(a)} ground truth masks and predictions by models trained on \textbf  {(b)} coarse annotations and RGB images, \textbf  {(c)} coarse annotations and multispectral images, \textbf  {(d)} pseudolabels and RGB images, \textbf  {(e)} pseudolabels and multispectral images. }}{23}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:inference-masks}{{15}{23}{Comparison of \textbf {(a)} ground truth masks and predictions by models trained on \textbf {(b)} coarse annotations and RGB images, \textbf {(c)} coarse annotations and multispectral images, \textbf {(d)} pseudolabels and RGB images, \textbf {(e)} pseudolabels and multispectral images}{figure.caption.24}{}}
 \bibstyle{IEEEtran}
 \bibdata{references}
 \bibcite{ecke}{1}
@@ -117,7 +132,7 @@
 \bibcite{ann}{9}
 \bibcite{julius}{10}
 \bibcite{cnn}{11}
-\@writefile{toc}{\contentsline {section}{References}{21}{section*.18}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{24}{section*.25}\protected@file@percent }
 \bibcite{convolutional-layer}{12}
 \bibcite{attention-is-all-you-need}{13}
 \bibcite{transformer}{14}
@@ -126,11 +141,12 @@
 \bibcite{sam}{17}
 \bibcite{aerial-photography}{18}
 \bibcite{hyperspectral-agricultural}{19}
-\bibcite{sam-treecrown}{20}
-\bibcite{rsprompter}{21}
-\bibcite{fmars}{22}
-\bibcite{resnet}{23}
-\bibcite{adamw}{24}
-\bibcite{jaccard}{25}
-\setcounter{NAllPages}{23}
-\gdef \@abspage@last{23}
+\bibcite{jaccard}{20}
+\bibcite{sam-treecrown}{21}
+\bibcite{rsprompter}{22}
+\bibcite{fmars}{23}
+\bibcite{coco}{24}
+\bibcite{resnet}{25}
+\bibcite{adamw}{26}
+\setcounter{NAllPages}{26}
+\gdef \@abspage@last{26}

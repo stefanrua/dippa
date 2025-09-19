@@ -21,45 +21,45 @@ Warning--empty journal in julius
 Warning--empty year in julius
 
 Done.
-You've used 25 entries,
+You've used 26 entries,
             4087 wiz_defined-function locations,
-            957 strings with 13054 characters,
-and the built_in function-call counts, 15487 in all, are:
-= -- 1148
-> -- 597
+            961 strings with 13309 characters,
+and the built_in function-call counts, 16170 in all, are:
+= -- 1188
+> -- 638
 < -- 39
-+ -- 294
-- -- 141
-* -- 789
-:= -- 2517
-add.period$ -- 50
-call.type$ -- 25
-change.case$ -- 27
++ -- 314
+- -- 151
+* -- 823
+:= -- 2614
+add.period$ -- 52
+call.type$ -- 26
+change.case$ -- 28
 chr.to.int$ -- 42
-cite$ -- 28
-duplicate$ -- 1167
-empty$ -- 1203
-format.name$ -- 160
-if$ -- 3467
+cite$ -- 29
+duplicate$ -- 1216
+empty$ -- 1257
+format.name$ -- 171
+if$ -- 3621
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 292
-newline$ -- 134
-num.names$ -- 25
-pop$ -- 775
+int.to.str$ -- 26
+missing$ -- 308
+newline$ -- 139
+num.names$ -- 26
+pop$ -- 825
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1141
+skip$ -- 1187
 stack$ -- 0
-substring$ -- 144
-swap$ -- 845
+substring$ -- 145
+swap$ -- 880
 text.length$ -- 25
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 25
+type$ -- 26
 warning$ -- 3
-while$ -- 34
-width$ -- 27
-write$ -- 290
+while$ -- 35
+width$ -- 28
+write$ -- 300
 (There was 1 error message)
