@@ -84,16 +84,51 @@ N.~Ravi, V.~Gabeur, Y.-T. Hu, R.~Hu, C.~Ryali, T.~Ma, H.~Khedr, R.~Rädle,
   \url{https://arxiv.org/abs/2408.00714}
 \BIBentrySTDinterwordspacing
 
+\bibitem{ann-intro}
+A.~Krenker, J.~Be{\v{s}}ter, and A.~Kos, ``Introduction to the artificial
+  neural networks,'' \emph{Artificial Neural Networks: Methodological Advances
+  and Biomedical Applications. InTech}, pp. 1--18, 2011.
+
 \bibitem{ann}
 K.~Gurney, \emph{An introduction to neural networks}.\hskip 1em plus 0.5em
   minus 0.4em\relax CRC press, 2018.
+
+\bibitem{perceptron}
+H.-D. Block, ``The perceptron: A model for brain functioning. i,''
+  \emph{Reviews of Modern Physics}, vol.~34, no.~1, p. 123, 1962.
 
 \bibitem{julius}
 J.~Pesonen, ``Pixelwise road surface slipperiness estimation for autonomous
   driving with weakly supervised learning,'' {Master}'s thesis, {Aalto
   University}.
 
+\bibitem{adamw}
+\BIBentryALTinterwordspacing
+I.~Loshchilov and F.~Hutter, ``Decoupled weight decay regularization,'' 2019.
+  [Online]. Available: \url{https://arxiv.org/abs/1711.05101}
+\BIBentrySTDinterwordspacing
+
+\bibitem{pretraining}
+\BIBentryALTinterwordspacing
+D.~Hendrycks, K.~Lee, and M.~Mazeika, ``Using pre-training can improve model
+  robustness and uncertainty,'' in \emph{Proceedings of the 36th International
+  Conference on Machine Learning}, ser. Proceedings of Machine Learning
+  Research, K.~Chaudhuri and R.~Salakhutdinov, Eds., vol.~97.\hskip 1em plus
+  0.5em minus 0.4em\relax PMLR, 09--15 Jun 2019, pp. 2712--2721. [Online].
+  Available: \url{https://proceedings.mlr.press/v97/hendrycks19a.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{imagenet1k}
+J.~Deng, W.~Dong, R.~Socher, L.-J. Li, K.~Li, and L.~Fei-Fei, ``Imagenet: A
+  large-scale hierarchical image database,'' in \emph{2009 IEEE Conference on
+  Computer Vision and Pattern Recognition}, 2009, pp. 248--255.
+
 \bibitem{cnn}
+Y.~LeCun, B.~Boser, J.~Denker, D.~Henderson, R.~Howard, W.~Hubbard, and
+  L.~Jackel, ``Handwritten digit recognition with a back-propagation network,''
+  \emph{Advances in neural information processing systems}, vol.~2, 1989.
+
+\bibitem{cnn-review}
 L.~Alzubaidi, J.~Zhang, A.~J. Humaidi, A.~Al-Dujaili, Y.~Duan, O.~Al-Shamma,
   J.~Santamar{\'\i}a, M.~A. Fadhel, M.~Al-Amidie, and L.~Farhan, ``Review of
   deep learning: concepts, cnn architectures, challenges, applications, future
@@ -195,12 +230,6 @@ T.-Y. Lin, M.~Maire, S.~Belongie, L.~Bourdev, R.~Girshick, J.~Hays, P.~Perona,
 K.~He, X.~Zhang, S.~Ren, and J.~Sun, ``Deep residual learning for image
   recognition,'' 2015. [Online]. Available:
   \url{https://arxiv.org/abs/1512.03385}
-\BIBentrySTDinterwordspacing
-
-\bibitem{adamw}
-\BIBentryALTinterwordspacing
-I.~Loshchilov and F.~Hutter, ``Decoupled weight decay regularization,'' 2019.
-  [Online]. Available: \url{https://arxiv.org/abs/1711.05101}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}

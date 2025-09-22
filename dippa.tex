@@ -156,7 +156,8 @@
 %% the pdf file as well as the abstract page. To have paragraphs in your
 %% abstract rewrite it in the abstarct environment as described below.
 \thesisabstract{
-    Lorem ipsum etc.
+    This thesis explores the use of zero-shot instance segmentation as a pseudolabeling preprocessing step in the context of tree crown detection from aerial imagery, where pre-existing annotations calculated from a canopy height model (CHM) are of insufficient quality. Segment Anything Model 2 (SAM2) was used for pseudolabeling, and pre-existing annotations were used as bounding box prompts. To evaluate the annotation quality improvement, both pseudolabels and original annotations were compared to a manually annotated test set. In addition, to examine the effect of pseudolabeling on model training, an instance segmentation network (Mask R-CNN + ResNet50 backbone) was trained on both pseudolabels and original annotations, and the inference results on a test area were evaluated based on the manual annotations.
+    Pseudolabels achieved a higher mIoU score (0.54) than the pre-existing annotations (0.48), and pseudolabeling improved inference results for models trained on RGB images (mIoU 0.47 $\rightarrow$ 0.53) and models trained on multispectral images (mIoU 0.53 $\rightarrow$ 0.62).
 }
 
 %% You can prevent LaTeX from writing into the xmpdata file (it contains all the 
@@ -194,7 +195,13 @@
 %% well.
 %%
 \begin{abstractpage}[english]
-    Lorem ipsum etc.
+
+    This thesis explores the use of zero-shot instance segmentation as a pseudolabeling preprocessing step in the context of tree crown detection from aerial imagery, where pre-existing annotations calculated from a canopy height model (CHM) are of insufficient quality. Segment Anything Model 2 (SAM2) was used for pseudolabeling, and pre-existing annotations were used as bounding box prompts. To evaluate the annotation quality improvement, both pseudolabels and original annotations were compared to a manually annotated test set. In addition, to examine the effect of pseudolabeling on model training, an instance segmentation network (Mask R-CNN + ResNet50 backbone) was trained on both pseudolabels and original annotations, and the inference results on a test area were evaluated based on the manual annotations.
+
+    Pseudolabels achieved a higher mIoU score (0.54) than the pre-existing annotations (0.48), and pseudolabeling improved inference results for models trained on RGB images (mIoU 0.47 $\rightarrow$ 0.53) and models trained on multispectral images (mIoU 0.53 $\rightarrow$ 0.62).
+
+    The results indicate that pseudolabeling is a viable preprocessing step for datasets with approximate annotations.
+
 \end{abstractpage}
 
 %% The text in the \thesisabstract macro is stored in the macro \abstractext, so
@@ -222,10 +229,16 @@
 \collaborativepartner{Paikkatietokeskus FGI}
 \date{30.9.2025}
 %% The keywords need not be separated by \spc now.
-\keywords{pseudolabelöinti, instanssisegmentaatio, metsäily}
+\keywords{pseudoannotointi, instanssisegmentaatio, metsätalous}
 %% Abstract text
 \begin{abstractpage}[finnish]
-    Lorem ipsum jne.
+
+    Tässä diplomityössä tutkittiin zero-shot instanssisegmentaatiota pseudoannotointiesikäsittelyvaiheena puulatvuksien tunnistuksessa ilmakuvista tapauksessa, jossa aineiston olemassaolevat latvuskorkeusmallista lasketut annotaatiot ovat epätarkat. Mallia Segment Anything Model 2 (SAM2) käytettiin pseudoannotointiin, ja alkuperäisiä latvuskorkeusmallipohjaisia annotaatioita käytettiin laatikkokehotteina. Annotaatiolaadun parannuksen arviomiseksi sekä pseudoannotaatioita että alkuperäisiä verrattiin käsin annotoituun koealueeseen. Pseudoannotaatioden vaikutuksen koneoppimismallien koulutukseen arvioimiseksi koulutettiin instanssisegmentaationeuroverkko (Mask R-CNN + ResNet50 selkäranka) sekä pseudoannotaatioilla että alkuperäisillä annotaatioilla, ja inferenssitulokset arvioitiin manuaalisten annotaatioiden perusteella.
+
+    Pseudoannotaatiot saavuttivat korkeamman mIoU tuloksen (0.54) kuin alkuperäiset annotaatiot (0.48). Pseudoannotaatio paransi myös inferenssituloksia sekä RGB-kuvilla koulutetulla mallilla (mIoU 0.47 $\rightarrow$ 0.53), että multispektrikuvilla koulutetulla mallilla (mIoU 0.53 $\rightarrow$ 0.62).
+
+    Tulokset viittavat siihen, että pseudoannotaatio on varteenotettava esikäsittely vaihe aineistoille, joissa annotaatiot ovat vain suuntaa antavia.
+
 \end{abstractpage}
 
 \dothesispagenumbering{}
@@ -283,7 +296,8 @@ The goal of this thesis is to test if training results can be improved in instan
 \begin{enumerate}
 \item How much does SAM2 pseudolabeling improve low quality instance segmentation annotations in UAV imagery?
 \item How much does SAM2 pseudolabeling improve training results in instance segmentaion tasks in UAV imagery?
-\item How well does SAM2 pseudolabeling perform compared to other zero-shot instance segmentation methods?
+\item How does the addition of IR and NIR channels improve training on SAM2 pseudolabels?
+%\item How well does SAM2 pseudolabeling perform compared to other zero-shot instance segmentation methods?
 \end{enumerate}
 
 \subsection{Structure of the Thesis}
@@ -297,10 +311,10 @@ This section goes over the necessary background information for understanding th
 
 \subsection{Neural Networks}
 
-Artificial neural networks (ANNs) are mathematical models, usually written as computer programs, designed to resemble the biological brain by imitating its structure of interconnected neurons. The goal of such models is to be "trained" using example data containing input and target pairs, after which the trained model is able to predict targets for new input data. The training is made possible by the interconnected neuron structure as shown in Figure \ref{fig:mlp}, represented as a graph where each neuron is a node, and each edge between nodes holds a tunable weight and bias parameter.
+Artificial neural networks (ANNs) are mathematical models, usually written as computer programs, designed to resemble the biological brain by imitating its structure of interconnected neurons \cite{ann-intro}. The goal of such models is to be "trained" using example data containing input and target pairs, after which the trained model is able to predict targets for new input data. The training is made possible by the interconnected neuron structure as shown in Figure \ref{fig:mlp}, represented as a graph where each neuron is a node, and each edge between nodes holds a tunable weight and bias parameter.
 \cite{ann}
 
-The oldest and simplest type of neural network is the multilayer perceptron (MLP), that consists of an input layer of nodes, an output layer, and fully connected hidden layers in-between (Figure \ref{fig:mlp}). During training, the outputs of the model are compared to the ground truth targets and evaluated using a loss function. The gradients of the weights for each layer are calculated during the prediction phase called the forward pass, and updated based on the resulting loss during the backward pass. By repeating this backpropagation step over multiple iterations, the model's parameters gradually converge to predict the wanted targets for the given domain.
+The oldest and simplest type of neural network is the multilayer perceptron (MLP), a multilayered version of the original perceptron \cite{perceptron}. The MLP consists of an input layer of nodes, an output layer, and fully connected hidden layers in-between (Figure \ref{fig:mlp}). During training, the outputs of the model are compared to the ground truth targets and evaluated using a loss function. The gradients of the weights for each layer are calculated during the prediction phase called the forward pass, and updated based on the resulting loss during the backward pass. By repeating this backpropagation step over multiple iterations, the model's parameters gradually converge to predict the wanted targets for the given domain.
 \cite{ann}
 
 The gradient calculation and backpropagation step utilize the chain rule of differentiation: if $h = f(g(x))$, the derivative of $h(x)$, $h'(x)$ is
@@ -316,9 +330,16 @@ The gradient calculation and backpropagation step utilize the chain rule of diff
     \label{fig:mlp}
 \end{figure}
 
+An optimization algorithm called the optimizer determines the direction and magnitude of the parameter update at each iteration. Optimizers have hyperparameters that tune the optimization process, such as learning rate which is a multiplier applied to the update magnitude, and in the case of the optimizer used in this thesis, AdamW \cite{adamw}, regularization parameter called weight decay.
+
+Pre-training is a common way to shorten the training time required to fit a model to custom data. Using pre-trained model weights, even if trained for a mostly different domain, often yields better results than random initialization \cite{pretraining}. A common set of pre-trained weights for image related tasks are weights optimized for ImageNet-1K \cite{imagenet1k}, an openly available dataset containing approximately 1.3 million images.
+
+% Training samples are processed in batches.
+
 \subsubsection{Convolutional Nerual Networks}
 
-Convolutional neural networks (CNNs) \cite{cnn} are neural networks that employ convolutional layers. These are commonly used for computer vision tasks due to their efficiency in detecting hierarchies of visual features. A convolutional layer consists of a kernel that is moved over the input as a sliding window, computing an output for each position as shown in Figure \ref{fig:convolutional}. The weights of the layer make up the kernel, and optimizing these weights lead to the kernel representing some feature related to the target. \cite{cnn}
+Convolutional neural networks (CNNs) \cite{cnn} are neural networks that employ convolutional layers. These are commonly used for computer vision tasks due to their efficiency in detecting hierarchies of visual features. A convolutional layer consists of a kernel that is moved over the input as a sliding window, computing an output for each position as shown in Figure \ref{fig:convolutional}. The weights of the layer make up the kernel, and optimizing these weights lead to the kernel representing some feature related to the target. The CNN provides several advantages, the first of which is efficiency. A fully connected network would need to have a very large number of parameters to achieve the same discriminative power for local features. Another benefit is translational robustness. The same feature in the input image may be shifted to another location, but since the convolution kernel's weights apply similarly everywhere in the layer's receptive field, the feature is recognized in the same way. The convolutional layer's neuron's receptive field is the set of inputs visible to it from the previous layer, and are determined by the kernel's dimensions and the sliding window's stride. Compared to a fully connected layer, which has the entire previous layer as its receptive field, the locally limited receptive field of the convolutional layer is a disadvantage, especially in cases where a feature is larger than the receptive field.
+\cite{cnn-review}
 
 \begin{figure}[h]
     \centering
@@ -329,7 +350,7 @@ Convolutional neural networks (CNNs) \cite{cnn} are neural networks that employ 
 
 \subsubsection{Transformers}
 
-The transformer is a more recent neural network architecture that has shown great performance when trained on extremely large amounts of data. The network consists of an encoder that takes as input a set of tokens, that are then weighed using a self-attention layer, after which a decoder calculates the output based on the output of the encoder \cite{attention-is-all-you-need}. The main advantage of transformers is the ability to leverage massively parallel compute efficiently, allowing the training of very large models in a reasonable amount of time. An example of a transformer type neural network in shown in Figure \ref{fig:transformer}.
+The transformer is a more recent neural network architecture that has shown great performance when trained on extremely large amounts of data \cite{transformer-survey}. The network consists of an encoder that takes as input a set of tokens, that are then weighed using a self-attention layer, after which a decoder calculates the output based on the output of the encoder \cite{attention-is-all-you-need}. The main advantage of transformers is the ability to leverage massively parallel compute efficiently, allowing the training of very large models in a reasonable amount of time. An example of a transformer type neural network in shown in Figure \ref{fig:transformer}.
 
 \begin{figure}[h]
     \centering
@@ -337,6 +358,9 @@ The transformer is a more recent neural network architecture that has shown grea
     \caption{A transformer architecture visualized. Left: encoder, right: decoder. \cite{transformer}}
     \label{fig:transformer}
 \end{figure}
+
+A key feature of transformers is self-attention, which allows them to model interactions between task-relevant tokens in the input token sequence, even when they occur far apart.
+\cite{transformer-survey}
 
 \subsection{Instance Segmentation}
 
@@ -530,7 +554,9 @@ SAM2 is used for the pseudolabeling task and Mask R-CNN \cite{maskrcnn} for the 
 
 \subsection{Methods}
 
-First the coarse segments were pseudolabeled using SAM2, indexing the orthophoto in a grid with a window of size 1024 and a stride of 512. For each window, only the segments whose centroids were located in the central 512 $\times$ 512 square of the window were selected for pseudolabeling. Then, the bounding box of each segment was passed as a prompt to SAM2, and the largest connected component of the output mask was saved as the pseudolabel. These parameters for the window size and stride were selected in order to avoid stitching artifacts and to provide SAM2 with images matching the native input resolution of the model. An example of the pseudolabeling process is shown in Figure \ref{fig:pseudolabel}, and the distribution of tree radii is shown in Figure \ref{fig:radii}.
+\subsubsection{Pseudolabeling}
+
+The coarse segments were pseudolabeled using SAM2, indexing the orthophoto in a grid with a window of size 1024 and a stride of 512. For each window, only the segments whose centroids were located in the central 512 $\times$ 512 square of the window were selected for pseudolabeling. Then, the bounding box of each segment was passed as a prompt to SAM2, and the largest connected component of the output mask was saved as the pseudolabel. These parameters for the window size and stride were selected in order to avoid stitching artifacts and to provide SAM2 with images matching the native input resolution of the model. With the selected window and stride dimensions, only An example of the pseudolabeling process is shown in Figure \ref{fig:pseudolabel}, and the distribution of tree radii is shown in Figure \ref{fig:radii}.
 
 
 \begin{figure}[h]
@@ -575,21 +601,40 @@ To evaluate the quality of the coarse segments and quantify the effect of SAM2 p
     \label{fig:annotation-comparison}
 \end{figure}
 
-Then, a Mask R-CNN model with a ResNet-50 \cite{resnet} backbone was trained separately on both the coarse segments and pseudolabels. The optimizer was AdamW \cite{adamw} with a learning rate of 1e-6 and weight decay of 1e-2. Training hyperparameters are listed in Table \ref{table:train}.
+\subsubsection{Supervised instance segmentation}
+
+A Mask R-CNN model with a ResNet-50 \cite{resnet} backbone was trained separately on the coarse segments and pseudolabels, on both RGB and multispectral images. By default Mask R-CNN takes as input only RGB images, and thus its first convolutional layer only has three input channels. For training and inference on multispectral images containing two additional channels, NIR and IR, the first convolutional layer was replaced with a convolutional layer with five input channels. In order to make use of pre-training, weights from the first two channels were copied to the new ones.
+
+The optimizer was AdamW \cite{adamw} with a learning rate of 1e-6 and weight decay of 1e-2, the batch size was set to 8, and each model was trained for 400 epochs. Pre-trained weights on ImageNet-1K \cite{imagenet1k} were used for initialization. Training hyperparameters are listed in Table \ref{table:train}. Finally, the weights that performed the best on the validation set was selected for testing.
 
 \begin{table}[h]
     \centering
     \begin{tabular}{ll}
-    Model & Mask R-CNN (ResNet50-FPN) \\
+    Model & Mask R-CNN \\
+    Backbone & ResNet50-FPN \\
     Optimizer & AdamW \\
     Learning rate & 1e-6 \\
     Weight decay & 1e-2 \\
     Batch size & 8 \\
     Epochs & 400 \\
-    Augmentations & Horizontal flipping, vertical flipping, rotation, random IoU crop \\
+    Augmentations & Horizontal and vertical flipping, rotation, random IoU crop \\
+    Pre-training & ImageNet-1K \\
     \end{tabular}
     \caption{Training hyperparameters.}
     \label{table:train}
+\end{table}
+
+For inference the mask threshold was set to 0.5, the score/confidence threshold to 0.3, and for NMS, the IoU threshold was set to 0.3, as very little overlap is expected between tree individuals. Table \ref{table:inference} contains the inference parameters.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ll}
+    Mask threshold & 0.5 \\
+    Score threshold & 0.3 \\
+    NMS IoU threshold & 0.3 \\
+    \end{tabular}
+    \caption{Inference parameters.}
+    \label{table:inference}
 \end{table}
 
 
@@ -599,7 +644,9 @@ Then, a Mask R-CNN model with a ResNet-50 \cite{resnet} backbone was trained sep
 \newpage
 \section{Experiments and Results}
 
-Figure \ref{fig:loss} shows the training and validation loss over the training epochs.
+\subsection{Training}
+
+Figure \ref{fig:loss} shows the training and validation losses over the training epochs.
 
 \begin{figure}[h]
     \centering
@@ -625,18 +672,7 @@ Figure \ref{fig:loss} shows the training and validation loss over the training e
     \label{fig:loss}
 \end{figure}
 
-Table \ref{table:inference} contains the inference parameters.
-
-\begin{table}[h]
-    \centering
-    \begin{tabular}{ll}
-    Mask threshold & 0.5 \\
-    Score threshold & 0.3 \\
-    NMS IoU threshold & 0.3 \\
-    \end{tabular}
-    \caption{Inference parameters.}
-    \label{table:inference}
-\end{table}
+\subsection{Inference}
 
 The inference results on the test area are shown in Table \ref{table:results}.
 
@@ -650,12 +686,11 @@ The inference results on the test area are shown in Table \ref{table:results}.
     Pseudolabeled & RGB & 0.71 & 0.68 & 0.69 & 0.53 \\
     Pseudolabeled & Multispectral & 0.70 & \textbf{0.78} & \textbf{0.74} & \textbf{0.62} \\
     \end{tabular}
-    \caption{Performance metrics on the test area.}
+    \caption{Inference performance metrics on the test area.}
     \label{table:results}
 \end{table}
 
-The best scores in recall (0.78), F1 (0.74), and mIoU (0.62) were achieved by the model trained on pseudolabels and multispectral images. The best precision score (0.74) was achieved by the model trained on coarse annotations and multispectral images. The addition of the SAM2 pseudolabeling preprocessing step improved the mIoU score both when training on RGB images (0.47 $\rightarrow$ 0.53, +0.06) and when training on multispectral images (0.53 $\rightarrow$ 0.62, +0.09). An interesting result is that the model trained on pseudolabeled RGB images achieved an equal mIoU score to the model trained on multispectral images with coarse annotations.
-
+The best scores in recall (0.78), F1 (0.74), and mIoU (0.62) were achieved by the model trained on pseudolabels and multispectral images. The best precision score (0.74) was achieved by the model trained on coarse annotations and multispectral images. The addition of the SAM2 pseudolabeling preprocessing step improved the mIoU score both when training on RGB images (0.47 $\rightarrow$ 0.53, +0.06) and when training on multispectral images (0.53 $\rightarrow$ 0.62, +0.09). The addition of IR and NIR channels also improved the mIoU score both when training on coarse (0.47 $\rightarrow$ 0.53, +0.06) and pseudolabeled data (0.53 $\rightarrow$ 0.62, +0.09).
 Examples of masks predicted by the models are shown in Figure \ref{fig:inference-masks}.
 
 \begin{figure}[h]
@@ -695,13 +730,37 @@ Examples of masks predicted by the models are shown in Figure \ref{fig:inference
     \label{fig:inference-masks}
 \end{figure}
 
+\subsection{Annotations}
+
+Pseudolabels and coarse annotations were evaluated based on the manual annotations of the test area, and the scores are shown in Table \ref{table:metrics-labels}. These annotations do not overlap the training area and were not used in training. However, they indicate the general quality of the coarse annotations and the effect of SAM2 pseudolabeling before training. The pseudolabels score better in all four metrics, improving precision from 0.56 to 0.62, recall from 0.61 to 0.65, F1 from 0.58 to 0.63, and mIoU from 0.48 to 0.54.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lrrrr}
+        Annotations & Precision & Recall & F1 & mIoU \\
+        \hline
+        Coarse & 0.56 & 0.61 & 0.58 & 0.48 \\
+        Pseudolabeled & \textbf{0.62} & \textbf{0.65} & \textbf{0.63} & \textbf{0.54} \\
+    \end{tabular}
+    \caption{Annotation quality metrics on the test area.}
+    \label{table:metrics-labels}
+\end{table}
+
+
 \subsection{Discussion}
 
-The segmentation performance improvement provided by pseudolabeling indicates that it is a worthwhile preprocessing step for datasets, where the original annotations are only approximate.
+SAM2 pseudolabeling improved the training results in both the RGB and multispectral use cases. An interesting result is that the model trained on pseudolabeled RGB images achieved an equal mIoU score to the model trained on multispectral images with coarse annotations.
 
 
 \newpage
 \section{Conclusions}
+
+The segmentation performance improvement provided by pseudolabeling indicates that it is a worthwhile preprocessing step for datasets where the original annotations are only approximate.
+
+% \item How much does SAM2 pseudolabeling improve low quality instance segmentation annotations in UAV imagery?
+% \item How much does SAM2 pseudolabeling improve training results in instance segmentaion tasks in UAV imagery?
+% \item How does the addition of IR and NIR channels improve training on SAM2 pseudolabels?
+
 
 \clearpage
 
