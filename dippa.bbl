@@ -141,6 +141,11 @@ Aphex34, ``Neurons of a convolutional layer,'' 2025, [Online; accessed
   \url{https://commons.wikimedia.org/w/index.php?curid=45659236}
 \BIBentrySTDinterwordspacing
 
+\bibitem{transformer-survey}
+S.~Khan, M.~Naseer, M.~Hayat, S.~W. Zamir, F.~S. Khan, and M.~Shah,
+  ``Transformers in vision: A survey,'' \emph{ACM computing surveys (CSUR)},
+  vol.~54, no. 10s, pp. 1--41, 2022.
+
 \bibitem{attention-is-all-you-need}
 A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez,
   {\L}.~Kaiser, and I.~Polosukhin, ``Attention is all you need,''
