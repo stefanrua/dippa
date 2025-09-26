@@ -1,0 +1,14 @@
+x abstract
+
+background:
+- inference hyperparameters
+x training hyperparameters
+x optimizers
+- fpn
+x imagenet 1k, pretrained weights
+
+methods:
+x multispectral muutos
+
+dada:
+- milloin kuvattu ja millä jne
