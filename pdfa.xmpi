@@ -62,10 +62,10 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> 
    <dc:format>application/pdf</dc:format> 
-   <dc:title><rdf:Alt><rdf:li xml:lang="x-default">SAM2 pseudolabeling for instance segmentation in UAV-based aerial imagery</rdf:li></rdf:Alt></dc:title>
+   <dc:title><rdf:Alt><rdf:li xml:lang="x-default">SAM2 Pseudolabeling for Instance Segmentation of Tree Crowns from Aerial Imagery</rdf:li></rdf:Alt></dc:title>
    <dc:creator><rdf:Seq><rdf:li>Stefan Rua</rdf:li></rdf:Seq></dc:creator>
    <dc:rights><rdf:Alt><rdf:li xml:lang="x-default">© 2025. This work is licensed under a Creative Commons "Attribution-NonCommercial-ShareAlike 4.0 International" (BY-NC-SA 4.0) license.</rdf:li></rdf:Alt></dc:rights>
-   <dc:description><rdf:Alt><rdf:li xml:lang="x-default"> This thesis explores the use of zero-shot instance segmentation as a pseudolabeling preprocessing step in the context of tree crown detection from aerial imagery, where pre-existing annotations calculated from a canopy height model (CHM) are of insufficient quality. Segment Anything Model 2 (SAM2) was used for pseudolabeling, and pre-existing annotations were used as bounding box prompts. To evaluate the annotation quality improvement, both pseudolabels and original annotations were compared to a manually annotated test set. In addition, to examine the effect of pseudolabeling on model training, an instance segmentation network (Mask R-CNN + ResNet50 backbone) was trained on both pseudolabels and original annotations, and the inference results on a test area were evaluated based on the manual annotations. Pseudolabels achieved a higher mIoU score (0.54) than the pre-existing annotations (0.48), and pseudolabeling improved inference results for models trained on RGB images (mIoU 0.47 $→$ 0.53) and models trained on multispectral images (mIoU 0.53 $→$ 0.62). </rdf:li></rdf:Alt></dc:description>
+   <dc:description><rdf:Alt><rdf:li xml:lang="x-default"> This thesis explores the use of zero-shot instance segmentation as a pseudolabeling preprocessing step in the context of tree crown detection from aerial imagery, where pre-existing annotations calculated from a canopy height model (CHM) are of insufficient quality. Segment Anything Model 2 (SAM2) was used for pseudolabeling, and pre-existing annotations were used as bounding box prompts. To evaluate the annotation quality improvement, both pseudolabels and original annotations were compared to a manually annotated test set. In addition, to examine the effect of pseudolabeling on model training, an instance segmentation network (Mask R-CNN + ResNet50 backbone) was trained on both pseudolabels and original annotations, and the inference results on a test area were evaluated based on the manual annotations. Pseudolabels achieved a higher mIoU score (0.54) than the pre-existing annotations (0.48), and pseudolabeling improved inference results for models trained on RGB images (mIoU 0.47 $→$ 0.53) and models trained on multispectral images (mIoU 0.53 $→$ 0.62). The results indicate that pseudolabeling is a viable preprocessing step for datasets with approximate annotations. </rdf:li></rdf:Alt></dc:description>
    <dc:subject><rdf:Bag><rdf:li>pseudolabeling</rdf:li>
      <rdf:li>instance segmentation</rdf:li>
      <rdf:li>forestry</rdf:li></rdf:Bag></dc:subject>
@@ -80,9 +80,9 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool> 
-   <xmp:ModifyDate>2025-09-24T13:24:12+03:00</xmp:ModifyDate> 
-   <xmp:CreateDate>2025-09-24T13:24:12+03:00</xmp:CreateDate> 
-   <xmp:MetadataDate>2025-09-24T13:24:12+03:00</xmp:MetadataDate> 
+   <xmp:ModifyDate>2025-09-25T14:23:25+03:00</xmp:ModifyDate> 
+   <xmp:CreateDate>2025-09-25T14:23:25+03:00</xmp:CreateDate> 
+   <xmp:MetadataDate>2025-09-25T14:23:25+03:00</xmp:MetadataDate> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
    <xmpRights:Marked>True</xmpRights:Marked>
@@ -91,7 +91,7 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
    <xmpMM:DocumentID>uuid:0C8D81BD-73E3-4DF2-3DB6-F8CF81B25F7D</xmpMM:DocumentID> 
-   <xmpMM:InstanceID>uuid:50FFF72C-7779-0465-CA91-C2E9C929E84A</xmpMM:InstanceID> 
+   <xmpMM:InstanceID>uuid:B7FE15B8-3693-9A34-A57B-7B19C2CDE173</xmpMM:InstanceID> 
   </rdf:Description> 
  </rdf:RDF> 
 </x:xmpmeta> 

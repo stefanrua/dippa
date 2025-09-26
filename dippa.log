@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.4.4)  24 SEP 2025 13:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.4.4)  25 SEP 2025 14:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1091,18 +1091,18 @@ nding settings to your xmpdata-file.  on input line 118.
 (/usr/share/texlive/texmf-dist/tex/latex/doclicense/doclicense-english.ldf
 File: doclicense-english.ldf 
 ))
-Package hyperref Info: Option `unicode' set `true' on input line 172.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 172.
+Package hyperref Info: Option `unicode' set `true' on input line 171.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 171.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 172.
+Package hyperref Info: Option `colorlinks' set `true' on input line 171.
 LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line
- 172.
+ 171.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
 File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 172.
+(Font)              scaled to size 12.0pt on input line 171.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ccicons/ccicons.sty
 Package: ccicons 2017/10/30 v1.6 LaTeX support for Creative Commons icons
@@ -1132,52 +1132,52 @@ Package babel Info: Importing basic data for finnish
 ))
 \openout1 = `dippa.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 172.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 171.
 LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line
- 172.
+ 171.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 171.
 LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 
-172.
+171.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 171.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 171.
 LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line
- 172.
+ 171.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 171.
 LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input lin
-e 172.
+e 171.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    ... okay on input line 171.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1201,7 +1201,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 172.
+Package hyperref Info: Link coloring ON on input line 171.
 
 (./dippa.out) (./dippa.out)
 \@outlinefile=\write5
@@ -1242,18 +1242,18 @@ Package hyperref Info: Link coloring ON on input line 172.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 172.
-Package microtype Info: Applying patch `item' on input line 172.
-Package microtype Info: Applying patch `toc' on input line 172.
-Package microtype Info: Applying patch `eqnum' on input line 172.
-Package microtype Info: Applying patch `footnote' on input line 172.
-Package microtype Info: Applying patch `verbatim' on input line 172.
+LaTeX Info: Redefining \microtypecontext on input line 171.
+Package microtype Info: Applying patch `item' on input line 171.
+Package microtype Info: Applying patch `toc' on input line 171.
+Package microtype Info: Applying patch `eqnum' on input line 171.
+Package microtype Info: Applying patch `footnote' on input line 171.
+Package microtype Info: Applying patch `verbatim' on input line 171.
 Package microtype Info: Generating PDF output.
 Package microtype Info: No character protrusion.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 172.
+LaTeX Info: Redefining \showhyphens on input line 171.
 Package microtype Info: Tracking enabled.
 Package microtype Info: Using default tracking set `smallcaps'.
 Package microtype Info: Adjustment of interword spacing enabled.
@@ -1276,8 +1276,8 @@ Package caption Info: End \AtBeginDocument code.
 
 \c@mv@tabular=\count359
 \c@mv@boldtabular=\count360
-LaTeX Info: Command `\dddot' is already robust on input line 172.
-LaTeX Info: Command `\ddddot' is already robust on input line 172.
+LaTeX Info: Command `\dddot' is already robust on input line 171.
+LaTeX Info: Command `\ddddot' is already robust on input line 171.
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1311,53 +1311,53 @@ LaTeX Info: Command `\ddddot' is already robust on input line 172.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Trying to load font information for T1+qhv on input line 17
-6.
+5.
 
 (/usr/share/texmf/tex/latex/tex-gyre/t1qhv.fd
 File: t1qhv.fd 2009/09/25 v1.2 font definition file for T1/qhv
 )
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 11.28003pt on input line 176.
+(Font)              scaled to size 11.28003pt on input line 175.
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 23.38725pt on input line 176.
+(Font)              scaled to size 23.38725pt on input line 175.
 
-Overfull \hbox (120.92422pt too wide) in paragraph at lines 176--176
+Overfull \hbox (120.92422pt too wide) in paragraph at lines 175--175
 [] 
  []
 
 
-Overfull \hbox (149.37697pt too wide) in paragraph at lines 176--176
+Overfull \hbox (149.37697pt too wide) in paragraph at lines 175--175
 [][] 
  []
 
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 13.53603pt on input line 176.
+(Font)              scaled to size 13.53603pt on input line 175.
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 13.53603pt on input line 176.
+(Font)              scaled to size 13.53603pt on input line 175.
 LaTeX Font Info:    Trying to load font information for OT1+minntx on input lin
-e 176.
+e 175.
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
 File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
 )
 LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 
-176.
+175.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
 )
 LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 
-176.
+175.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
 )
 LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 
-176.
+175.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
-Overfull \hbox (120.92422pt too wide) in paragraph at lines 176--176
+Overfull \hbox (120.92422pt too wide) in paragraph at lines 175--175
 $[]$ 
  []
 
@@ -1374,25 +1374,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 {/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}]
 LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input lin
-e 184.
+e 183.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
 File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 184.
+(Font)              scaled to size 12.0pt on input line 183.
 
 
 Package microtype Warning: I cannot find a spacing list for font
 (microtype)                `TS1/ntxtlf/m/n/12' (context: `nonfrench'). Switchin
 g off
-(microtype)                spacing for this font on input line 184.
+(microtype)                spacing for this font on input line 183.
 
 <doclicense-CC-by-nc-sa-88x31.pdf, id=155, 90.3375pt x 31.61812pt>
 File: doclicense-CC-by-nc-sa-88x31.pdf Graphic file (type pdf)
 <use doclicense-CC-by-nc-sa-88x31.pdf>
 Package pdftex.def Info: doclicense-CC-by-nc-sa-88x31.pdf  used on input line 1
-84.
+83.
 (pdftex.def)             Requested size: 120.0pt x 42.0004pt.
 [2
 
@@ -1401,9 +1401,9 @@ Package pdftex.def Info: doclicense-CC-by-nc-sa-88x31.pdf  used on input line 1
 dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc} </usr/share/texlive/texmf-dist/tex/l
 atex/doclicense/images/doclicense-CC-by-nc-sa-88x31.pdf>]
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 11.28003pt on input line 197.
+(Font)              scaled to size 11.28003pt on input line 196.
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
  []
 
@@ -1420,7 +1420,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
 
@@ -1437,11 +1437,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 ]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 248.
+(Font)              scaled to size 17.28pt on input line 247.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 248.
+(Font)              scaled to size 17.28pt on input line 247.
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 16.24324pt on input line 248.
+(Font)              scaled to size 16.24324pt on input line 247.
  (./dippa.toc
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 5.
@@ -1477,173 +1477,151 @@ File: figures/transformer.png Graphic file (type png)
 <use figures/transformer.png>
 Package pdftex.def Info: figures/transformer.png  used on input line 357.
 (pdftex.def)             Requested size: 282.81915pt x 297.45978pt.
-<figures/task-comparison/obj-det.png, id=297, 1017.8025pt x 847.165pt>
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.8pt on input line 366.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.6pt on input line 366.
+ [10 <./figures/transformer.png>]
+<figures/task-comparison/obj-det.png, id=307, 1017.8025pt x 847.165pt>
 File: figures/task-comparison/obj-det.png Graphic file (type png)
 <use figures/task-comparison/obj-det.png>
 Package pdftex.def Info: figures/task-comparison/obj-det.png  used on input lin
-e 372.
+e 376.
 (pdftex.def)             Requested size: 129.29227pt x 107.61461pt.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 373.
+(Font)              scaled to size 10.95pt on input line 377.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.95pt on input line 373.
+(Font)              scaled to size 10.95pt on input line 377.
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 10.29301pt on input line 373.
-<figures/task-comparison/sem-seg.png, id=298, 1017.8025pt x 847.165pt>
+(Font)              scaled to size 10.29301pt on input line 377.
+<figures/task-comparison/sem-seg.png, id=308, 1017.8025pt x 847.165pt>
 File: figures/task-comparison/sem-seg.png Graphic file (type png)
 <use figures/task-comparison/sem-seg.png>
 Package pdftex.def Info: figures/task-comparison/sem-seg.png  used on input lin
-e 376.
+e 380.
 (pdftex.def)             Requested size: 129.29227pt x 107.61461pt.
-<figures/task-comparison/instance-seg.png, id=299, 1017.8025pt x 847.165pt>
+<figures/task-comparison/instance-seg.png, id=309, 1017.8025pt x 847.165pt>
 File: figures/task-comparison/instance-seg.png Graphic file (type png)
 <use figures/task-comparison/instance-seg.png>
 Package pdftex.def Info: figures/task-comparison/instance-seg.png  used on inpu
-t line 380.
+t line 384.
 (pdftex.def)             Requested size: 129.29227pt x 107.61461pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[10 <./figures/transformer.png>]
-<figures/sam-prompts/box.png, id=315, 888.31876pt x 743.77875pt>
+ [11 <./figures/task-comparison/obj-det.png> <./figures/task-comparison/sem-seg
+.png> <./figures/task-comparison/instance-seg.png>]
+<figures/sam-prompts/box.png, id=328, 888.31876pt x 743.77875pt>
 File: figures/sam-prompts/box.png Graphic file (type png)
 <use figures/sam-prompts/box.png>
-Package pdftex.def Info: figures/sam-prompts/box.png  used on input line 402.
+Package pdftex.def Info: figures/sam-prompts/box.png  used on input line 406.
 (pdftex.def)             Requested size: 129.29227pt x 108.24805pt.
-<figures/sam-prompts/point.png, id=316, 888.31876pt x 743.77875pt>
+<figures/sam-prompts/point.png, id=329, 888.31876pt x 743.77875pt>
 File: figures/sam-prompts/point.png Graphic file (type png)
 <use figures/sam-prompts/point.png>
-Package pdftex.def Info: figures/sam-prompts/point.png  used on input line 406.
+Package pdftex.def Info: figures/sam-prompts/point.png  used on input line 410.
 
 (pdftex.def)             Requested size: 129.29227pt x 108.24805pt.
-<figures/sam-prompts/point-background.png, id=317, 888.31876pt x 743.77875pt>
+<figures/sam-prompts/point-background.png, id=330, 888.31876pt x 743.77875pt>
 File: figures/sam-prompts/point-background.png Graphic file (type png)
 <use figures/sam-prompts/point-background.png>
 Package pdftex.def Info: figures/sam-prompts/point-background.png  used on inpu
-t line 410.
+t line 414.
 (pdftex.def)             Requested size: 129.29227pt x 108.24805pt.
+<figures/drone.jpg, id=332, 1387.584pt x 925.056pt>
+File: figures/drone.jpg Graphic file (type jpg)
+<use figures/drone.jpg>
+Package pdftex.def Info: figures/drone.jpg  used on input line 434.
+(pdftex.def)             Requested size: 282.81915pt x 188.53671pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11 <./figures/task-comparison/obj-det.png> <./figures/task-comparison/sem-seg.
-png> <./figures/task-comparison/instance-seg.png>]
-<figures/drone.jpg, id=332, 1387.584pt x 925.056pt>
-File: figures/drone.jpg Graphic file (type jpg)
-<use figures/drone.jpg>
-Package pdftex.def Info: figures/drone.jpg  used on input line 430.
-(pdftex.def)             Requested size: 282.81915pt x 188.53671pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 435--440
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 435--440
-
- []
-
 [12 <./figures/sam-prompts/box.png> <./figures/sam-prompts/point.png> <./figure
-s/sam-prompts/point-background.png> <./figures/drone.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 441--446
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 441--446
-
- []
-
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 462.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.6pt on input line 462.
+s/sam-prompts/point-background.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 469.
+(hyperref)                removing `math shift' on input line 465.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 469.
+(hyperref)                removing `subscript' on input line 465.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 469.
+(hyperref)                removing `math shift' on input line 465.
 
-[13] [14]
-<figures/dataset-ortho.png, id=367, 818.05624pt x 879.285pt>
+[13 <./figures/drone.jpg>] [14] [15]
+<figures/dataset-ortho.png, id=373, 818.05624pt x 879.285pt>
 File: figures/dataset-ortho.png Graphic file (type png)
 <use figures/dataset-ortho.png>
-Package pdftex.def Info: figures/dataset-ortho.png  used on input line 498.
+Package pdftex.def Info: figures/dataset-ortho.png  used on input line 496.
 (pdftex.def)             Requested size: 242.41994pt x 260.5541pt.
-<figures/dataset-test.png, id=368, 985.6825pt x 863.225pt>
+<figures/dataset-test.png, id=374, 985.6825pt x 863.225pt>
 File: figures/dataset-test.png Graphic file (type png)
 <use figures/dataset-test.png>
-Package pdftex.def Info: figures/dataset-test.png  used on input line 505.
+Package pdftex.def Info: figures/dataset-test.png  used on input line 503.
 (pdftex.def)             Requested size: 242.41994pt x 212.30203pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/ndvi.pdf, id=370, 462.52798pt x 346.89601pt>
+[16 <./figures/dataset-ortho.png>]
+<figures/ndvi.pdf, id=384, 462.52798pt x 346.89601pt>
 File: figures/ndvi.pdf Graphic file (type pdf)
 <use figures/ndvi.pdf>
-Package pdftex.def Info: figures/ndvi.pdf  used on input line 520.
+Package pdftex.def Info: figures/ndvi.pdf  used on input line 518.
 (pdftex.def)             Requested size: 282.81915pt x 212.12498pt.
-[15 <./figures/dataset-ortho.png>]
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/dataset-test-manual-segments.png, id=383, 835.12pt x 761.84625pt>
+<figures/dataset-test-manual-segments.png, id=388, 835.12pt x 761.84625pt>
 File: figures/dataset-test-manual-segments.png Graphic file (type png)
 <use figures/dataset-test-manual-segments.png>
 Package pdftex.def Info: figures/dataset-test-manual-segments.png  used on inpu
-t line 545.
+t line 543.
 (pdftex.def)             Requested size: 242.41994pt x 221.15062pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16 <./figures/dataset-test.png> <./figures/ndvi.pdf>]
-<figures/pseudolabel1a.png, id=434, 800.9925pt x 777.90625pt>
+[17 <./figures/dataset-test.png> <./figures/ndvi.pdf>]
+<figures/pseudolabel1a.png, id=440, 800.9925pt x 777.90625pt>
 File: figures/pseudolabel1a.png Graphic file (type png)
 <use figures/pseudolabel1a.png>
-Package pdftex.def Info: figures/pseudolabel1a.png  used on input line 565.
+Package pdftex.def Info: figures/pseudolabel1a.png  used on input line 563.
 (pdftex.def)             Requested size: 197.97649pt x 192.26828pt.
-<figures/pseudolabel1b.png, id=435, 808.01875pt x 777.90625pt>
+<figures/pseudolabel1b.png, id=441, 808.01875pt x 777.90625pt>
 File: figures/pseudolabel1b.png Graphic file (type png)
 <use figures/pseudolabel1b.png>
-Package pdftex.def Info: figures/pseudolabel1b.png  used on input line 569.
+Package pdftex.def Info: figures/pseudolabel1b.png  used on input line 567.
 (pdftex.def)             Requested size: 197.97649pt x 190.59464pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/radii.pdf, id=436, 462.52798pt x 346.89601pt>
+<figures/radii.pdf, id=442, 462.52798pt x 346.89601pt>
 File: figures/radii.pdf Graphic file (type pdf)
 <use figures/radii.pdf>
-Package pdftex.def Info: figures/radii.pdf  used on input line 579.
+Package pdftex.def Info: figures/radii.pdf  used on input line 577.
 (pdftex.def)             Requested size: 282.81915pt x 212.12498pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[17 <./figures/dataset-test-manual-segments.png>]
-<figures/annotations/coarse.png, id=445, 818.05624pt x 879.285pt>
+[18 <./figures/dataset-test-manual-segments.png>]
+<figures/annotations/coarse.png, id=451, 818.05624pt x 879.285pt>
 File: figures/annotations/coarse.png Graphic file (type png)
 <use figures/annotations/coarse.png>
-Package pdftex.def Info: figures/annotations/coarse.png  used on input line 589
+Package pdftex.def Info: figures/annotations/coarse.png  used on input line 587
 .
 (pdftex.def)             Requested size: 129.29227pt x 138.9577pt.
-<figures/annotations/pseudolabeled.png, id=446, 818.05624pt x 879.285pt>
+<figures/annotations/pseudolabeled.png, id=452, 818.05624pt x 879.285pt>
 File: figures/annotations/pseudolabeled.png Graphic file (type png)
 <use figures/annotations/pseudolabeled.png>
 Package pdftex.def Info: figures/annotations/pseudolabeled.png  used on input l
-ine 593.
+ine 591.
 (pdftex.def)             Requested size: 129.29227pt x 138.9577pt.
-<figures/annotations/manual.png, id=447, 818.05624pt x 879.285pt>
+<figures/annotations/manual.png, id=453, 818.05624pt x 879.285pt>
 File: figures/annotations/manual.png Graphic file (type png)
 <use figures/annotations/manual.png>
-Package pdftex.def Info: figures/annotations/manual.png  used on input line 597
+Package pdftex.def Info: figures/annotations/manual.png  used on input line 595
 .
 (pdftex.def)             Requested size: 129.29227pt x 138.9577pt.
 
@@ -1653,98 +1631,93 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[19 <./figures/pseudolabel1a.png> <./figures/pseudolabel1b.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[18 <./figures/pseudolabel1a.png> <./figures/pseudolabel1b.png>]
-<figures/loss/coarse.pdf, id=464, 462.52798pt x 346.89601pt>
+[20 <./figures/radii.pdf> <./figures/annotations/coarse.png> <./figures/annotat
+ions/pseudolabeled.png> <./figures/annotations/manual.png>]
+<figures/loss/coarse.pdf, id=512, 462.52798pt x 346.89601pt>
 File: figures/loss/coarse.pdf Graphic file (type pdf)
 <use figures/loss/coarse.pdf>
-Package pdftex.def Info: figures/loss/coarse.pdf  used on input line 654.
+Package pdftex.def Info: figures/loss/coarse.pdf  used on input line 652.
 (pdftex.def)             Requested size: 197.97649pt x 148.48483pt.
-<figures/loss/coarse-ms.pdf, id=465, 462.52798pt x 346.89601pt>
+<figures/loss/coarse-ms.pdf, id=513, 462.52798pt x 346.89601pt>
 File: figures/loss/coarse-ms.pdf Graphic file (type pdf)
 <use figures/loss/coarse-ms.pdf>
-Package pdftex.def Info: figures/loss/coarse-ms.pdf  used on input line 658.
+Package pdftex.def Info: figures/loss/coarse-ms.pdf  used on input line 656.
 (pdftex.def)             Requested size: 197.97649pt x 148.48483pt.
-<figures/loss/pseudo.pdf, id=466, 462.52798pt x 346.89601pt>
+<figures/loss/pseudo.pdf, id=514, 462.52798pt x 346.89601pt>
 File: figures/loss/pseudo.pdf Graphic file (type pdf)
 <use figures/loss/pseudo.pdf>
-Package pdftex.def Info: figures/loss/pseudo.pdf  used on input line 663.
+Package pdftex.def Info: figures/loss/pseudo.pdf  used on input line 661.
 (pdftex.def)             Requested size: 197.97649pt x 148.48483pt.
-<figures/loss/pseudo-ms.pdf, id=467, 462.52798pt x 346.89601pt>
+<figures/loss/pseudo-ms.pdf, id=515, 462.52798pt x 346.89601pt>
 File: figures/loss/pseudo-ms.pdf Graphic file (type pdf)
 <use figures/loss/pseudo-ms.pdf>
-Package pdftex.def Info: figures/loss/pseudo-ms.pdf  used on input line 667.
+Package pdftex.def Info: figures/loss/pseudo-ms.pdf  used on input line 665.
 (pdftex.def)             Requested size: 197.97649pt x 148.48483pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[19 <./figures/radii.pdf> <./figures/annotations/coarse.png> <./figures/annotat
-ions/pseudolabeled.png> <./figures/annotations/manual.png>]
-<figures/masks/masks-gt.png, id=514, 1097.09875pt x 817.0525pt>
+<figures/masks/masks-gt.png, id=518, 1097.09875pt x 817.0525pt>
 File: figures/masks/masks-gt.png Graphic file (type png)
 <use figures/masks/masks-gt.png>
-Package pdftex.def Info: figures/masks/masks-gt.png  used on input line 699.
+Package pdftex.def Info: figures/masks/masks-gt.png  used on input line 697.
 (pdftex.def)             Requested size: 197.97649pt x 147.43712pt.
-<figures/masks/masks-inf-coarse.png, id=515, 1097.09875pt x 817.0525pt>
+<figures/masks/masks-inf-coarse.png, id=519, 1097.09875pt x 817.0525pt>
 File: figures/masks/masks-inf-coarse.png Graphic file (type png)
 <use figures/masks/masks-inf-coarse.png>
 Package pdftex.def Info: figures/masks/masks-inf-coarse.png  used on input line
- 705.
+ 703.
 (pdftex.def)             Requested size: 197.97649pt x 147.43712pt.
-<figures/masks/masks-inf-coarse-ms.png, id=516, 1097.09875pt x 817.0525pt>
+<figures/masks/masks-inf-coarse-ms.png, id=520, 1097.09875pt x 817.0525pt>
 File: figures/masks/masks-inf-coarse-ms.png Graphic file (type png)
 <use figures/masks/masks-inf-coarse-ms.png>
 Package pdftex.def Info: figures/masks/masks-inf-coarse-ms.png  used on input l
-ine 709.
+ine 707.
 (pdftex.def)             Requested size: 197.97649pt x 147.43712pt.
-<figures/masks/masks-inf-pseudo.png, id=517, 1097.09875pt x 817.0525pt>
+<figures/masks/masks-inf-pseudo.png, id=521, 1097.09875pt x 817.0525pt>
 File: figures/masks/masks-inf-pseudo.png Graphic file (type png)
 <use figures/masks/masks-inf-pseudo.png>
 Package pdftex.def Info: figures/masks/masks-inf-pseudo.png  used on input line
- 715.
+ 713.
 (pdftex.def)             Requested size: 197.97649pt x 147.43712pt.
-<figures/masks/masks-inf-pseudo-ms.png, id=518, 1097.09875pt x 817.0525pt>
+<figures/masks/masks-inf-pseudo-ms.png, id=522, 1097.09875pt x 817.0525pt>
 File: figures/masks/masks-inf-pseudo-ms.png Graphic file (type png)
 <use figures/masks/masks-inf-pseudo-ms.png>
 Package pdftex.def Info: figures/masks/masks-inf-pseudo-ms.png  used on input l
-ine 719.
+ine 717.
 (pdftex.def)             Requested size: 197.97649pt x 147.43712pt.
 
-
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[20] [21 <./figures/loss/coarse.pdf> <./figures/loss/coarse-ms.pdf> <./figures/
-loss/pseudo.pdf> <./figures/loss/pseudo-ms.pdf>] [22] [23 <./figures/masks/mask
+[21] [22 <./figures/loss/coarse.pdf> <./figures/loss/coarse-ms.pdf> <./figures/
+loss/pseudo.pdf> <./figures/loss/pseudo-ms.pdf>] [23] [24 <./figures/masks/mask
 s-gt.png> <./figures/masks/masks-inf-coarse.png> <./figures/masks/masks-inf-coa
 rse-ms.png> <./figures/masks/masks-inf-pseudo.png> <./figures/masks/masks-inf-p
-seudo-ms.png>] (./dippa.bbl
+seudo-ms.png>] [25
+
+] (./dippa.bbl
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 12.0pt on input line 28.
- [24
+ [26
 
-] [25]) [26] (./dippa.aux)
+] [27]) [28] (./dippa.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `dippa.out' has not changed.
-(rerunfilecheck)             Checksum: 1987560F190B2E2BA2F32E1A434CB28C;5208.
+(rerunfilecheck)             Checksum: 0F9F4169209908DA9779F0DD94B662DD;5203.
  ) 
 Here is how much of TeX's memory you used:
- 38159 strings out of 474222
- 675245 string characters out of 5748734
+ 38164 strings out of 474222
+ 675284 string characters out of 5748734
  1940975 words of memory out of 5000000
  59483 multiletter control sequences out of 15000+600000
- 635907 words of font info for 174 fonts, out of 8000000 for 9000
+ 636674 words of font info for 176 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  132i,12n,135p,1479b,2556s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/sha
@@ -1755,10 +1728,10 @@ xlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx
 /ztmri.pfb>
-Output written on dippa.pdf (26 pages, 38552735 bytes).
+Output written on dippa.pdf (28 pages, 38556712 bytes).
 PDF statistics:
- 812 PDF objects out of 1000 (max. 8388607)
- 503 compressed objects within 6 object streams
- 124 named destinations out of 1000 (max. 500000)
+ 823 PDF objects out of 1000 (max. 8388607)
+ 512 compressed objects within 6 object streams
+ 127 named destinations out of 1000 (max. 500000)
  39359 words of extra memory for PDF output out of 42996 (max. 10000000)
 

@@ -39,7 +39,7 @@
 %%   in the optional argument in box brackets. This is done because the title
 %%   is part of the metadata in the pdf/a file, and the metadata cannot contain
 %%   linebreaks.
-\thesistitle{SAM2 pseudolabeling for instance segmentation in UAV-based aerial imagery}
+\thesistitle{SAM2 Pseudolabeling for Instance Segmentation of Tree Crowns from Aerial Imagery}
 \place{Espoo}
 %% The date for the bachelor's thesis is the day it is presented
 \date{30 September 2025}
@@ -156,8 +156,7 @@
 %% the pdf file as well as the abstract page. To have paragraphs in your
 %% abstract rewrite it in the abstarct environment as described below.
 \thesisabstract{
-    This thesis explores the use of zero-shot instance segmentation as a pseudolabeling preprocessing step in the context of tree crown detection from aerial imagery, where pre-existing annotations calculated from a canopy height model (CHM) are of insufficient quality. Segment Anything Model 2 (SAM2) was used for pseudolabeling, and pre-existing annotations were used as bounding box prompts. To evaluate the annotation quality improvement, both pseudolabels and original annotations were compared to a manually annotated test set. In addition, to examine the effect of pseudolabeling on model training, an instance segmentation network (Mask R-CNN + ResNet50 backbone) was trained on both pseudolabels and original annotations, and the inference results on a test area were evaluated based on the manual annotations.
-    Pseudolabels achieved a higher mIoU score (0.54) than the pre-existing annotations (0.48), and pseudolabeling improved inference results for models trained on RGB images (mIoU 0.47 $\rightarrow$ 0.53) and models trained on multispectral images (mIoU 0.53 $\rightarrow$ 0.62).
+    This thesis explores the use of zero-shot instance segmentation as a pseudolabeling preprocessing step in the context of tree crown detection from aerial imagery, where pre-existing annotations calculated from a canopy height model (CHM) are of insufficient quality. Segment Anything Model 2 (SAM2) was used for pseudolabeling, and pre-existing annotations were used as bounding box prompts. To evaluate the annotation quality improvement, both pseudolabels and original annotations were compared to a manually annotated test set. In addition, to examine the effect of pseudolabeling on model training, an instance segmentation network (Mask R-CNN + ResNet50 backbone) was trained on both pseudolabels and original annotations, and the inference results on a test area were evaluated based on the manual annotations. Pseudolabels achieved a higher mIoU score (0.54) than the pre-existing annotations (0.48), and pseudolabeling improved inference results for models trained on RGB images (mIoU 0.47 $\rightarrow$ 0.53) and models trained on multispectral images (mIoU 0.53 $\rightarrow$ 0.62). The results indicate that pseudolabeling is a viable preprocessing step for datasets with approximate annotations.
 }
 
 %% You can prevent LaTeX from writing into the xmpdata file (it contains all the 
@@ -265,6 +264,7 @@ mIoU & mean intersection over union \\
 MLP & multilayer perceptron \\
 NDVI & normalized difference vegetation index \\
 NIR & near-infrared \\
+NMS & non-maximum suppression \\
 R-CNN & region-based convolutional neural network \\
 RPN & region proposal network \\
 RGB & red, green, blue \\
@@ -294,15 +294,15 @@ The goal of this thesis is to test if training results can be improved in instan
 \subsection{Research Questions}
 
 \begin{enumerate}
-\item How much does SAM2 pseudolabeling improve low quality instance segmentation annotations in UAV imagery?
-\item How much does SAM2 pseudolabeling improve training results in instance segmentaion tasks in UAV imagery?
-\item How does the addition of IR and NIR channels improve training on SAM2 pseudolabels?
+\item How much does SAM2 pseudolabeling improve low quality instance segmentation annotations in aerial imagery?
+\item How much does SAM2 pseudolabeling improve training results in instance segmentaion tasks in aerial imagery?
+\item How much does the addition of IR and NIR channels improve training on SAM2 pseudolabels?
 %\item How well does SAM2 pseudolabeling perform compared to other zero-shot instance segmentation methods?
 \end{enumerate}
 
 \subsection{Structure of the Thesis}
 
-This thesis begins by explaining the necessary background information in the Backgroud section, and exploring the previous works relevant to this study in the Related Work section. The Dataset and Methods section contains a detailed explanation of the dataset, models, and training hyperparameters. Finally, the experiments' outcomes are displayed and analyzed in the Results and Discussion sections, along with suggestions for future improvement.
+This thesis begins by explaining the necessary background information in the Background section, and exploring the previous works relevant to this study in the Related Work section. The Dataset and Methods section contains a detailed explanation of the dataset, models, and training hyperparameters. Finally, the experiments' outcomes are displayed and analyzed in the Results and Discussion sections, along with suggestions for future improvement.
 
 \newpage
 \section{Background}
@@ -359,8 +359,12 @@ The transformer is a more recent neural network architecture that has shown grea
     \label{fig:transformer}
 \end{figure}
 
-A key feature of transformers is self-attention, which allows them to model interactions between task-relevant tokens in the input token sequence, even when they occur far apart.
-\cite{transformer-survey}
+A key feature of transformers is self-attention, which allows them to model interactions between task-relevant tokens in the input token sequence, even when they occur far apart \cite{transformer-survey}.
+The attention function is analogous to mapping a query and key-value pairs to an output, which is a weighted sum of the values. The weights are computed using a compatibility function of the query and the keys. The scaled dot-product attention uses query and key vectors of dimension $d_k$ and values of dimension $d_v$. The dot product of the query and the keys is computed and divided by $\sqrt{d_k}$. In practice, the attention function is computed simultaneously on a set of queries, keys, and values, all packed into matrices $Q$, $K$, and $V$ respectively. The output matrix is computed as follows \cite{attention-is-all-you-need}:
+
+\begin{equation}
+    \text{Attention}(Q, K, V) = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V
+\end{equation}
 
 \subsection{Instance Segmentation}
 
@@ -433,16 +437,8 @@ Aerial images may be taken from any airborne apparatus, for example drones, heli
 \end{figure}
 
 Aerial remote sensing sensors include laser scanners and multispectral cameras in addition to traditional RGB-cameras that only capture visible wavelengths. Laser scanners produce three-dimensional point could data. Point clouds be used for volumetric segmentation or detection, or for calculating a digital surface model (DSM) or canopy height model (CHM). A DSM models the surface of the ground and protruding objects, and a CHM models the height of the tree canopy.
-\newline
-\newline
-[image of point cloud, image of dsm]
-\newline
 
 Multispectral cameras can capture additional wavelengths invisible to the human eye. Typically these include infrared (IR) at 1550--1750 nm and near-infrared (NIR) at 750--900 nm. Hyperspectral cameras capture a continuous spectrum instead of discrete channels. In forestry and agriculture, this extended range of bandwidths can provide useful information for biomass and growth stage estimation and species detection. \cite{hyperspectral-agricultural}
-\newline
-\newline
-[hyperspectral graph]
-\newline
 
 
 \subsection{Performance Measures}
@@ -484,6 +480,8 @@ Another study examining SAM for remote sensing use proposes RSPrompter \cite{rsp
 
 FMARS \cite{fmars} is a dataset with annotations generated using GroundingDINO and SAM. GroundingDINO was used to convert text prompts to bounding boxes, and SAM for converting these boxes to segments. A subset of the annotated area was manually annotated, and the generated annotations were compared to the manual ones, resulting in a mIoU score of 50.22\%.
 
+Although these methods were tested on different data and the results are thus not directly comparable, they give an approximate idea of the performance achieved so far.
+
 \newpage
 \section{Dataset and Methods}
 
@@ -491,7 +489,7 @@ This section covers the technical details of the dataset and methods used to tra
 
 \subsection{Dataset}
 
-The main dataset consists of a multispectral orthophoto taken from Espoonlahti by helicopter spanning approximately 2 km$^2$ and CHM-based coarse tree crown segments. The entire area is shown in Figure \ref{fig:dataset-ortho} and a magnified view of the test area is shown in Figure \ref{fig:dataset-test}). The orthophoto covers both forest and urban area, has a GSD of 0.05 m, has a width of 36871 pixels and a height of 31254 pixels, and contains blue, green, red, near-infrared, mid-infrared, and thermal infrared bands. The test area was cut out of the orthophoto and selected based on image quality and environment variety, and has a width of 4893 pixels and a height of 4471 pixels.
+The main dataset consists of a multispectral orthophoto taken by helicopter on 28 July 2023 from Espoonlahti spanning approximately 2 km$^2$ and tree crown segments calculated from a CHM. The entire area is shown in Figure \ref{fig:dataset-ortho} and a magnified view of the test area is shown in Figure \ref{fig:dataset-test}). The orthophoto covers both forest and urban area, has a GSD of 0.05 m, has a width of 36871 pixels and a height of 31254 pixels, and contains blue, green, red, near-infrared, mid-infrared, and thermal infrared bands. The thermal band was excluded in the experiments conducted in this thesis. The test area was cut out of the orthophoto and selected based on image quality and environment variety, and has a width of 4893 pixels and a height of 4471 pixels.
 
 \begin{figure}[h]
     \centering
@@ -507,7 +505,7 @@ The main dataset consists of a multispectral orthophoto taken from Espoonlahti b
     \label{fig:dataset-test}
 \end{figure}
 
-As the CHM-based coarse tree crown segments had been calculated from point-cloud data from an earlier flight than the multispectral images, many segments no longer contained trees. To eliminate these erroneus segments, they were filtered based on their Normalized Difference Vegetation Index (NDVI) value:
+As the CHM-based coarse tree crown segments had been calculated from point-cloud data from an earlier flight than the multispectral images, many segments no longer contained trees. To eliminate these erroneous segments, they were filtered based on their Normalized Difference Vegetation Index (NDVI) value:
 
 \begin{equation}
     \text{NDVI} = \frac{\text{NIR} - \text{Red}}{\text{NIR + Red}}.
@@ -624,7 +622,7 @@ The optimizer was AdamW \cite{adamw} with a learning rate of 1e-6 and weight dec
     \label{table:train}
 \end{table}
 
-For inference the mask threshold was set to 0.5, the score/confidence threshold to 0.3, and for NMS, the IoU threshold was set to 0.3, as very little overlap is expected between tree individuals. Table \ref{table:inference} contains the inference parameters.
+For inference the mask threshold was set to 0.5, the score/confidence threshold to 0.3, and for non-maximum suppression (NMS), the IoU threshold was set to 0.3, as very little overlap is expected between tree individuals. Table \ref{table:inference} contains the inference parameters.
 
 \begin{table}[h]
     \centering
@@ -752,14 +750,11 @@ Pseudolabels and coarse annotations were evaluated based on the manual annotatio
 SAM2 pseudolabeling improved the training results in both the RGB and multispectral use cases. An interesting result is that the model trained on pseudolabeled RGB images achieved an equal mIoU score to the model trained on multispectral images with coarse annotations.
 
 
+\clearpage
 \newpage
-\section{Conclusions}
+\section{Conclusion}
 
-The segmentation performance improvement provided by pseudolabeling indicates that it is a worthwhile preprocessing step for datasets where the original annotations are only approximate.
-
-% \item How much does SAM2 pseudolabeling improve low quality instance segmentation annotations in UAV imagery?
-% \item How much does SAM2 pseudolabeling improve training results in instance segmentaion tasks in UAV imagery?
-% \item How does the addition of IR and NIR channels improve training on SAM2 pseudolabels?
+Pseudolabeling improved inference results both in models trained on RGB images and in models trained on multispectral images. The segmentation performance improvement indicates that SAM2 pseudolabeling is a worthwhile preprocessing step for datasets where the original annotations are only approximate.
 
 
 \clearpage
