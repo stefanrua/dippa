@@ -150,13 +150,13 @@
 %% above.
 %% Thesis keywords:
 %% Note! The keywords are separated using the \spc macro
-\keywords{pseudolabeling\spc instance segmentation\spc forestry}
+\keywords{pseudolabeling\spc instance segmentation\spc forestry\spc mapping\spc aerial imaging\spc multispectral imaging}
 
 %% The abstract text. This text in one paragraph is included in the metadata of
 %% the pdf file as well as the abstract page. To have paragraphs in your
 %% abstract rewrite it in the abstarct environment as described below.
 \thesisabstract{
-    This thesis explores the use of zero-shot instance segmentation as a pseudolabeling preprocessing step in the context of tree crown detection from aerial imagery, where pre-existing annotations calculated from a canopy height model (CHM) are of insufficient quality. Segment Anything Model 2 (SAM2) was used for pseudolabeling, and pre-existing annotations were used as bounding box prompts. To evaluate the annotation quality improvement, both pseudolabels and original annotations were compared to a manually annotated test set. In addition, to examine the effect of pseudolabeling on model training, an instance segmentation network (Mask R-CNN + ResNet50 backbone) was trained on both pseudolabels and original annotations, and the inference results on a test area were evaluated based on the manual annotations. Pseudolabels achieved a higher mIoU score (0.54) than the pre-existing annotations (0.48), and pseudolabeling improved inference results for models trained on RGB images (mIoU 0.47 $\rightarrow$ 0.53) and models trained on multispectral images (mIoU 0.53 $\rightarrow$ 0.62). The results indicate that pseudolabeling is a viable preprocessing step for datasets with approximate annotations.
+    This thesis explores the use of zero-shot instance segmentation as a pseudolabeling preprocessing step in the context of tree crown detection from aerial imagery, where pre-existing annotations calculated from a canopy height model (CHM) are of insufficient quality. Segment Anything Model 2 (SAM2) was used for pseudolabeling and pre-existing annotations were used as bounding box prompts. To evaluate the annotation quality improvement, both pseudolabels and original annotations were compared to a manually annotated test set. In addition, to examine the effect of pseudolabeling on model training, an instance segmentation network (Mask R-CNN + ResNet50 backbone) was trained on both pseudolabels and original annotations, and the inference results on a test area were evaluated based on the manual annotations. Pseudolabels achieved a higher mIoU score than the pre-existing annotations, and pseudolabeling improved inference results for models trained on RGB images and models trained on multispectral images. The results indicate that pseudolabeling is a viable preprocessing step for datasets with approximate annotations.
 }
 
 %% You can prevent LaTeX from writing into the xmpdata file (it contains all the 
@@ -195,9 +195,9 @@
 %%
 \begin{abstractpage}[english]
 
-    This thesis explores the use of zero-shot instance segmentation as a pseudolabeling preprocessing step in the context of tree crown detection from aerial imagery, where pre-existing annotations calculated from a canopy height model (CHM) are of insufficient quality. Segment Anything Model 2 (SAM2) was used for pseudolabeling, and pre-existing annotations were used as bounding box prompts. To evaluate the annotation quality improvement, both pseudolabels and original annotations were compared to a manually annotated test set. In addition, to examine the effect of pseudolabeling on model training, an instance segmentation network (Mask R-CNN + ResNet50 backbone) was trained on both pseudolabels and original annotations, and the inference results on a test area were evaluated based on the manual annotations.
+    This thesis explores the use of zero-shot instance segmentation as a pseudolabeling preprocessing step in the context of tree crown detection from aerial imagery, where pre-existing annotations calculated from a canopy height model (CHM) are of insufficient quality. Segment Anything Model 2 (SAM2) was used for pseudolabeling and pre-existing annotations were used as bounding box prompts. To evaluate the annotation quality improvement, both pseudolabels and original annotations were compared to a manually annotated test set. In addition, to examine the effect of pseudolabeling on model training, an instance segmentation network (Mask R-CNN + ResNet50 backbone) was trained on both pseudolabels and original annotations, and the inference results on a test area were evaluated based on the manual annotations.
 
-    Pseudolabels achieved a higher mIoU score (0.54) than the pre-existing annotations (0.48), and pseudolabeling improved inference results for models trained on RGB images (mIoU 0.47 $\rightarrow$ 0.53) and models trained on multispectral images (mIoU 0.53 $\rightarrow$ 0.62).
+    Pseudolabels achieved a higher mIoU score than the pre-existing annotations, and pseudolabeling improved inference results for models trained on RGB images and models trained on multispectral images.
 
     The results indicate that pseudolabeling is a viable preprocessing step for datasets with approximate annotations.
 
@@ -234,7 +234,7 @@
 
     Tässä diplomityössä tutkittiin zero-shot instanssisegmentaatiota pseudoannotointiesikäsittelyvaiheena puulatvuksien tunnistuksessa ilmakuvista tapauksessa, jossa aineiston olemassaolevat latvuskorkeusmallista lasketut annotaatiot ovat epätarkat. Mallia Segment Anything Model 2 (SAM2) käytettiin pseudoannotointiin, ja alkuperäisiä latvuskorkeusmallipohjaisia annotaatioita käytettiin laatikkokehotteina. Annotaatiolaadun parannuksen arviomiseksi sekä pseudoannotaatioita että alkuperäisiä verrattiin käsin annotoituun koealueeseen. Pseudoannotaatioden vaikutuksen koneoppimismallien koulutukseen arvioimiseksi koulutettiin instanssisegmentaationeuroverkko (Mask R-CNN + ResNet50 selkäranka) sekä pseudoannotaatioilla että alkuperäisillä annotaatioilla, ja inferenssitulokset arvioitiin manuaalisten annotaatioiden perusteella.
 
-    Pseudoannotaatiot saavuttivat korkeamman mIoU tuloksen (0.54) kuin alkuperäiset annotaatiot (0.48). Pseudoannotaatio paransi myös inferenssituloksia sekä RGB-kuvilla koulutetulla mallilla (mIoU 0.47 $\rightarrow$ 0.53), että multispektrikuvilla koulutetulla mallilla (mIoU 0.53 $\rightarrow$ 0.62).
+    Pseudoannotaatiot saavuttivat korkeamman mIoU tuloksen kuin alkuperäiset annotaatiot. Pseudoannotaatio paransi myös inferenssituloksia sekä RGB-kuvilla koulutetulla mallilla, että multispektrikuvilla koulutetulla mallilla.
 
     Tulokset viittavat siihen, että pseudoannotaatio on varteenotettava esikäsittely vaihe aineistoille, joissa annotaatiot ovat vain suuntaa antavia.
 
@@ -258,16 +258,16 @@ CHM & canopy height model \\
 CNN & convolutional neural network \\
 DSM & digital surface model \\
 GSD & ground sample distance \\
-IR & infrared \\
 IoU & intersection over union \\
+IR & infrared \\
 mIoU & mean intersection over union \\
 MLP & multilayer perceptron \\
 NDVI & normalized difference vegetation index \\
 NIR & near-infrared \\
 NMS & non-maximum suppression \\
 R-CNN & region-based convolutional neural network \\
-RPN & region proposal network \\
 RGB & red, green, blue \\
+RPN & region proposal network \\
 SAM & Segment Anything Model \\
 SAM2 & Segment Anything Model 2 \\
 UAV & unmanned aerial vehicle\\
@@ -287,22 +287,22 @@ Airborne remote sensing based tree mapping methods are used for forest health mo
 
 In recent years, deep learning based methods have been shown to produce increasingly useful models and predictions in forestry and agriculture \cite{dl-forestry}, especially in the tasks of species detection and land cover prediction. Combined with the recent advances in autonomous data collection methods using unmanned aerial vehicles (UAVs) \cite{uav-data-collection}, there is unprecedented potential for massive data collection and mapping with relatively little manual labor. The efficient use of the available manual labor resources is especially important here in Finland where the population in small.
 
-The ability to keep an up to date map of vegetation is essential for monitoring our forest ecosystems, which are increasingly important as global emissions rise and biodiversity decreases \cite{natural-resources-finland}. Finland has an especially great resposibility in protecting its nature, as an exceptionally large part of its surface area (75\%) is covered by forest. In addition to protecting boreal forests, efficiently managing areas used for by the forest industry is necessary, as it accounts for a significant part of the Finnish economy \cite{forest-industry-economy}. Finnish forests face unprecedented risks from bark beetles, drought, and forest fires due to climate change \cite{climate-change-finland-forestry}.
+The ability to keep an up to date map of vegetation is essential for monitoring our forest ecosystems, which are increasingly important as global emissions rise and biodiversity decreases \cite{natural-resources-finland}. Finland has an especially great resposibility in protecting its nature, as an exceptionally large part of its surface area (75\%) is covered by forest. In addition to protecting boreal forests, efficiently managing areas used by the forest industry is necessary, as it accounts for a significant part of the Finnish economy \cite{forest-industry-economy}. Finnish forests face unprecedented risks from bark beetles, drought, and forest fires due to climate change \cite{climate-change-finland-forestry}.
 
-The goal of this thesis is to test if training results can be improved in instance segmentation tasks by refining coarse segments calculated from a canopy height model (CHM) using Segment Anything Model 2 (SAM2) \cite{sam2}.
+The goal of this thesis is to test if training results in instance segmentation tasks can be improved by refining coarse segments calculated from a canopy height model (CHM) using Segment Anything Model 2 (SAM2) \cite{sam2}.
 
 \subsection{Research Questions}
 
 \begin{enumerate}
 \item How much does SAM2 pseudolabeling improve low quality instance segmentation annotations in aerial imagery?
-\item How much does SAM2 pseudolabeling improve training results in instance segmentaion tasks in aerial imagery?
+\item How much does SAM2 pseudolabeling improve training results in instance segmentation tasks in aerial imagery?
 \item How much does the addition of IR and NIR channels improve training on SAM2 pseudolabels?
 %\item How well does SAM2 pseudolabeling perform compared to other zero-shot instance segmentation methods?
 \end{enumerate}
 
 \subsection{Structure of the Thesis}
 
-This thesis begins by explaining the necessary background information in the Background section, and exploring the previous works relevant to this study in the Related Work section. The Dataset and Methods section contains a detailed explanation of the dataset, models, and training hyperparameters. Finally, the experiments' outcomes are displayed and analyzed in the Results and Discussion sections, along with suggestions for future improvement.
+This thesis begins by explaining the necessary background information in the Background section, and exploring the previous works relevant to this study in the Related Work section. The Dataset and Methods section contains a detailed explanation of the dataset, models, and training hyperparameters. Finally, the experiments' outcomes are displayed and analyzed in the Experiments and Results section, and final outcomes, answers to the research questions, and suggestions for future improvement are in the Conclusion section.
 
 \newpage
 \section{Background}
