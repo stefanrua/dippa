@@ -197,7 +197,7 @@
 
     This thesis explores the use of zero-shot instance segmentation as a pseudolabeling preprocessing step in the context of tree crown detection from aerial imagery, where pre-existing annotations calculated from a canopy height model (CHM) are of insufficient quality. Segment Anything Model 2 (SAM2) was used for pseudolabeling and pre-existing annotations were used as bounding box prompts. To evaluate the annotation quality improvement, both pseudolabels and original annotations were compared to a manually annotated test set. In addition, to examine the effect of pseudolabeling on model training, an instance segmentation network (Mask R-CNN + ResNet50 backbone) was trained on both pseudolabels and original annotations, and the inference results on a test area were evaluated based on the manual annotations.
 
-    Pseudolabels achieved a higher mIoU score than the pre-existing annotations, and pseudolabeling improved inference results for models trained on RGB images and models trained on multispectral images.
+    Using manually drawn tree crown segments as ground truth, pseudolabels achieved a higher mean intersection over union (mIoU) score than the CHM-based annotations. Models trained on pseudolabels produced better inference results than models trained on CHM-based coarse annotations, both when trained on RGB images and when trained on multispectral images.
 
     The results indicate that pseudolabeling is a viable preprocessing step for datasets with approximate annotations.
 
@@ -307,7 +307,7 @@ This thesis begins by explaining the necessary background information in the Bac
 \newpage
 \section{Background}
 
-This section goes over the necessary background information for understanding this thesis. Subsections explain the the machine learning task of instance segmentation, methods and model architectures to perform said task, the goals and methods of aerial tree mapping, and differences in remote sensing aerial imaging apparatus.
+This section goes over the necessary background information for understanding this thesis. Subsections explain the machine learning task of instance segmentation, methods and model architectures to perform the task, the goals and methods of aerial tree mapping, and differences in remote sensing aerial imaging apparatus.
 
 \subsection{Neural Networks}
 
@@ -330,15 +330,15 @@ The gradient calculation and backpropagation step utilize the chain rule of diff
     \label{fig:mlp}
 \end{figure}
 
-An optimization algorithm called the optimizer determines the direction and magnitude of the parameter update at each iteration. Optimizers have hyperparameters that tune the optimization process, such as learning rate which is a multiplier applied to the update magnitude, and in the case of the optimizer used in this thesis, AdamW \cite{adamw}, regularization parameter called weight decay.
+An optimization algorithm called the optimizer determines the direction and magnitude of the parameter update at each iteration. Optimizers have hyperparameters that tune the optimization process, such as the learning rate which is a multiplier applied to the update magnitude. AdamW \cite{adamw}, the optimizer used in this thesis, also has a regularization parameter called weight decay.
 
 Pre-training is a common way to shorten the training time required to fit a model to custom data. Using pre-trained model weights, even if trained for a mostly different domain, often yields better results than random initialization \cite{pretraining}. A common set of pre-trained weights for image related tasks are weights optimized for ImageNet-1K \cite{imagenet1k}, an openly available dataset containing approximately 1.3 million images.
 
 % Training samples are processed in batches.
 
-\subsubsection{Convolutional Nerual Networks}
+\subsubsection{Convolutional Neural Networks}
 
-Convolutional neural networks (CNNs) \cite{cnn} are neural networks that employ convolutional layers. These are commonly used for computer vision tasks due to their efficiency in detecting hierarchies of visual features. A convolutional layer consists of a kernel that is moved over the input as a sliding window, computing an output for each position as shown in Figure \ref{fig:convolutional}. The weights of the layer make up the kernel, and optimizing these weights lead to the kernel representing some feature related to the target. The CNN provides several advantages, the first of which is efficiency. A fully connected network would need to have a very large number of parameters to achieve the same discriminative power for local features. Another benefit is translational robustness. The same feature in the input image may be shifted to another location, but since the convolution kernel's weights apply similarly everywhere in the layer's receptive field, the feature is recognized in the same way. The convolutional layer's neuron's receptive field is the set of inputs visible to it from the previous layer, and are determined by the kernel's dimensions and the sliding window's stride. Compared to a fully connected layer, which has the entire previous layer as its receptive field, the locally limited receptive field of the convolutional layer is a disadvantage, especially in cases where a feature is larger than the receptive field.
+Convolutional neural networks (CNNs) \cite{cnn} are neural networks that employ convolutional layers. These are commonly used for computer vision tasks due to their efficiency in detecting hierarchies of visual features. A convolutional layer consists of a kernel that is moved over the input as a sliding window, computing an output for each position as shown in Figure \ref{fig:convolutional}. The weights of the layer make up the kernel, and optimizing these weights leads to the kernel representing some feature related to the target. The CNN provides several advantages, the first of which is efficiency. A fully connected network would need to have a very large number of parameters to achieve the same discriminative power for local features. Another benefit is translational robustness. The same feature in the input image may be shifted to another location, but since the convolution kernel's weights apply similarly everywhere in the layer's receptive field, the feature is recognized in the same way. The convolutional layer's neuron's receptive field is the set of inputs visible to it from the previous layer, and are determined by the kernel's dimensions and the sliding window's stride. Compared to a fully connected layer, which has the entire previous layer as its receptive field, the locally limited receptive field of the convolutional layer is a disadvantage, especially in cases where a feature is larger than the receptive field.
 \cite{cnn-review}
 
 \begin{figure}[h]
@@ -350,7 +350,7 @@ Convolutional neural networks (CNNs) \cite{cnn} are neural networks that employ 
 
 \subsubsection{Transformers}
 
-The transformer is a more recent neural network architecture that has shown great performance when trained on extremely large amounts of data \cite{transformer-survey}. The network consists of an encoder that takes as input a set of tokens, that are then weighed using a self-attention layer, after which a decoder calculates the output based on the output of the encoder \cite{attention-is-all-you-need}. The main advantage of transformers is the ability to leverage massively parallel compute efficiently, allowing the training of very large models in a reasonable amount of time. An example of a transformer type neural network in shown in Figure \ref{fig:transformer}.
+The transformer is a more recent neural network architecture that has shown great performance when trained on extremely large amounts of data \cite{transformer-survey}. The network consists of an encoder that takes as input a set of tokens, that are then weighed using a self-attention layer, after which a decoder calculates the output based on the output of the encoder \cite{attention-is-all-you-need}. The main advantage of transformers is the ability to leverage massively parallel compute efficiently, allowing the training of very large models in a reasonable amount of time. An example of a transformer type neural network is shown in Figure \ref{fig:transformer}.
 
 \begin{figure}[h]
     \centering
@@ -363,12 +363,12 @@ A key feature of transformers is self-attention, which allows them to model inte
 The attention function is analogous to mapping a query and key-value pairs to an output, which is a weighted sum of the values. The weights are computed using a compatibility function of the query and the keys. The scaled dot-product attention uses query and key vectors of dimension $d_k$ and values of dimension $d_v$. The dot product of the query and the keys is computed and divided by $\sqrt{d_k}$. In practice, the attention function is computed simultaneously on a set of queries, keys, and values, all packed into matrices $Q$, $K$, and $V$ respectively. The output matrix is computed as follows \cite{attention-is-all-you-need}:
 
 \begin{equation}
-    \text{Attention}(Q, K, V) = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V
+    \text{Attention}(Q, K, V) = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V.
 \end{equation}
 
 \subsection{Instance Segmentation}
 
-Instance segmentation is a machine learning task where the goal is to generate separate masks for individual objects in an image. This differs from semantic segmentation, where each pixel is given a semantic label without separating individual objects, and from object detection where individual objects are given bounding boxes but no masks. See Figure \ref{fig:task-comparison} for a visual comparison of the tasks.
+Instance segmentation is a machine learning task where the goal is to generate separate masks for individual objects in an image. This differs from semantic segmentation, where each pixel is given a semantic label without separating individual objects, and from object detection, where individual objects are given bounding boxes but no masks. See Figure \ref{fig:task-comparison} for a visual comparison of the tasks.
 
 \begin{figure}[h]
     \centering
@@ -397,7 +397,7 @@ A CNN consists of convolutional layers, where the connections to the next layer 
 \subsubsection{Segment Anything Model 2}
 
 Segment Anything Model 2 (SAM2) \cite{sam2} is a foundation model that can segment objects very generally, even ones that it has not been trained on.
-SAM2 is a revised version of Segment Anything Model (SAM) \cite{sam}, a transformer-based foundation model for image segmentation. The main improvement in SAM2 the ability to train and predict on video data. While no video data was used in this thesis, SAM2 was chosen for its higher accuracy and 6x speedup over SAM.
+SAM2 is a revised version of Segment Anything Model (SAM) \cite{sam}, a transformer-based foundation model for image segmentation. The main improvement in SAM2 is the ability to train and predict on video data. While no video data was used in this thesis, SAM2 was chosen for its higher accuracy and $6\times$ speedup over SAM.
 There are two ways to use it: only providing it with an image and letting it segment every object on its own, or providing it with an image and a prompt containing the location of the object of interest. The prompts can be of two types: a set of one or more foreground points and optional background points, or a bounding box as shown in Figure \ref{fig:sam-prompts}. The model outputs a binary mask.
 
 \begin{figure}[h]
@@ -421,13 +421,13 @@ There are two ways to use it: only providing it with an image and letting it seg
 
 \subsection{Aerial Tree Mapping}
 
-Tree mapping is used by the forestry industry to monitor forest health, by urban planners to plan cities, by scientists to model ecological change and assess post-disaster damage.
+Tree mapping is used by the forestry industry to monitor forest health, by urban planners to plan cities, and by scientists to model ecological change and assess post-disaster damage.
 
 Traditionally tree mapping has been done by ground-level visual analysis \cite{aerial-photography}, but the advent of aerial photography, laser scanning, and computational analysis has moved this task towards remote sensing.
 
 \subsubsection{Aerial Imaging}
 
-Aerial images may be taken from any airborne apparatus, for example drones, helicopters, aeroplanes, or even satellites. For the purpose of mapping individual trees satellite imagery rarely provides a high enough ground sample distance (GSD), and aeroplanes are not convenient for covering square-ish areas, so drones and helicopters are most often used.
+Aerial images may be taken from any airborne apparatus, for example drones as seen in Figure \ref{fig:drone}, helicopters, aeroplanes, or even satellites. For the purpose of mapping individual trees satellite imagery rarely provides a high enough ground sample distance (GSD), and aeroplanes are not convenient for covering square-ish areas, so drones and helicopters are most often used. \cite{uav-rs}
 
 \begin{figure}[h]
     \centering
@@ -436,16 +436,18 @@ Aerial images may be taken from any airborne apparatus, for example drones, heli
     \label{fig:drone}
 \end{figure}
 
-Aerial remote sensing sensors include laser scanners and multispectral cameras in addition to traditional RGB-cameras that only capture visible wavelengths. Laser scanners produce three-dimensional point could data. Point clouds be used for volumetric segmentation or detection, or for calculating a digital surface model (DSM) or canopy height model (CHM). A DSM models the surface of the ground and protruding objects, and a CHM models the height of the tree canopy.
+Aerial remote sensing sensors include laser scanners and multispectral cameras in addition to traditional RGB-cameras that only capture visible wavelengths. Laser scanners produce three-dimensional point could data. Point clouds can be used for volumetric segmentation or detection, or for calculating a digital surface model (DSM) or canopy height model (CHM). A DSM models the surface of the ground and protruding objects, and a CHM models the height of the tree canopy. \cite{uav-lidar}
 
 Multispectral cameras can capture additional wavelengths invisible to the human eye. Typically these include infrared (IR) at 1550--1750 nm and near-infrared (NIR) at 750--900 nm. Hyperspectral cameras capture a continuous spectrum instead of discrete channels. In forestry and agriculture, this extended range of bandwidths can provide useful information for biomass and growth stage estimation and species detection. \cite{hyperspectral-agricultural}
 
 
 \subsection{Performance Measures}
 
+This section explains the performance measures used to evaluate and compare models in this thesis.
+
 \subsubsection{Jaccard Index}
 
-The Jaccard index\cite{jaccard} is a measure of similarity between two segments:
+The Jaccard index \cite{jaccard} is a measure of similarity between two segments:
 \begin{equation}
 J(A, B) = \frac{|A \cap B|}{|A \cup B |},
 \end{equation}
@@ -466,7 +468,7 @@ and recall is the fraction of targets that were detected:
 
 The $F_1$ score is a performance measure that represents the overall performance of a model as the harmonic mean of precision and recall:
 \begin{equation}
-    F_1 = \frac{2}{\text{recall}^{-1} + \text{precision}^{-1}}.
+    F_1 = \frac{2}{\text{Precision}^{-1} + \text{Recall}^{-1}}.
 \end{equation}
 
 
@@ -478,7 +480,7 @@ The previous version of SAM2, SAM has been assessed for tree crown instance segm
 
 Another study examining SAM for remote sensing use proposes RSPrompter \cite{rsprompter}, a method that learns to generate prompts from the SAM's image encoder, then feeding them to the decoder. The study proposing the method reports the results as AP scores, but the study mentioned above tested RSPrompter as well, achieving 82.58\% mIoU. \cite{sam-treecrown}
 
-FMARS \cite{fmars} is a dataset with annotations generated using GroundingDINO and SAM. GroundingDINO was used to convert text prompts to bounding boxes, and SAM for converting these boxes to segments. A subset of the annotated area was manually annotated, and the generated annotations were compared to the manual ones, resulting in a mIoU score of 50.22\%.
+FMARS \cite{fmars} is a dataset with annotations generated using GroundingDINO \cite{groundingdino} and SAM. GroundingDINO was used to convert text prompts to bounding boxes, and SAM for converting these boxes to segments. A subset of the annotated area was manually annotated, and the generated annotations were compared to the manual ones, resulting in a mIoU score of 50.22\%.
 
 Although these methods were tested on different data and the results are thus not directly comparable, they give an approximate idea of the performance achieved so far.
 
